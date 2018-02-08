@@ -1,0 +1,88 @@
+<!------------------------------------------------------------------------>
+{{TEMPLATE:List_diff}}
+{{?Form:Diff}}
+  {{Form:Diff}}
+  {{@actions/versions.html:Diff}}
+{{?/}}
+    {{TEMPLATE:List_diff_Item}}
+     <div class="version">
+       {{?is_diff}}
+       <!-- поля для диффа -->&nbsp;&nbsp;
+       <input type="radio" name="a" value="{{supertag}}" {{checked_a}} /> <!-- -->
+       <input type="radio" name="b" value="{{supertag}}" {{checked_b}} />
+       {{?/}}
+
+       {{??is_version}}
+       <!-- информация о версии -->&nbsp;
+         <span class="dt-"><a href="{{href}}">{{datetime}}</a></span>
+         . . . . . . . . .
+         <span class="author-"> 
+          {{??is_first}}    создал  {{??/is_first}}
+          {{??!is_first}}   изменил {{??/is_first}} {{Link:author}}
+         </span>
+         {{??is_record}}  
+          <span class="tag-">(текущая&nbsp;версия)</span>
+         {{??/is_record}}  
+
+       {{??/is_version}}
+       <!-- информация об анонсе -->&nbsp;
+       {{??!is_version}}
+         {{??is_record}}
+           <span class="dt-">{{edited_datetime}} &#151;
+            текущее состояние документа  </span>
+           <span class="author-"> 
+            
+           </span>
+         {{??/is_record}}
+         {{??!is_record}}
+           <span class="dt-">{{datetime}}
+            &#151; {{Link:announce}} </span>
+           <span class="author-"> 
+            . . {{??is_journals}} в журналах{{??/is_journals}}
+                {{??!is_journals}}в журнале {{??/is_journals}} {{Link:journal}}
+           </span>
+         {{??/is_record}}
+       {{??/is_version}}
+
+       {{??version_tag}}
+        <span class="tag-">метка:&nbsp;<b>{{version_tag}}</b></span>
+       {{??/version_tag}}
+       {{??is_record}} 
+         <div><img src="{{images}}z.gif" class="block" width="1" height="5" alt="" border="0" /></div> 
+       {{??/is_record}} 
+       <!-- -->
+     </div>
+    {{/TEMPLATE:List_diff_Item}}
+{{/TEMPLATE:List_diff}}
+
+
+{{TEMPLATE:List_diff_Empty}}
+ Записей нет
+{{/TEMPLATE:List_diff_Empty}}
+
+
+<!------------------------------------------------------------------------>
+{{TEMPLATE:Diff}}
+  <input type="submit" value="Сравнить версии" />  
+   &nbsp;&#151;&nbsp;<input type="checkbox" name="fastdiff" id="fastdiff" /><label for="fastdiff">Показать только что добавилось/убавилось</label>    
+   <div><img src="{{images}}z.gif" class="block" width="1" height="5" alt="" border="0" /></div>
+{{/TEMPLATE:Diff}}
+
+
+{{TEMPLATE:Both}}
+{{?Form:Diff}}
+  {{Form:Diff}}
+  {{@actions/versions.html:Diff}}
+  <hr size="1" />
+{{?/}}
+ <div>
+ <strong>Версии документа</strong> {{?skipsame}}(группированы по авторам изменений){{?/}}
+ </div>
+ {{Versions}}
+ <hr size="1" />
+ <div>
+ <strong>Анонсы документа</strong>
+ </div>
+ {{Announces}}
+{{/Form:Diff}}
+{{/TEMPLATE:Both}}

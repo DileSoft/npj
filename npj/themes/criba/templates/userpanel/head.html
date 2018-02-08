@@ -1,0 +1,148 @@
+{{#FlipCookie}}
+<div id="menu_block_full" {{?UserPanel:IsUp}}class="hidden"{{?!UserPanel:IsUp}}class="visible"{{?/}}>
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+<td class="login-{{?UserPanel.Guest}}guest-{{?/}}status-{{?UserPanel.foreign}}foreign{{?!UserPanel.foreign}}ok{{?/}}" valign="bottom"> <!-- -->
+{{?UserPanel.Guest}} <!-- -->
+<img class="block" src="{{images}}z.gif" width="43" height="1" alt="" title="" border="0" /> <!-- -->
+{{?!UserPanel.Guest}} <!-- -->
+  <a href="javascript:;"
+    onclick="return flipUp();"
+  ><img class="block" src="{{images}}user_panel/close_userpanel.gif" width="20" height="43" alt="" title="”меньшить" border="0" /></a><!-- -->
+{{?/}} <!-- -->
+</td>
+<td class="bg"><img align="top" src="{{images}}z.gif" width="5" height="1" alt="" border="0" /></td>
+<td class="user-panel">
+ <!-- User Panel -->
+ <table cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tr>
+   <td>
+     <div class="user-pic-{{?UserPanel.Guest}}guest-{{?/}}">{{UserPanel.userpic}}</div>
+   </td>
+   <td class="w100" valign="top">
+   {{??UserPanel.Guest}} <!-- -->
+    <!-- User Login -->
+     {{UserPanel.FORM}}
+     <input type="hidden" name="freturn" value="{{UserPanel.FORM.Return}}" />
+    <table border="0" cellspacing="0" cellpadding="0">
+    <tr><td>
+      <table class="login-" border="0" cellspacing="5" cellpadding="0">
+      <tr><td>{{!Login}}:</td>
+          <td><input type="text" size="15" name="_flogin" value='' /></td>
+      </tr>
+      <tr><td>{{!Password}}:</td>
+          <td><input size="15" type="password" name="_fpassword" value='' /></td>
+      </tr>
+      </table>
+    </td>
+    <td>
+      <table class="login-" border="0" cellspacing="5" cellpadding="0">
+      <tr><td style="height:23px" class="opts-"><a href="{{/}}forgot">забыли пароль?</a></td> <!-- !!! messageset -->
+      </tr>
+      <tr><td style="vertical-align:bottom;height:23px;"><input style="width:70px" class="UpdateBtnSmall" 
+                     onmouseover='this.className="UpdateBtnSmall_";' 
+                     onmouseout ='this.className="UpdateBtnSmall";' 
+                     type="submit" value='{{!DoLogin}}' /></td>
+      </tr>
+      </table>
+    </td></tr>
+    </table>
+    <table class="login-" border="0" cellspacing="0" cellpadding="0">
+      <tr><td><img src="{{images}}" class="block" border="0" alt="" width="50" height="1" /></td>
+          <td><input size="15" id="id_fpermanent" type="checkbox" name="_logout_at" value="cookie" checked="checked" /></td>
+          <td><label for="id_fpermanent">запомнить вход и потом авторизовывать автоматически</label></td>
+      </tr>
+      <tr><td><img src="{{images}}" class="block" border="0" alt="" width="50" height="1" /></td>
+          <td><input size="15" id="id_freturn" type="checkbox" name="freturn2" checked="checked" /></td>
+          <td><label for="id_freturn">вернутьс€ на эту страницу после авторизации</label></td>
+      </tr>
+    </table>
+    </form>
+    <!-- / User Login -->
+   {{??/UserPanel.Guest}} <!-- -->
+   {{??!UserPanel.Guest}} <!-- -->
+    {{@userpanel/useropts.html}}
+    <!-- User Info -->
+    <div class="user-">
+     <span class="name-">{{UserPanel.user_name}}</span>
+     <span class="opts-"> { {{??!UserPanel.foreign}}<a href="{{Href:Principal}}/manage">{{!Manage}}</a> | {{??/UserPanel.foreign}}
+                            <a onclick="return confirm('{{!LogoutSure}}');" href="{{/}}login/?_logout=yes">{{!Logout}}</a> }
+
+       {{??M:cms}}
+         &nbsp;&nbsp;&nbsp;
+         <strong>–едактирование:</strong>&nbsp;
+           {{??M:cms.Show}}показано{{??/M:cms.Show}}
+           {{??!M:cms.Show}}<a href="?_cms=show">показать</a>{{??/M:cms.Show}}
+           |
+           {{??!M:cms.Show}}скрыто{{??/M:cms.Show}}
+           {{??M:cms.Show}}<a href="?_cms=hide">скрыть</a>{{??/M:cms.Show}}
+       {{??/M:cms}}
+
+     </span>
+    </div>
+    <!-- / User Info -->
+   {{??/UserPanel.Guest}} <!-- -->
+   </td>
+  </tr>
+  {{??!UserPanel.Guest}} <!-- -->
+  <tr>
+   <td valign="bottom">
+     <div ><img src="{{images}}z.gif" width="1" height="10" alt="" border="0" /></div>
+     <div class="bg"><img src="{{images}}z.gif" width="1" height="10" alt="" border="0" /></div>
+   </td>
+   <td>
+    <!-- Buttons -->
+        {{#UserMenu}}
+    <!-- / Buttons -->
+   </td>
+  </tr>
+  {{??/UserPanel.Guest}} <!-- -->
+ </table>
+ <!-- / User Panel -->
+</td>
+<td class="bg"><img align="top" src="{{images}}z.gif" width="10" height="1" alt="" border="0" /></td>
+<td class="bg">
+{{#NodeMenu}}
+</td>
+</tr>
+</table>
+
+<div class="brbr1">{{@dummy.html}}</div>
+<div class="brbr2">{{@dummy.html}}</div>
+<div class="brbr3"><img src="{{images}}z.gif" class="block" width="1" height="3" id="headbottom" alt="" border="0" /></div>
+<div class="brbr1">{{@dummy.html}}</div>
+<div class="brbr4">{{@dummy.html}}</div>
+
+</div>
+
+<div id="menu_block_short" {{?!UserPanel:IsUp}}class="hidden"{{?UserPanel:IsUp}}class="visible"{{?/}}>
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td class="login-status-{{?UserPanel.foreign}}foreign{{?!UserPanel.foreign}}ok{{?/}}" valign="bottom"> <!-- -->
+ <a href="javascript:;"
+    onclick="return flipDown();"
+  ><img class="block" src="{{images}}user_panel/open_userpanel.gif" width="20" height="23" alt="" title="”величить" border="0" /></a><!-- -->
+</td>
+<td class="login-status-{{?UserPanel.foreign}}foreign{{?!UserPanel.foreign}}ok{{?/}}" valign="bottom"> <!-- -->
+ <img src="{{images}}z.gif" class="block" width="20" height="1" alt="" border="0" /><!-- -->
+</td>
+<td width="100%" class="user-panel-small">
+  <div class="info-">
+    ¬ы &mdash; {{Link:Principal}}
+     <span class="opts-"> { 
+                            {{??!UserPanel.foreign}}<a href="{{Href:Principal}}/manage">{{!Manage}}</a> | {{??/UserPanel.foreign}}
+                            <a onclick="return confirm('{{!LogoutSure}}');" href="{{/}}login/?_logout=yes">{{!Logout}}</a> 
+                          } </span>
+  </div>
+</td>
+<td class="user-panel-small" nowrap="nowrap">
+ {{@userpanel/nodemenu.html:StaticSmall}}
+</td>
+</tr>
+</table>
+
+<div class="brbr1">{{@dummy.html}}</div>
+<div class="brbr2">{{@dummy.html}}</div>
+<div class="brbr3"><img src="{{images}}z.gif" class="block" width="1" height="3" alt="" border="0" /></div>
+<div class="brbr1">{{@dummy.html}}</div>
+<div class="brbr4">{{@dummy.html}}</div>
+</div>

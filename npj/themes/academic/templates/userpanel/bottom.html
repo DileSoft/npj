@@ -1,0 +1,57 @@
+<a name="bottom" id="bottom"></a>
+<div class="userpanel-bottom">
+
+   {{??UserPanel.Guest}} <!-- -->
+    <!-- User Login -->
+     {{UserPanel.FORM}}
+     <input type="hidden" name="freturn" value="{{UserPanel.FORM.Return}}" />
+
+    <table border="0" cellspacing="0" cellpadding="0">
+    <tr><td>
+      <table class="login-" border="0" cellspacing="5" cellpadding="0">
+      <tr><td>{{!Login}}:</td>
+          <td><input type="text" size="15" name="_flogin" value='' /></td>
+      </tr>
+      <tr><td>{{!Password}}:</td>
+          <td><input size="15" type="password" name="_fpassword" value='' /></td>
+      </tr>
+      </table>
+    </td>
+    <td>
+      <table class="login-" border="0" cellspacing="5" cellpadding="0">
+      <tr><td style="height:23px" class="opts-"><a href="{{/}}forgot">забыли пароль?</a></td> <!-- !!! messageset -->
+      </tr>
+      <tr><td style="vertical-align:bottom;height:23px;"><input type="submit" value='{{!DoLogin}}' /></td>
+      </tr>
+      </table>
+    </td></tr>
+    </table>
+    <table class="login-" border="0" cellspacing="0" cellpadding="0">
+      <tr><td><img src="{{images}}" class="block" border="0" alt="" width="60" height="1" /></td>
+          <td><input size="15" id="id_fpermanent" type="checkbox" name="_logout_at" value="cookie" checked="checked" /></td>
+          <td><label for="id_fpermanent">запомнить вход и потом авторизовывать автоматически</label></td>
+      </tr>
+      <tr><td><img src="{{images}}" class="block" border="0" alt="" width="50" height="1" /></td>
+          <td><input size="15" id="id_freturn" type="checkbox" name="freturn2" checked="checked" /></td>
+          <td><label for="id_freturn">вернуться на эту страницу после авторизации</label></td>
+      </tr>
+    </table>
+    </form>
+    <!-- / User Login -->
+   {{??/UserPanel.Guest}} <!-- -->
+   {{??!UserPanel.Guest}} <!-- -->
+    <!-- User Info -->
+     <strong>Вы &#151; {{Link:Principal}}</strong>
+     <span class="opts-"> { {{??!UserPanel.foreign}}<a href="{{Href:Principal}}/manage">{{!Manage}}</a> | {{??/UserPanel.foreign}}
+                            <a onclick="return confirm('{{!LogoutSure}}');" href="{{/}}login/?_logout=yes">{{!Logout}}</a> }
+     </span>
+     {{@userpanel/useropts.html}}
+     {{#UserMenu}}
+    </div>
+    <!-- / User Info -->
+   {{??/UserPanel.Guest}} <!-- -->
+
+ <!-- / User Panel -->
+
+</div>
+

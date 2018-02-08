@@ -1,0 +1,33 @@
+{{TEMPLATE:Unknown}}
+<div class="action-error">
+ <strong>ОШИБКА!</strong><br />
+ Действия <b>&laquo;{{Action:Name}}&raquo;</b> в данном релизе НПЖ ещё (уже) нет.
+</div>
+{{/TEMPLATE:Unknown}}
+
+{{TEMPLATE:404}}
+<div class="action-404">
+ Нет страницы {{Link:Create}}
+</div>
+{{/TEMPLATE:404}}
+
+
+{{TEMPLATE:Forbidden}}
+<div class="action-forbidden">
+ Доступ на страницу, запрошенную действием, запрещён.
+</div>
+{{/TEMPLATE:Forbidden}}
+
+
+{{TEMPLATE:CustomError}}
+<div class="action-404">
+ {{404:Error}}
+</div>
+{{/TEMPLATE:CustomError}}
+
+{{TEMPLATE:Error}}
+<div class="action-error">
+ <strong>Ошибка в синтаксисе!</strong><br />
+ {{Action:SOURCE}}
+</div>
+{{/TEMPLATE:Error}}

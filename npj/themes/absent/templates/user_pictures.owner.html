@@ -1,0 +1,62 @@
+{{TEMPLATE:List}}
+
+<div class="userpic_load_more"><a href="{{Href:Account}}/profile/pictures/add">Желаете загрузить ещё?</a></div>
+<table class="userpic" cellspacing="5" cellpadding="0" border="0" width="100%">
+<thead>
+<tr>
+  <td colspan="5" class="hr"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></td>
+</tr>
+<tr>
+  <td class="center">Для сообщений</td>
+  <td class="center">Для комментариев</td>
+  <td>Название аватары</td>
+  <td>Переобзовём?</td>
+  <td>Экшн</td>
+<tr>
+<tr>
+  <td colspan="5" class="hr"><img src="{{images}}z.gif" width="1" height="1" alt=""  border="0" /></td>
+</tr>
+{{Form:edit}}
+</thead>
+<tbody>
+  {{TEMPLATE:List_Item}}
+  <tr>
+   <td class="center">
+   {{?have_big}}  <img title="Аватара для постов в лентах" src="{{Link:pic_big}}" border="0" />
+   {{?!have_big}}(нет)
+   {{?/have_big}}
+   </td>
+   <td class="center">
+   {{?have_small}}  <img title="Аватара для комментариев" src="{{Link:pic_small}}" border="0" />
+   {{?!have_small}}(нет)
+   {{?/have_small}}
+   </td>
+   <td>{{description}}</td>
+   <td><input type=text name="description_{{pic_id}}" value="{{description}}"></td>
+   <td nowrap="nowrap">
+    {{?is_default}}<img align="absmiddle" class="icon" src="{{images}}userpic_def.gif" alt="" title="Уже по умолчанию" border="0" />{{?/is_default}}
+    {{?!is_default}}<a href="{{Link:default}}" onMouseOver="cI('userpic_def{{pic_id}}',  'userpic_set_def_'); return true;" onMouseOut="cI('userpic_def{{pic_id}}', 'userpic_set_def'); return true;"><img class="icon" src="{{images}}userpic_set_def.gif" alt="" title="Сделать по умолчанию" name="userpic_def{{pic_id}}" align="absmiddle" border="0" /></a>{{?!/is_default}} |
+    <a href="{{Link:remove}}" onMouseOver="cI('userpic_del{{pic_id}}',  'userpic_del_'); return true;" onMouseOut="cI('userpic_del{{pic_id}}', 'userpic_del'); return true;"><img class="icon" src="{{images}}userpic_del.gif" alt="" title="Удалить аватару" name="userpic_del{{pic_id}}" align="absmiddle" border="0" /></a>
+   </td>
+  </tr>
+  <tr>
+    <td colspan="5" class="hr"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></td>
+  </tr>
+  </tbody>
+  {{/TEMPLATE:List_Item}}
+  <tfoot>
+  <tr>
+   <td colspan="3" >&nbsp;</td>
+   <td colspan="2" ><input type="submit" value={{!ButtonTextUpdate}}></td>
+  </tr>
+  </tfoot>
+{{/Form}}
+</table>
+{{/TEMPLATE:List}}
+
+{{TEMPLATE:List_Empty}}
+Картинок не загружено &#151;
+<a href="{{Href:Account}}/profile/pictures/add">желаете загрузить?</a>
+{{/TEMPLATE:List_Empty}}
+
+

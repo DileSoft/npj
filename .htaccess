@@ -1,0 +1,13 @@
+RewriteEngine on
+RewriteRule ^robots\.txt$ robots.txt [QSA,L]
+RewriteRule ^z\.gif z.gif [QSA,L]
+RewriteRule ^z\.html z.html [QSA,L]
+RewriteRule ^favicon\.ico$ npj/themes/absent/images/favicon/node.ico [QSA,L]
+
+RewriteCond    %{REQUEST_FILENAME}  -d
+RewriteRule ^(.*/[^\./]*[^/])$ $1/
+RewriteRule ^(.*)$ index.php?page=$1 [QSA,L]
+<IfModule mod_php.c>
+ php_value session.use_trans_sid 1
+ php_value allow_call_time_pass_reference 1
+</IfModule>

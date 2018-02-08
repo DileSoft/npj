@@ -1,0 +1,9 @@
+{{TEMPLATE:UserColon}}{{_Account}}:{{/TEMPLATE:UserColon}}
+
+{{TEMPLATE:User}}{{_Account}}{{/TEMPLATE:User}}
+
+{{TEMPLATE:UserDate}}{{_Account}}: /{{_Date}}/{{/TEMPLATE:UserDate}}
+
+{{TEMPLATE:Date}}{{_Date}}{{/TEMPLATE:Date}}
+
+{{TEMPLATE:FullUserName}}not implemented{{/TEMPLATE:FullUserName}}

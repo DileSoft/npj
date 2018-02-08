@@ -1,0 +1,39 @@
+<table cellspacing="0" cellpadding="10" border="0" width="100%">
+<tr><td style="background:#D8D7CD;color:#444444;font:70% Tahoma,Verdana">
+ {{!YouAre}}<b>{{PrincipalName}}</b> 
+
+ &nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;
+
+
+       {{??M:cms}}
+         <nobr>
+         <strong>Редактирование:</strong>&nbsp;
+           {{??M:cms.Show}}показано{{??/M:cms.Show}}
+           {{??!M:cms.Show}}<a href="?_cms=show">показать</a>{{??/M:cms.Show}}
+           |
+           {{??!M:cms.Show}}скрыто{{??/M:cms.Show}}
+           {{??M:cms.Show}}<a href="?_cms=hide">скрыть</a>{{??/M:cms.Show}}
+         &nbsp;&nbsp;&nbsp;
+         </nobr>
+         <nobr>
+         <strong>Невидимые посетителю разделы:</strong>&nbsp;
+           {{??M:cms.Hidden}}показаны{{??/M:cms.Hidden}}
+           {{??!M:cms.Hidden}}<a href="?_cms_hidden=show">показать</a>{{??/M:cms.Hidden}}
+           |
+           {{??!M:cms.Hidden}}скрыты{{??/M:cms.Hidden}}
+           {{??M:cms.Hidden}}<a href="?_cms_hidden=hide">скрыть</a>{{??/M:cms.Hidden}}
+         </nobr>
+       {{??/M:cms}}
+
+
+</td><td style="background=#D8D7CD;color:#444444;font:70% Tahoma,Verdana; text-align:right">
+ <nobr>
+ {{?M:cms}}
+ <a target="_top" href="{{M:cms/}}">CMS:управление сайтом</a>
+ |
+ {{?/}}
+ <a onclick="return confirm('{{!LogoutConfirm}}')" target="_top" href="{{M:cms/}}logout">{{!Logout}}</a>
+ </nobr>
+</td></tr>
+</table>

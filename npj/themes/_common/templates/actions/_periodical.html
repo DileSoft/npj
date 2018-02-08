@@ -1,0 +1,55 @@
+<!--==============================================================================-->
+<!--== простой такой списочек ====================================================-->
+
+<!-- Ѕазовый список итемов ------------------------------------------------------->
+{{TEMPLATE:List_plain_items}}
+<div class="changes-items">
+ {{TEMPLATE:List_plain_items_Item}}
+   <span class="changes-time">{{datetime}}</span>
+   {{?Href:versions_target}}
+   <span class="changes-versions">(<a href="{{Href:versions_target}}/versions">истори€</a>)</span>
+   {{?/}}
+   <a href="{{Href:tag}}">{{_tag}}</a>
+   . . . . . . . . . . . . . . . . . . . . . . . . . . .
+   <a href="{{Href:user}}" class="changes-editor">{{edited_user_name}}</a>
+   <br />
+ {{/TEMPLATE:List_plain_items_Item}}
+</div>
+{{/TEMPLATE:List_plain_items}}
+
+{{TEMPLATE:List_plain_items_Empty}}
+<div class="changes-none">{{data_empty}}</div>
+{{/TEMPLATE:List_plain_items_Empty}}
+
+<!-- –азбивка по датам ---------------------------------------------------------->
+{{TEMPLATE:List_plain}}
+<div class="changes-plain">
+  {{TEMPLATE:List_plain_Item}}
+    <div class="changes-date">{{date}}</div>
+    {{items}}
+  {{/TEMPLATE:List_plain_Item}}
+</div>
+{{@actions/_prevnext.html:PrevNext}}
+{{/TEMPLATE:List_plain}}
+
+{{TEMPLATE:List_plain_Empty}}
+<div class="changes-none">{{data_empty}}</div>
+{{/TEMPLATE:List_plain_Empty}}
+
+
+
+<!--==============================================================================-->
+<!--== дл€ default show parameter ================================================-->
+{{TEMPLATE:List_context}}
+ {{TEMPLATE:List_context_Item}}
+   <div class="link-">
+    <a title="{{subject}} 
+изменил: {{edited_user_name}}" href="{{Href:tag}}">{{_tag}}</a>
+    <div class="dt-">{{datetime}}</div>
+   </div>
+ {{/TEMPLATE:List_context_Item}}
+{{/TEMPLATE:List_context}}
+
+{{TEMPLATE:List_context_Empty}}
+<div class="link-">{{data_empty}}</div>
+{{/TEMPLATE:List_context_Empty}}

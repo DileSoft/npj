@@ -1,0 +1,25 @@
+{{TEMPLATE:Item}}
+  <div>
+   <div><b><a href="{{Href:tag}}">{{subject}}</a></b></div>
+   <div style="padding-bottom:2px; font:11px Tahoma; color:#666666">Автор:{{Link:user_name}}, пост написан {{user_datetime}}</div>
+   <div style="margin:2px 0px 10px">{{Digest:body}}</div>
+  </div>
+{{/TEMPLATE:Item}}
+
+{{TEMPLATE:List}}
+ <ul>
+ <!-- -->
+ {{TEMPLATE:List_Item}}   <!-- -->
+  <li>
+   {{Digest:compiled}}     <!-- -->
+  </li>
+ {{/TEMPLATE:List_Item}}
+ <!-- -->
+ </ul>
+{{/TEMPLATE:List}}
+
+{{TEMPLATE:List_Empty}}
+<div>
+За указанный период сообщений не было
+</div>
+{{/TEMPLATE:List_Empty}}

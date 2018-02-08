@@ -1,0 +1,253 @@
+{{TEMPLATE:Hidden}}
+<input type="hidden" id="id_{{_Field}}" name="{{_Field}}" value="{{_Value}}" />
+{{/TEMPLATE:Hidden}}
+
+
+<!--------------------------------------------------------->
+{{TEMPLATE:Textarea}}
+<textarea class="w100" cols=40 rows=10 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+{{/TEMPLATE:Textarea}}
+
+{{TEMPLATE:Textarea_Medium}}
+<textarea class="w100" cols=40 rows=20 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+{{/TEMPLATE:Textarea_Medium}}
+
+{{TEMPLATE:Textarea_Big}}
+<textarea class="wh100" cols=40 rows=50 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+{{/TEMPLATE:Textarea_Big}}
+
+<!--------------------------------------------------------->
+{{TEMPLATE:Textarea_Big_WikiEdit}}
+<!--input type="checkbox" id="weEn" onclick="weSwitch();"><label for="weEn">{{!WikiEdit.Disable}}</label><br-->
+<textarea class="wh100" cols=40 rows=50 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+<script type="text/javascript"> 
+ var themeurl = '{{theme}}';
+ seteditor("id_{{_Field}}"); 
+</script>
+{{/TEMPLATE:Textarea_Big_WikiEdit}}
+
+{{TEMPLATE:Textarea_Medium_WikiEdit}}
+<!--input type="checkbox" id="weEn" onclick="weSwitch();"><label for="weEn">{{!WikiEdit.Disable}}</label><br-->
+<textarea class="w100" cols=40 rows=20 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+<script type="text/javascript"> 
+ var themeurl = '{{theme}}';
+ seteditor("id_{{_Field}}"); 
+</script>
+{{/TEMPLATE:Textarea_Medium_WikiEdit}}
+
+{{TEMPLATE:Textarea_WikiEdit}}
+<!-- -->
+<textarea class="w100" cols=40 rows=10 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+<script type="text/javascript"> 
+ var themeurl = '{{theme}}';
+ seteditor("id_{{_Field}}"); 
+</script>
+{{/TEMPLATE:Textarea_WikiEdit}}
+
+<!--------------------------------------------------------->
+{{TEMPLATE:Textarea_Big_SimpleEdit}}
+<textarea class="wh100" cols=40 rows=50 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+<script type="text/javascript"> 
+ var themeurl = '{{theme}}';
+ seteditor("id_{{_Field}}", "simple"); 
+</script>
+{{/TEMPLATE:Textarea_Big_SimpleEdit}}
+
+{{TEMPLATE:Textarea_Medium_SimpleEdit}}
+<textarea class="w100" cols=40 rows=20 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+<script type="text/javascript"> 
+ var themeurl = '{{theme}}';
+ seteditor("id_{{_Field}}", "simple"); 
+</script>
+{{/TEMPLATE:Textarea_Medium_SimpleEdit}}
+
+{{TEMPLATE:Textarea_SimpleEdit}}
+<textarea class="w100" cols=40 rows=10 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+<script type="text/javascript"> 
+ var themeurl = '{{theme}}';
+ seteditor("id_{{_Field}}", "simple"); 
+</script>
+{{/TEMPLATE:Textarea_SimpleEdit}}
+
+<!--------------------------------------------------------->
+{{TEMPLATE:Textarea_Big_RichEdit}}
+<textarea class="wh100" cols=40 rows=50 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+<script type="text/javascript"> 
+ var themeurl = '{{theme}}';
+ seteditor("id_{{_Field}}", "rich"); 
+</script>
+{{/TEMPLATE:Textarea_Big_RichEdit}}
+
+{{TEMPLATE:Textarea_Medium_RichEdit}}
+<textarea class="w100" cols=40 rows=20 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+<script type="text/javascript"> 
+ var themeurl = '{{theme}}';
+ seteditor("id_{{_Field}}", "rich"); 
+</script>
+{{/TEMPLATE:Textarea_Medium_RichEdit}}
+
+{{TEMPLATE:Textarea_RichEdit}}
+<textarea class="w100" cols=40 rows=10 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+<script type="text/javascript"> 
+ var themeurl = '{{theme}}';
+ seteditor("id_{{_Field}}", "rich"); 
+</script>
+{{/TEMPLATE:Textarea_RichEdit}}
+
+{{TEMPLATE:Textarea_Big_RichEdit_Uninit}}
+<textarea class="wh100" cols=40 rows=50 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+<script type="text/javascript"> 
+ var themeurl = '{{theme}}';
+</script>
+{{/TEMPLATE:Textarea_Big_RichEdit_Uninit}}
+
+{{TEMPLATE:Textarea_Medium_RichEdit_Uninit}}
+<textarea class="w100" cols=40 rows=20 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+<script type="text/javascript"> 
+ var themeurl = '{{theme}}';
+</script>
+{{/TEMPLATE:Textarea_Medium_RichEdit_Uninit}}
+
+
+
+<!--------------------------------------------------------->
+
+{{TEMPLATE:TextareaSmall_Readonly}}
+<textarea class="w100" cols=40 style='background:#efefef'  readonly="readonly" rows=5 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+{{/TEMPLATE:TextareaSmall_Readonly}}
+
+{{TEMPLATE:TextareaSmall}}
+<textarea class="w100" cols=40 rows=5 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+{{/TEMPLATE:TextareaSmall}}
+
+{{TEMPLATE:TextareaSmall_Fixed}}
+<textarea class="w100" cols=30 rows=5 id="id_{{_Field}}" name="{{_Field}}">{{_Value}}</textarea>
+{{/TEMPLATE:TextareaSmall_Fixed}}
+
+{{TEMPLATE:DEDIT}}
+<textarea name="{{_Field}}" style="width: 100%" rows=50 id="id_{{_Field}}" class="dedit">
+<html>
+<head><style>
+table.brd { border-collapse: collapse; }
+table.brd td { border: solid black 1px; }
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<base href="{{BaseHost}}" />
+</head>
+<!--!Всё, что вы измените до тега body, будет удалено.-->
+<body>
+{{_Value}}
+</body>
+<!--!Всё, что вы измените после тега /body, будет удалено.-->
+</html>
+</textarea>
+<SCRIPT LANGUAGE="JavaScript">
+  var dedit_html = CreateEditControl('{{FormName}}','id_{{_Field}}','{{theme}}/images/dedit/','100%,500','',{{DeInit}});
+</SCRIPT>
+<div id="dedit{{_Field}}"></div>
+{{/TEMPLATE:DEDIT}}
+
+{{TEMPLATE:DEDIT_Small}}
+<textarea name="{{_Field}}" style="width: 100%" rows=10 id="id_{{_Field}}" class="dedit">
+<html>
+<head><style>
+table.brd { border-collapse: collapse; }
+table.brd td {  border: solid black 1px; }
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<base href="{{BaseHost}}" />
+</head>
+<!--!Всё, что вы измените до тега body, будет удалено.-->
+<body>
+{{_Value}}
+</body>
+<!--!Всё, что вы измените после тега /body, будет удалено.-->
+</html>
+</textarea>
+<SCRIPT LANGUAGE="JavaScript">
+  var dedit_html = CreateEditControl('{{FormName}}','id_{{_Field}}','{{theme}}/images/dedit/','100%,200','',{{DeInit}});
+</SCRIPT>
+<div id="dedit{{_Field}}"></div>
+{{/TEMPLATE:DEDIT_Small}}
+
+
+{{TEMPLATE:WYSIWYG}}
+<textarea style='display:none' id="wysiwyg_{{_Field}}" class="w100" style='height:400px' cols=40 rows=5 name="{{_Field}}">{{_Value}}</textarea>
+<iframe style='border:2px groove; height:400px'
+        id="wysiwyg_{{_Field}}_W" 
+        name="wysiwyg_{{_Field}}_frame" width="100%" class="w100" 
+        src='{{CmsWYSIWYG}}?FIELD=wysiwyg_{{_Field}}&BASEURL={{/}}' >
+        nothing to do with iframes =(
+</iframe>
+<div>
+<input onclick="wysiwyg_{{_Field}}.style.display='none';document.all.wysiwyg_{{_Field}}_W.style.display='block';"
+       type=radio checked name="__flip_{{_Field}}" id="__flip_{{_Field}}_W">
+<label for="__flip_{{_Field}}_W">наглядный&nbsp;редактор</label>
+&nbsp;&nbsp;&nbsp;
+<input onclick="wysiwyg_{{_Field}}.style.display='block';document.all.wysiwyg_{{_Field}}_W.style.display='none';"
+type=radio name="__flip_{{_Field}}" id="__flip_{{_Field}}_HTML">
+<label for="__flip_{{_Field}}_HTML">HTML</label>
+</div>
+{{/TEMPLATE:WYSIWYG}}
+                  
+{{TEMPLATE:WYSIWYG_Small}}
+<textarea style='display:none' id="wysiwyg_{{_Field}}" class="w100" style='height:200px' cols=40 rows=5 name="{{_Field}}">{{_Value}}</textarea>
+<iframe style='border:2px groove; height:200px'
+        id="wysiwyg_{{_Field}}_W" 
+        name="wysiwyg_{{_Field}}_frame" width="100%" class="w100" 
+        src='{{CmsWYSIWYG}}?FIELD=wysiwyg_{{_Field}}&BASEURL={{/}}' >
+        nothing to do with iframes =(
+</iframe>
+<div>
+<input onclick="wysiwyg_{{_Field}}.style.display='none';document.all.wysiwyg_{{_Field}}_W.style.display='block';"
+       type=radio checked name="__flip_{{_Field}}" id="__flip_{{_Field}}_W">
+<label for="__flip_{{_Field}}_W">наглядный&nbsp;редактор</label>
+&nbsp;&nbsp;&nbsp;
+<input onclick="wysiwyg_{{_Field}}.style.display='block';document.all.wysiwyg_{{_Field}}_W.style.display='none';"
+type=radio name="__flip_{{_Field}}" id="__flip_{{_Field}}_HTML">
+<label for="__flip_{{_Field}}_HTML">HTML</label>
+</div>
+{{/TEMPLATE:WYSIWYG_Small}}
+
+
+{{TEMPLATE:WYSIWYG_Popup}}
+<table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td width="100%" >
+<textarea id="wysiwyg_{{_Field}}" class="w100" cols=40 rows=5 name="{{_Field}}">{{_Value}}</textarea>
+</td><td valign=top>
+<!--
+<input type="button" 
+ onclick="window.showModalDialog('{{CmsWYSIWYG}}?ZOOM=modal&FIELD=wysiwyg_{{_Field}}&BASEURL={{/}}',document.all['wysiwyg_{{_Field}}'], 'status:no;maximize:yes;center:yes;help:no;border:thin;statusbar:no');
+            return false;" value="Вызов редактора" />
+-->
+<a onclick="window.showModalDialog('{{CmsWYSIWYG}}?ZOOM=modal&FIELD=wysiwyg_{{_Field}}&BASEURL={{/}}',document.all['wysiwyg_{{_Field}}'], 'status:no;maximize:yes;center:yes;help:no;border:thin;statusbar:no');
+            return false;" href='javascript:;' 
+  ><img src='{{theme_images}}wysiwyg.gif' width="18" height="18" align="right" hspace="2" vspace="2" border="0" 
+        alt='Редактировать в WYSIWYG-редакторе
+(как в MS Word)' title='Редактировать в WYSIWYG-редакторе
+(как в MS Word)' /></a>
+</td></tr></table>
+{{/TEMPLATE:WYSIWYG_Popup}}
+
+
+{{TEMPLATE:Wide}}
+<input type="text" class="w100" maxlen="{{_MaxLen}}" name="{{_Field}}" id="id_{{_Field}}"  value="{{_Value}}" />
+{{/TEMPLATE:Wide}}
+
+
+{{TEMPLATE:Plain}}
+<input type="text" maxlen="{{_MaxLen}}" name="{{_Field}}" id="id_{{_Field}}" value="{{_Value}}" />{{_Postfix}}
+{{/TEMPLATE:Plain}}
+
+{{TEMPLATE:Small}}
+<input type="text" size="5" maxlen="{{_MaxLen}}" name="{{_Field}}" value="{{_Value}}" />{{_Postfix}}
+{{/TEMPLATE:Small}}
+
+{{TEMPLATE:Password}}
+<input type="password" maxlen="{{_MaxLen}}" name="{{_Field}}" /> <br />
+<input type="password" maxlen="{{_MaxLen}}" name="{{_Field}}_Dupe" />
+{{/TEMPLATE:Password}}
+
+{{TEMPLATE:SinglePassword}}
+<input type="password" maxlen="{{_MaxLen}}" name="{{_Field}}" /> <br />
+{{/TEMPLATE:SinglePassword}}
+

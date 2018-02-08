@@ -1,0 +1,28 @@
+
+/* профиль */
+.profile-left .dot- { font-size: 115% }
+.profile-left  { white-space:nowrap; text-align:right; vertical-align:top; font:bold 70% Tahoma; color:#444444 }
+.profile-right { width:100%; font-size: 80%; vertical-align:top;  color:#444444 }
+.profile-right .journal-name- { color:#000000; 
+                                font-weight: bold; 
+                                font-size:160%; padding-bottom:3px }
+.profile-right .journal-desc- { font-size: 90%; padding-bottom:20px }
+
+/* diff */
+.diff-title      { padding-bottom:10px; font-weight:bold; }
+.diff-title .dt- { font:11px Tahoma }
+.diff-title .subject- { color:#999999 }
+
+
+/* интерфейс для юзерпиков */
+table.skin-userpic thead td {color:#666666; font-size:70%; font-weight:bold;}
+table.skin-userpic thead td .center {text-align:center}
+table.skin-userpic tbody td {color:#666666; font-size:75%}
+table.skin-userpic tbody img.icon {height:25px; width:30px;}
+table.skin-userpic .hr-            {background:#cccccc}
+.skin-userpic-load-more {padding:5px}
+
+
+
+
+

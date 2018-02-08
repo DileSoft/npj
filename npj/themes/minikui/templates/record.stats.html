@@ -1,0 +1,50 @@
+{{TEMPLATE:Title}}
+<h1 class="title">{{Preparsed:TITLE}}
+{{Record.Announce.Top}}
+</h1>
+{{/TEMPLATE:Title}}
+
+{{TEMPLATE:Record}}
+<h1 class="title">{{Preparsed:TITLE}}
+{{Record.Announce.Top}}
+</h1>
+
+<div class="body_panel{{?CommentID}}_tight{{?/}}">
+<table cellspacing="0" cellpadding="0" border="0" >
+<tr>
+ <td valign="top"><img src="{{images}}z.gif" width="30" height="1" border="0" alt="" /></td>
+ <td valign="top"><img src="{{images}}record_{{Record.Stats.Type}}.gif" vspace="0" hspace="0" width="28" height="39" border="0" alt="{{Record.Stats.TypeName}}" title="{{Record.Stats.TypeName}}" /></td>
+ <td valign="top">
+  <div class="body_panel_info">
+   {{Record.Stats.ChangedByName}} <strong>{{Link:Record.Stats.ChangedBy}}</strong><nobr><span class="dt_">&nbsp;@&nbsp;{{Record.Stats.ChangedDT}}</span></nobr>
+   <!-- -->
+   {{?Record.Stats.ShowVersions}}&nbsp;[<a href="{{Href:Object}}/versions">{{!Versions}}</a>]{{?/Record.Stats.ShowVersions}}<br /><strong>{{!RecordAddress}}</strong> <span class="address">{{Record.Stats.Address}}</span>
+  </div>
+ </td>
+ {{Record.Stats.Ctrls}}
+</tr>
+<tr>
+ <td><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></td>
+ <td colspan="{{Record.Stats.Colspan}}" class="body_panel_br"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></td>
+</tr>
+<tr>
+ <td valign="top"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></td>
+ <td colspan="{{Record.Stats.Colspan}}"><div style="float:left" ><img src="{{images}}security_{{Record.Stats.Sec}}.gif" 
+    class="security_{{Record.Stats.Sec}}" vspace="0" hspace="0" border="0" 
+    alt="{{Record.Stats.Sec.Title}}" title="{{Record.Stats.Sec.Title}}" /></div><div style='float:left' class="body_panel_ref">{{Record.Stats.Ref}}</div>
+ </td>
+</tr>
+</table>
+</div>
+{{/TEMPLATE:Record}}
+
+ {{TEMPLATE:Record.Panel_Item}}
+ <td class="body_panel_br"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></td>
+ <td><a href="{{_Href}}" title="{{_Title}}">{{_Icon}}</a></td>
+ {{/TEMPLATE:Record.Panel_Item}}
+
+ {{TEMPLATE:Record.Panel_Item_Current}}
+ <td class="body_panel_br"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></td>
+ <td>{{_Icon}}</td>
+ {{/TEMPLATE:Record.Panel_Item_Current}}
+

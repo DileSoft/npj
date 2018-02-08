@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />    <title>Loging in...</title>
+<script type="text/javascript" language="javascript">
+var Auth = new Array();
+var Url = new Array();
+Auth['.yandex.ua'] = false;
+Url['.yandex.ua'] = 'http://pass.yandex.ua/login?session_info=1169737535.729.1319581.sah^D5B4C1BB.yandex_login^mendokusee.yandexuid^9974240391169737535.intother^2:2883980:99.yandex_ua:4211.7745.cb7fa76a6b567ccf62cc4c7763135991'
+
+var Iterations = 0;
+function loginAll(n){
+    var millis = 100;
+    if (n == null){
+        n = 0;
+    }
+    Iterations++;
+    var Successful = true;
+    for (var key in Auth){
+        if (Auth[key] == false){
+            mysrc = Url[key];
+            Successful = false;
+            var newLink = document.createElement('script');
+            newLink.type = 'text/javascript';
+            newLink.language = 'javascript';
+            newLink.src = mysrc + '&ncrnd=' + (100000 + Math.floor(Math.random() * 899999));
+            document.body.appendChild(newLink);
+            var date = new Date();
+            var curDate = null;
+            do { var curDate = new Date(); } while(curDate-date < 10);
+        }
+    }
+    if (Successful){
+        window.location = 'http://mail.yandex.ru/';
+    }
+    if (n < 4){
+        window.setTimeout(function(){loginAll(++n);}, millis);
+    }
+}
+</script>
+</head>
+<body>
+<div>Wait please...</div>
+<script type="text/javascript" language="javascript">
+    document.writeln('<meta http-equiv="refresh" content="10;url=https://passport.yandex.ru/passport?mode=passport">');
+    loginAll();
+</script>
+</body>
+</html>

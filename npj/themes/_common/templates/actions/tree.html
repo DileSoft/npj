@@ -1,0 +1,74 @@
+{{TEMPLATE:List_ul}}
+<ul class="tree">
+ {{TEMPLATE:List_ul_Item}}
+  <li><a title="{{title}} | {{subject}}" href="{{Link:tag}}">{{short_tag}}</a> {{content_count}}</li>
+  {{Childs}}
+ {{/TEMPLATE:List_ul_Item}}
+</ul>
+{{/TEMPLATE:List_ul}}
+{{TEMPLATE:List_ul_Empty}}
+<div class="tree_none">Дерево пустое</div>
+{{/TEMPLATE:List_ul_Empty}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:List_ol}}
+<ol class="tree">
+ {{TEMPLATE:List_ol_Item}}
+  <li><a title="{{title}} | {{subject}}" href="{{Link:tag}}">{{short_tag}}</a> {{content_count}}</li>
+  {{Childs}}
+ {{/TEMPLATE:List_ol_Item}}
+</ol>
+{{/TEMPLATE:List_ol}}
+{{TEMPLATE:List_ol_Empty}}
+<div class="tree_none">Дерево пустое</div>
+{{/TEMPLATE:List_ol_Empty}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:List_indent}}
+<div class="tree">
+ {{TEMPLATE:List_indent_Item}}
+  <div class="indent"><a title="{{title}} | {{subject}}" href="{{Link:tag}}">{{short_tag}}</a> {{content_count}}</div>
+  {{Childs}}
+ {{/TEMPLATE:List_indent_Item}}
+</div>
+{{/TEMPLATE:List_indent}}
+{{TEMPLATE:List_indent_Empty}}
+<div class="tree_none">Дерево пустое</div>
+{{/TEMPLATE:List_indent_Empty}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:List_br}}
+<div class="tree">
+ {{TEMPLATE:List_br_Item}}
+  <a title="{{title}} | {{subject}}" href="{{Link:tag}}">{{title}}</a> {{content_count}}<br />
+  {{Childs}}
+ {{/TEMPLATE:List_br_Item}}
+</div>
+{{/TEMPLATE:List_br}}
+{{TEMPLATE:List_br_Empty}}
+<div class="tree_none">Дерево пустое</div>
+{{/TEMPLATE:List_br_Empty}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:List_index}}
+<div class="tree">
+ {{TEMPLATE:List_index_Item}}
+  <a class="index_letter_a" name="letter_{{id}}">{{letter}}</a>
+  <a title="{{title}} | {{subject}}" href="{{Link:tag}}">{{title}}</a> {{content_count}}<br />
+  {{Childs}}
+ {{/TEMPLATE:List_index_Item}}
+</div>
+{{/TEMPLATE:List_index}}
+{{TEMPLATE:List_index_Empty}}
+<div class="tree_none">Дерево пустое</div>
+{{/TEMPLATE:List_index_Empty}}
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:NotFound}}
+<div class="tree_none">Не удалось построить дерево</div>
+{{/TEMPLATE:NotFound}}
+

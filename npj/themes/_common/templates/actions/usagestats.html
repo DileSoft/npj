@@ -1,0 +1,25 @@
+{{TEMPLATE:NotRecognized}}
+<div>
+ <b>{{query}}</b>: Такой режим статистики нам неизвестен
+</div>
+{{/TEMPLATE:NotRecognized}}
+
+{{TEMPLATE:Separator}}
+<br />
+{{/TEMPLATE:Separator}}
+
+
+{{TEMPLATE:List}}
+<div class="usage-stats-title">{{title}}</div>
+<table class="usage-stats" cellspacing="0" cellpadding="2" border="0" width="100%">
+ {{TEMPLATE:List_Item}}
+ <tr class="even{{even}}-">
+  <td class="value-">{{value}}</td>
+  <td class="name-" >{{name}}</td>
+ </tr>
+ {{/TEMPLATE:List_Item}}
+</table>
+{{/TEMPLATE:List}}
+{{TEMPLATE:List_Empty}}
+<div>Такая статистика ещё не накоплена.</div>
+{{/TEMPLATE:List_Empty}}

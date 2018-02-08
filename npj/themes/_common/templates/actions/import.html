@@ -1,0 +1,32 @@
+<!------------------------------------------------------------------------->
+{{TEMPLATE:Form}}
+{{Form:Import}}
+  <input type="hidden" name="_form" value="form" />
+  <table class="action-import" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>{{!ImportTo}}:&nbsp;</td>
+    <td><input type="text" name="_to" size="40" value="{{to}}" /></td>
+  </tr>
+  <tr>
+    <td>{{!ImportWhat}}:&nbsp;</td>
+    <td><input type="file" name="_import" /></td>
+  </tr>
+  <!--tr>
+    <td>&nbsp;</td>
+    <td><input type="checkbox" name="_topic" {{checked}} id="checkboxSearch">
+        <label for="checkboxSearch">{{!TopicSearchText}}</label><br />
+        <input type="checkbox" name="_where" {{checked2}} id="checkboxSearchWhere">
+        <label for="checkboxSearchWhere">{{!AccountSearchText}}</label><br />
+    </td>
+  </tr-->
+  <tr>
+    <td colspan="2"><input type="submit" value="{{!ImportButtonText}}" /></td>
+  </tr>
+</table><br />
+{{/Form}}
+{{/TEMPLATE:Form}}
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:Success}}
+{{!ImportSuccess}}
+{{/TEMPLATE:Success}}

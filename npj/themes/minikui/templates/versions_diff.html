@@ -1,0 +1,19 @@
+{{?diff_foreign}}
+
+  <div class="diff-title">Вы просматриваете различия между:
+   <ul>
+     <li><nobr><span class="dt-">{{Version1_datetime}}</span></nobr> <a href="{{Href:Version1}}" >{{Version1}}</a></li>
+     <li><nobr><span class="dt-">{{Version2_datetime}}</span></nobr> <a href="{{Href:Version2}}" >{{Version2}}</a></li>
+  </div>
+
+{{?!diff_foreign}}
+  
+  <div class="diff-title">Вы просматриваете различия между
+    <nobr><span class="dt-"><a href="{{Href:Version1}}" >{{Version1_datetime}}</a></span></nobr> и 
+    <nobr><span class="dt-"><a href="{{Href:Version2}}" >{{Version2_datetime}}</a></span></nobr>.
+  </div>
+
+{{?/}}
+ 
+  {{Diff_post}}
+  

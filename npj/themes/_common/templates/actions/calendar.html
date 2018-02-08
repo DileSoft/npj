@@ -1,0 +1,104 @@
+{{TEMPLATE:default}}
+<!-- !!!!! refactor CSS -->
+<style>
+.calendar {  }
+.calendar .subj- { margin:0 0 2px 15px; font:bold 15px Arial; color:#444444; }
+.calendar .month- { margin: 0 0 16px 10px }
+.calendar .month- thead td { border-bottom: 1px #cccccc solid; 
+                              font-size: 11px;
+                              color:#999999;
+                              padding: 2px 7px;
+                              font-family: Tahoma;
+                              text-align:center;
+                            }
+.calendar .month- tbody td { font-size:11px;
+                              color:#999999;
+                              padding: 2px 7px;
+                              font-family: Tahoma;
+                            }
+.calendar .month- .h- { font-weight:bold; }
+.calendar .month- .out- { color:#dddddd }
+.calendar .month- .current- { background:#bb0000; color:#ffffff }
+
+</style>
+ <div class="calendar">
+ <table cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+   <td>{{Calendar:Contents[0]}}</td>
+   <td>{{Calendar:Contents[1]}}</td>
+   <td>{{Calendar:Contents[2]}}</td>
+ </tr>
+ <tr>
+   <td>{{Calendar:Contents[3]}}</td>
+   <td>{{Calendar:Contents[4]}}</td>
+   <td>{{Calendar:Contents[5]}}</td>
+ </tr>
+ <tr>
+   <td>{{Calendar:Contents[6]}}</td>
+   <td>{{Calendar:Contents[7]}}</td>
+   <td>{{Calendar:Contents[8]}}</td>
+ </tr>
+ <tr>
+   <td>{{Calendar:Contents[9]}}</td>
+   <td>{{Calendar:Contents[10]}}</td>
+   <td>{{Calendar:Contents[11]}}</td>
+ </tr>
+ </table>
+ </div>
+{{/TEMPLATE:default}}
+
+{{TEMPLATE:default_Month}}
+  <div class="subj-">{{month}} `{{year}} {{?Href:year}}<a href="{{Href:year}}">&rarr;</a>{{?/}}</div>
+  <div class="body-">
+   <table cellspacing="0" cellpadding="0" border="0" class="month-">
+    <thead> 
+     <td>пн</td><td>вт</td><td>ср</td><td>чт</td><td>пт</td><td class="h-">сб</td><td class="h-">вс</td>
+    </thead>
+    <tbody>
+      {{row0}} {{row1}} {{row2}} {{row3}} {{row4}} {{row5}} {{row6}}
+    </tbody>
+   </table>
+  </div>
+{{/TEMPLATE:default_Month}}
+
+{{TEMPLATE:context}}
+<!-- !!!!! IT"S A COPY FROM DEFAULT -->
+<style>
+.calendar {  }
+.calendar .subj- { margin:0 0 2px 15px; font:bold 15px Arial; color:#444444; }
+.calendar .month- { margin: 0 0 16px 10px }
+.calendar .month- thead td { border-bottom: 1px #cccccc solid; 
+                              font-size: 11px;
+                              color:#999999;
+                              padding: 2px 7px;
+                              font-family: Tahoma;
+                              text-align:center;
+                            }
+.calendar .month- tbody td { font-size:11px;
+                              color:#999999;
+                              padding: 2px 7px;
+                              font-family: Tahoma;
+                            }
+.calendar .month- .h- { font-weight:bold; }
+.calendar .month- .out- { color:#dddddd }
+.calendar .month- .current- { background:#bb0000; color:#ffffff }
+
+</style>
+ <div class="calendar">
+  {{Calendar:Contents}}
+ </div>
+{{/TEMPLATE:context}}
+
+{{TEMPLATE:context_Month}}
+  <div class="subj-">{{month}} `{{year}} {{?Href:year}}<a href="{{Href:year}}">&rarr;</a>{{?/}}</div>
+  <div class="body-">
+   <table cellspacing="0" cellpadding="0" border="0" class="month-">
+    <thead> 
+     <td>пн</td><td>вт</td><td>ср</td><td>чт</td><td>пт</td><td class="h-">сб</td><td class="h-">вс</td>
+    </thead>
+    <tbody>
+      {{row0}} {{row1}} {{row2}} {{row3}} {{row4}} {{row5}} {{row6}}
+    </tbody>
+   </table>
+  </div>
+{{/TEMPLATE:context_Month}}

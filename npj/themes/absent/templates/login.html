@@ -1,0 +1,30 @@
+<h1 class="title">¬ход на узел</h1>
+<table cellspacing="0" cellpadding="0" border="0" ><tr><td align="center" >
+<table border=0 cellspacing=10 cellpadding=0>
+{{Form}}
+<tr><td colspan=2 style='font:11px Tahoma' align=left><div class="error">{{Error}}</div></td>
+</tr>
+<tr><td style='font:11px Tahoma' align=left>{{!Login}}:</td>
+    <td align=left><input type=text size=15 name=_flogin value='{{CookieLogin}}'>
+    <span class="text">(<a href="{{/}}registration">регистраци€</a>)</span>
+    </td>
+</tr>
+<tr><td style='font:11px Tahoma' align=left>{{!Password}}:</td>
+    <td align=left><input size=20 type=password name=_fpassword value=''>
+    <span class="text">(<a href="{{/}}forgot">забыли?</a>)</span>
+    </td>
+</tr>
+<tr><td align=left>&nbsp;</td>
+    <td style='color:#666666; font:10px Tahoma' align=left><input type=submit value='{{!DoLogin}}'>
+    <br><input id=idCookie1 type=checkbox name=_save_login  checked><label for=idCookie1>{{!StoreLogin}}</label>
+<!--
+    <br><input id=idCookie2 type=checkbox name=_save_password ><label for=idCookie2>{{!StorePassword}}</label>
+-->
+    </td>
+</tr>
+{{/Form}}
+</table>
+</td></tr></table>
+<script language=JavaScript>
+  {{FocusToID}}.focus();
+</script>

@@ -1,0 +1,36 @@
+<table cellspacing="0" cellpadding="0" >
+<tr>
+ <td class="login-block">
+  <table cellspacing="10" cellpadding="0" align="center"><tr>
+    {{Form}}
+    <td class="login">{{!YouAre}} <strong>{{Link:UserLogin}}</strong></td>
+    <td><input type="hidden" name="_logout" value="yes" />
+        <input class="LogoutBtn" onmouseover='this.className="LogoutBtn_";' 
+                             onmouseout ='this.className="LogoutBtn";' 
+                             type="submit" value="{{!DoLogout}}" /></td>
+    {{/Form}}
+  </tr></table>
+ </td>
+</tr>
+<tr>
+ <td class="login-block"><br />
+    {{Form}}
+  <table cellspacing="0" cellpadding="0" align="center"><tr>
+   <td valign="top" class="login"><strong>{{!Login.EndSession}}</strong></td>
+   <td valign="top" class="login">
+    <div style="text-align:left">
+    <input type="radio" name="_logout_at" {{checked1}} value="session" id="id_logout_at1" /><label for="id_logout_at1">{{!Login.Session}}</label><br />
+    <input type="radio" name="_logout_at" {{checked2}} value="cookie" id="id_logout_at2" /><label for="id_logout_at2">{{!Login.Cookies}}</label><br /><img src="{{images}}z.gif" width="1" height="5" alt="" border="0" /><br />
+    </div>
+        <input class="UpdateBtnSmall" onmouseover='this.className="UpdateBtnSmall_";' 
+                             onmouseout ='this.className="UpdateBtnSmall";' 
+                             type="submit" value="{{!Login.SaveChanges}}" />
+   </td>
+  </tr></table>
+  <hr size="1" noshade="noshade" />
+  <div class="login2">{{!Login.Description}}</div>
+    {{/Form}}
+ </td>
+</tr>
+</table>
+<br /><br />

@@ -1,0 +1,19 @@
+{{TEMPLATE:Subject}}{{!Mail:Subject}}{{/TEMPLATE:Subject}}
+
+
+<!-- —мена парол€ -- установка временного -->
+<!-- ѕодтверждение высылки оповещений на почтовый €щик, указанный в профиле -->
+{{TEMPLATE:Body}}
+{{!Mail:Hello}} {{Mail.UserName}} ({{Link:Mail.Login}})!
+<br /><br />
+{{!Mail:MainText}}
+<a href="{{Href:Confirm}}">{{!Mail:Agree}}</a>
+<br /><br />
+{{!Mail:IfYouCant}} {{Link:BlindConfirm}} (Code: {{_Confirm}})
+<br /><br />
+<hr />
+{{!Mail:Goodbye}}<br />
+{{Link:Host}}
+{{/TEMPLATE:Body}}
+
+

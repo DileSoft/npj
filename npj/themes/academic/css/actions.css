@@ -1,0 +1,98 @@
+/* ещё не затачивался под эту шкуру */
+
+
+/* common actions =========================================================================================  */
+.action-forbidden,
+.action-error { background-color: #f88888; padding: 8px; color:#ffffff }
+.action-error A { font-weight:bold; color:#ffffff }
+.action-404 { background-color: #f8f8f8; padding: 8px; }
+
+/* WRAPPERS ================================================================================================ */
+div.action           { margin:2px; background: #eeeeee }
+div.action-title     { padding:10px; font: bold 80% Verdana, Arial; color:#000000; background: #CDCD94 } 
+div.action-title2    { padding: 5px; font: 70% Verdana, Arial; color:#666666; background: #CDCD94;
+                       text-align:right } 
+div.action-content   { padding:10px 10px 25px 10px; } 
+fieldset.action { font-size:95%; padding:0 }
+fieldset.action div.action- { padding:5px }
+legend.action-title { font-weight:bold; }
+fieldset.action ul { padding-top:0; padding-bottom:0; margin-top:0; margin-bottom:0; 
+                     margin-left:20px } /* suspicious */
+
+/* Usage stats =========================================================================================== */
+.usage-stats-title { font-weight:bold }
+table.usage-stats .even0- { background:#efefef }
+table.usage-stats .value- { font:11px Tahoma; width:30px; text-align:right; padding-right:5px; }
+table.usage-stats .name-  { font:11px Tahoma }
+
+/* Goto ================================================================================================== */
+TABLE.action-goto TD { font-size:12px; color:#444444; vertical-align:middle }
+TABLE.action-goto TD .input- {width:200px}
+
+/* Search ================================================================================================== */
+TABLE.action-search { font-size:1em }
+TABLE.action-search TD { font-size:90%; color:#444444; }
+.by- { font-size:90% }
+
+
+/* Feeds =================================================================================================== */
+.feed-userpic0 { text-align:right; background:#efefef }
+.feed-info0 { width:100%; color:#666666; background:#efefef; font: 11px Tahoma, Arial; }
+.feed-info0 .panel-,
+.feed-info1 .panel-,
+.feed-info2 .panel-,
+.feed-info-rep .panel-
+ { padding:0px 5px; vertical-align:bottom; font: 11px Tahoma, Arial;  }
+.feed-title { font: bold 16px Arial; margin:10px 5px 0px; color:#333333 }
+.feed-body { margin:5px 10px 20px 10px }
+.feed-info0 .time-,
+.feed-info1 .time-,
+.feed-info2 .time-,
+.feed-info-rep .time-
+ { width:9px; height:9px  }
+.feed-body .panel- { padding:5px }
+.feed-info0 .access-, .feed-info0 .crossposted-, 
+.feed-info1 .access-, .feed-info1 .crossposted-, 
+.feed-info2 .access-, .feed-info2 .crossposted-, 
+.feed-info-rep .access-, .feed-info-rep .crossposted- 
+{ font:11px Tahoma }
+
+.feed-info1 { width:100%; color:#666666; background:#fff5cf; font: 11px Tahoma, Arial; }
+.feed-userpic1 { text-align:right; background:#fff5cf }
+.feed-info2 { width:100%; background:#e0e0ff; font: 11px Tahoma, Arial; }
+.feed-userpic2 { text-align:right; background:#e0e0ff }
+.feed-info-rep { width:100%; color:#666666; background:#D7FFDF; font: 11px Tahoma, Arial; }
+.feed-userpic-rep { text-align:right; background:#D7FFDF}
+
+
+/* Changes ================================================================================================== */
+.changes-plain .changes-items { margin-bottom:10px; margin-left:15px }
+.changes-time     { font:70% tahoma }
+.changes-date     { font:bold 90% tahoma }
+.changes-versions { font-size:80% }
+.changes-editor   { font-size:80% }
+.changes-none { font-style:italic }
+
+/* Trees ==================================================================================================== */
+.tree .dt_     { font:10px Tahoma }
+.tree .author_ { font-size:75% }
+.tree, .tree li { }
+.tree-none { font-style:italic }
+.tree .indent- { margin-left: 20px; }
+.tree-index { text-align:center; font-weight:bold }
+.index-letter { margin-bottom:3px; margin-top:30px; font-weight:bold; background:#e0e0d0; padding: 5px 20px 5px 20px }
+A.index-letter-a:ACTIVE { background: #ff0000; color:#0000ff }
+.tree .count- { font: 11px Tahoma }
+div.link- span.count- { font: 11px Tahoma; display:block }
+div.link- small.tree-create { display:block }
+.tree-create { font: 11px Tahoma; color:#666666 }
+.tree-create A:LINK,
+.tree-create A:VISITED { color:#666666 }
+.tree-create A:ACTIVE,
+.tree-create A:HOVER   { color:#FF0000 }
+
+/* Versions ================================================================================================= */
+.version        { margin:3px }
+.version .author- { font-size:85%     }
+.version .tag-    { font: 11px Tahoma }
+.version .dt-     { font: 11px Tahoma }

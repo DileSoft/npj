@@ -1,0 +1,96 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                D E P R E C A T E D
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{TEMPLATE:List_simple}}
+<div class="changes_simple">
+ {{TEMPLATE:List_simple_Item}}
+   <span class="changes_time">{{edited_datetime}}</span>
+   <span class="changes_versions">(<a href="{{Link:tag}}/versions">история</a>)</span>
+   <a href="{{Link:tag}}">{{tag}}</a>
+   . . . . . . . . . . . . . . . . . . . . . . . . . . .
+   <a href="{{Link:Editor}}" class="changes_editor">{{edited_user_name}}</a>
+   <br />
+ {{/TEMPLATE:List_simple_Item}}
+</div>
+{{/TEMPLATE:List_simple}}
+
+{{TEMPLATE:List_simple_Empty}}
+<div class="changes_none">Обновлений давно не было</div>
+{{/TEMPLATE:List_simple_Empty}}
+
+
+{{TEMPLATE:List_brief}}
+<div class="changes_brief">
+  {{TEMPLATE:List_brief_Item}}
+    <div class="changes_day">{{day}}:</div>
+    {{SimpleList}}
+  {{/TEMPLATE:List_brief_Item}}
+</div>
+{{/TEMPLATE:List_brief}}
+
+{{TEMPLATE:List_brief_Empty}}
+<div class="changes_none">Обновлений давно не было</div>
+{{/TEMPLATE:List_brief_Empty}}
+
+
+
+
+<!-- для default show parameter -->
+{{TEMPLATE:List_context}}
+ {{TEMPLATE:List_context_Item}}
+   <div class="link_">
+    <a title="{{subject}} 
+изменил: {{edited_user_name}}" href="{{Link:tag}}">{{tag}}</a>
+    <div class="dt_">{{edited_datetime}}</div>
+   </div>
+ {{/TEMPLATE:List_context_Item}}
+{{/TEMPLATE:List_context}}
+
+{{TEMPLATE:List_context_Empty}}
+<div class="link_">Обновлений давно не было</div>
+{{/TEMPLATE:List_context_Empty}}

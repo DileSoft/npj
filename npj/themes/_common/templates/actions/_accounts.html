@@ -1,0 +1,116 @@
+<!---------------------------------- simple ----------------------------------------->
+{{TEMPLATE:List_simple}}
+ <style>
+   .a-accounts-simple { font-size:1em; color:#222222 }
+   .a-accounts-simple td { vertical-align:middle }
+   .a-accounts-simple .link- { font-weight:bold }
+   .a-accounts-simple .name- { }
+ </style>
+ {{FORUM-ARROWS}}
+ <table cellspacing="3" cellpadding="0" border="0" class="a-accounts-simple">
+  {{TEMPLATE:List_simple_Item}}
+   <tr>
+    <td class="link-">{{Account>Link:account}}</td>
+    <td class="name-">&mdash;</td>
+    <td class="name-">{{Account>user_name}}</td>
+   </tr>
+  {{/TEMPLATE:List_simple_Item}}
+ </table>
+ {{FORUM-ARROWS}}
+{{/TEMPLATE:List_simple}}
+
+{{TEMPLATE:List_simple_Empty}}
+{{/TEMPLATE:List_simple_Empty}}
+
+
+
+
+<!---------------------------------- forum ----------------------------------------->
+{{TEMPLATE:List_forum}}
+<style>
+.accounts-action { }
+.accounts-action thead td { background:#aaaaaa; color:#ffffff; font-size:11px; vertical-align:middle; padding:2px 5px }
+.accounts-action thead .subj- { font-size:12px; font-weight:bold }
+.accounts-action thead .author- { font-size:12px; font-weight:bold }
+.accounts-action thead .noco- { font-size:9px; text-align:center; }
+
+.accounts-action thead .subj-    { width: 60% }
+.accounts-action thead .author-  { width: 25% }
+.accounts-action thead .noco-    { width:  5% }
+.accounts-action tbody .lastmsg-,
+.accounts-action thead .lastcom- { width: 10% }
+
+.accounts-action tbody td { padding:2px 5px }
+.accounts-action tbody tr.even1  { background:#fff5ee }
+.accounts-action tbody .subj-    { font-weight:bold; font-size:12px }
+.accounts-action tbody .abstract-  { font-weight:normal; font-size:10px; color:#999999 }
+.accounts-action tbody .author-  { font-size:12px }
+.accounts-action tbody .noco-    { font-size:12px; text-align:center }
+.accounts-action tbody .lastmsg-,
+.accounts-action tbody .lastcom- { font-size:11px }
+.accounts-action tbody .author- div { width:48px; height:48px; text-align:center; vertical-align:center }
+.accounts-action tbody .author- div { display:none }
+.accounts-action tbody .none- { color:#999999 }
+
+</style>
+{{FORUM-ARROWS}}
+
+<table cellspacing="2" cellpadding="0" border="0" class="accounts-action w100">
+ <thead>
+  <tr>
+   <td class="subj-">Форум</td>
+   <td class="noco-">Сообщений</td>
+   <td class="lastmsg-">Последнее сообщение</td>
+   <td class="lastcom-">Последний комментарий</td>
+  </tr>
+ </thead>
+
+ <tbody>
+ {{TEMPLATE:List_forum_Item}}
+  <tr class="even{{even}}">
+   <td class="subj-">
+     <a href="{{Account>Href:account}}">{{Account>user_name}}</a>
+     {{?Account>non_empty_bio}}<div class="abstract-">{{Account>non_empty_bio}}</div>{{?/}}
+   </td>
+   <td class="noco-">
+    <span title="НЕВЕРНО">
+    {{?Account>number_public}}  <b>{{Account>number_public}}</b>
+    {{?!Account>number_public}} <small class="none-">(нет)<small>
+    {{?/}}
+    </span>
+   </td>
+   <td class="lastmsg-"> <!------------------------- Последний создал ------------------>
+    {{?record_id}}
+      {{created_dt}}
+      <br />
+      {{Link:user}}
+      <br />
+      <small><a href="{{Href:tag}}">читать</a></small>
+    {{?!record_id}}
+     <span class="none-">&mdash;</span>
+    {{?/}}
+   </td>
+   <td class="lastcom-"> <!------------------------- Последний комментировал ------------------>
+    {{?Commented>last_comment_id}}
+      {{Commented>commented_dt}}
+      <br />
+      {{Commented>Link:comment_user}}
+      <br />
+      <small><a href="{{Commented>Href:tag}}/comments/{{Commented>last_comment_id}}">комментарий</a></small>
+    {{?!Commented>last_comment_id}}
+     <span class="none-">&mdash;</span>
+    {{?/}}
+   </td>
+  </tr>
+ {{/TEMPLATE:List_forum_Item}}
+ </tbody>
+
+</table>
+{{FORUM-ARROWS}}
+
+{{/TEMPLATE:List_forum}}
+{{TEMPLATE:List_forum_Empty}}
+<div class="feed-none">{{data_empty}}</div>
+{{/TEMPLATE:List_forum_Empty}}
+
+

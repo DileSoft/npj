@@ -1,0 +1,59 @@
+{{TEMPLATE:Keywords}}
+  <div>
+  <strong>Рубрики:</strong>
+    {{TEMPLATE:Keywords_Item}}<a href="{{href}}">{{subject}}</a>{{/TEMPLATE:Keywords_Item}}
+  </div>
+{{/TEMPLATE:Keywords}}
+{{TEMPLATE:Keywords_Empty}} {{/TEMPLATE:Keywords_Empty}}
+{{TEMPLATE:Keywords_Separator}}, {{/TEMPLATE:Keywords_Separator}}
+
+
+{{TEMPLATE:Communities}}
+  <div>
+  <strong>Опубликовано в:</strong>
+    {{TEMPLATE:Communities_Item}}{{Link:account}}{{?announce}}&nbsp;(как&nbsp;анонс){{?/}}{{/TEMPLATE:Communities_Item}}
+  </div>
+{{/TEMPLATE:Communities}}
+{{TEMPLATE:Communities_Empty}} {{/TEMPLATE:Communities_Empty}}
+{{TEMPLATE:Communities_Separator}}, {{/TEMPLATE:Communities_Separator}}
+
+{{TEMPLATE:Moderate}}
+<div class="body_panel">
+<table cellspacing="0" cellpadding="0" border="0" >
+<tr>
+ <td><img src="{{images}}z.gif" width="30" height="1" alt="" border="0" /></td>
+ <td class="body_panel_br"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></td>
+</tr>
+<tr>
+ <td valign="top"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></td>
+ <td valign="top">
+  <div class="body_panel_info_bottom">
+  <strong>Опубликовано в&nbsp;сообществах/рабочих группах:</strong>
+  <ul>
+    {{TEMPLATE:Moderate_Item}}
+     <li>
+      {{?!is_mod}} {{Link:account}} {{??announce}}<b>&nbsp;(как&nbsp;анонс)</b>{{??/announce}} &#151; {{user_name}}  {{?/}}
+      {{?need_mod}}  
+        <div class="need_mod_">
+        {{Link:account}} {{??announce}}&nbsp;(как&nbsp;анонс){{??/announce}} &#151; <b>{{user_name}}</b> &#151; <strong>нужна модерация</strong>
+        <form method="post" action="{{Href:account}}/manage/moderate/{{Record.Stats.Ref.RecordId}}">
+         <input class="confirm_" type="submit" name="approve" value="Подтвердить" />
+         &nbsp;или&nbsp;
+         <input class="decline_"type="submit" name="decline" value="Отклонить" />
+         или <a href="{{Href:account}}/ban/{{Npj:Account}}">забанить {{Npj:Account}}</a>
+        </form>
+        </div>
+      {{?/}}
+      {{?done_mod}}  {{Link:account}} &#151; <b>{{user_name}}</b> &#151; отмодерировано 
+                     (<b><a href="{{href}}/manage/moderate/{{Record.Stats.Ref.RecordId}}">отклонить</a></b>
+                     |
+                     <a href="{{href}}/manage/moderate/{{Record.Stats.Ref.RecordId}}/reset">временно сбросить</a>){{?/}}
+     </li>
+    {{/TEMPLATE:Moderate_Item}}
+  </ul>
+  </div>
+ </td>
+</table>
+</div>
+{{/TEMPLATE:Moderate}}
+{{TEMPLATE:Moderate_Empty}}&nbsp;{{/TEMPLATE:Moderate_Empty}}

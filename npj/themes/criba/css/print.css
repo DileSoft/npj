@@ -1,0 +1,43 @@
+IMG { filter:Gray }
+body { padding:0px;margin:0; }
+
+fieldset { border:0; border-color:#ffffff; }
+fieldset a { text-decoration:none }
+p.auto-print { margin:0.8em 0 0.3em 0; }
+
+
+div.menu-block { display:none }
+div.menu-block-short { display:none }
+.flippers .icon- { display:none; border:0 }
+
+.sitepath { padding-bottom:2em }
+
+
+div.footer { display:none }
+.comments-hidden, .comments-visible { display:none }
+
+P, H1,H2,H3,H4,H5,H6, LI, TD { color:#000000 }
+
+
+td#wrapper_1 { width:100% }
+img#comments_pic1, img#comments_pic2, img#flipper_pic, img#wrapper_pic { width:1px }
+
+.feed { border-top: 4px black solid; border-bottom: 2px #999999 solid }
+.feed-comments { display:none }
+
+
+.body-panel { display:none }
+
+.comments .admin- { display:none }
+.comments .one- { border:0; border-left: 2px #999999 solid; }
+.comments .body- { border:0 }
+.comments .controls- { display:none }
+.comments .userinfo- .author- { float:none }
+.comments .userinfo- .dt-     { float:none }
+.comments { padding-left:0; padding-right:0; margin-top:20px; border-top:2px #999999 solid; }
+
+
+/* tricky */
+#formcommentsan {display:none;}
+
+.no-print { display:none }

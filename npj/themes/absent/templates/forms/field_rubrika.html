@@ -1,0 +1,45 @@
+{{TEMPLATE:Single}}
+  <div id="id_rubrika_target_{{_Field}}"></div>
+  <input type="hidden" name="{{_Field}}" id="id_{{_Field}}" value="{{_Value}}" />
+  {{GROUPS}}
+  <script type="text/javascript" src="{{theme}}/js/rubrika-2-01-imploded.js"></script>
+  <script type="text/javascript" language="JavaScript">
+        var r{{_Field}} = new Rubrika( "no facets", "Изменить..." );
+        r{{_Field}}.Init ( "id_rubrika_target_{{_Field}}",  false, "id_{{_Field}}", "id_{{_Field}}_all" );
+  </script>
+{{/TEMPLATE:Single}}
+
+{{TEMPLATE:Facets}}
+  <div id="id_rubrika_target_{{_Field}}"></div>
+  <input type="hidden" name="{{_Field}}" id="id_{{_Field}}" value="{{_Value}}" />
+  {{GROUPS}}
+  <script type="text/javascript" src="{{theme}}/js/rubrika-2-01-imploded.js"></script>
+  <script type="text/javascript" language="JavaScript">
+        var r{{_Field}} = new Rubrika( );
+        r{{_Field}}.Init ( "id_rubrika_target_{{_Field}}",  false, "id_{{_Field}}", "id_{{_Field}}_all" );
+  </script>
+{{/TEMPLATE:Facets}}
+
+{{TEMPLATE:All}}
+{{/TEMPLATE:All}}
+
+
+<!-- old mama refactor -->
+{{TEMPLATE:All}}{{GROUPS}}{{/TEMPLATE:All}}
+{{TEMPLATE:All_Js}}{{/TEMPLATE:All_Js}}
+
+{{TEMPLATE:All_Groups}}
+  <input type="hidden" name="{{_Field}}_all" id="id_{{_Field}}_all" value="
+  <!-- -->
+  <!-- -->{{TEMPLATE:All_Groups_Item_Current}}
+  <!-- -->{{TEMPLATE:All_Groups_Item}}
+  <!-- --> {{_Text}};
+  <!-- -->{{/TEMPLATE:All_Groups_Item}}
+  <!-- -->{{/TEMPLATE:All_Groups_Item_Current}}
+  <!-- -->
+  " />
+{{/TEMPLATE:All_Groups}}
+{{TEMPLATE:All_Groups_Empty}}
+ <input type="hidden" name="{{_Field}}_all" id="id_{{_Field}}_all" value="" />
+{{/TEMPLATE:All_Groups_Empty}} 
+

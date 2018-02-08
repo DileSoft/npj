@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <title>Ins Image</title>
+  <script language="JavaScript" type="text/javascript">
+  function insImage(url, alt) {
+    document.rte.insImage(url, alt);
+  }
+
+  function InitLinkDialog() {
+  }
+  
+  function cli() {
+    insImage(document.getElementById('url').value, document.getElementById('alt').value);
+  }
+  function clo() {
+    document.rte.closeDialog('img');
+  }
+  </script>
+
+<STYLE TYPE="text/css">
+ BODY, DIV   {margin-left:10; font-family:Verdana; font-size:12px; background:menu}
+ BUTTON {width:5em}
+ TABLE  {font-family:Verdana; font-size:12px}
+ P      {text-align:center}
+</STYLE>
+</head>
+<body bgcolor="white" onLoad="InitLinkDialog()" leftmargin="0" rightmargin="0" marginwidth="0" marginheight="0" topmargin="0" bottommargin="0">
+<div style="margin:10px;">
+Адрес изображения: <input type="text" id="url" value="http://"><br />
+ALT: <input type="text" id="alt"><br />
+<button onclick="cli();">Ok</button>
+<BUTTON ONCLICK="clo();">Cancel</BUTTON>
+</div>
+</body>
+</html>

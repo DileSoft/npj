@@ -1,0 +1,78 @@
+{{TEMPLATE:List_ul}}
+<ul class="tree">
+ {{TEMPLATE:List_ul_Item}}
+  <li>{{Link:user}}, {{user_name}} &#151; {{account_type}}</li>
+ {{/TEMPLATE:List_ul_Item}}
+</ul>
+{{/TEMPLATE:List_ul}}
+{{TEMPLATE:List_ul_Empty}}
+<div class="tree_none">Нет таких аккаунтов</div>
+{{/TEMPLATE:List_ul_Empty}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:List_ol}}
+<ol class="tree">
+ {{TEMPLATE:List_ol_Item}}
+  <li>{{Link:user}}, {{user_name}} &#151; {{account_type}} </li>
+ {{/TEMPLATE:List_ol_Item}}
+</ol>
+{{/TEMPLATE:List_ol}}
+{{TEMPLATE:List_ol_Empty}}
+<div class="tree_none">Нет таких аккаунтов</div>
+{{/TEMPLATE:List_ol_Empty}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:List_br}}
+<div class="tree">
+ {{TEMPLATE:List_br_Item}}
+  {{Link:user}}, {{user_name}} &#151; {{account_type}} <br />
+ {{/TEMPLATE:List_br_Item}}
+</div>
+{{/TEMPLATE:List_br}}
+{{TEMPLATE:List_br_Empty}}
+<div class="tree_none">Нет таких аккаунтов</div>
+{{/TEMPLATE:List_br_Empty}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:List_comma}}
+<div class="tree">
+ {{TEMPLATE:List_comma_Item}}<span title="{{account_type}} {{user_name}}">{{Link:user}}</span>{{/TEMPLATE:List_comma_Item}}
+</div>
+{{/TEMPLATE:List_comma}}
+{{TEMPLATE:List_comma_Empty}}
+<div class="tree_none">Нет таких аккаунтов</div>
+{{/TEMPLATE:List_comma_Empty}}
+ {{TEMPLATE:List_comma_Separator}}, {{/TEMPLATE:List_comma_Separator}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:List_td}}
+<style>
+.a-directory { color:#222222 }
+.a-directory .link- { font-size:80%; font-weight:bold }
+.a-directory .name- { font-size:80%; }
+.a-directory .dt- { color:#666666; font: 60% Tahoma }
+</style>
+<table cellspacing="3" cellpadding="0" border="0" class="a-directory">
+ {{TEMPLATE:List_td_Item}}
+  <tr>
+   {{?is_dt}}
+   <td class="dt-"> @ {{dt}} : </td>
+   {{?!is_dt}}
+   <td class="dt-">&nbsp;</td>
+   {{?/}}
+   <td class="link-">{{Link:user}}</td>
+   <td class="name-"> &#151; {{user_name}} </td>
+  </tr>
+ {{/TEMPLATE:List_td_Item}}
+</table>
+{{/TEMPLATE:List_td}}
+{{TEMPLATE:List_td_Empty}}
+<div class="tree_none">Нет таких аккаунтов</div>
+{{/TEMPLATE:List_td_Empty}}
+
+
+<!------------------------------------------------------------------------->

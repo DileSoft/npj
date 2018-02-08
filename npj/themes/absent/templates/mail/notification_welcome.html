@@ -1,0 +1,16 @@
+!!!! refactor
+<!-- Подтверждение регистрации, только боди -->
+
+{{TEMPLATE:Body}}
+{{!Mail:Hello}} {{Mail.UserName}} ({{Link:Mail.Login}})!
+<br /><br />
+{{!Mail:MainText}}
+<br /><br />
+Войти на сайт под вашим именем Вы можете здесь:
+<ul>
+<li><a href="{{Href:LoginForm}}">Форма логина</a></li>
+</ul>
+<hr />
+{{!Mail:Goodbye}}<br />
+{{Link:Host}}
+{{/TEMPLATE:Body}}

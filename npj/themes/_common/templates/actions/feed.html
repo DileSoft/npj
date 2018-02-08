@@ -1,0 +1,225 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                D E P R E C A T E D
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---------------------------------- subjects ----------------------------------------->
+{{TEMPLATE:List_subjects}}
+<ul class="tree">
+ {{TEMPLATE:List_subjects_Item}}
+  <li><span class="dt_">{{dt}}&nbsp;</span>
+      <a title="{{tag}} | {{subject}}" href="{{Href:tag}}">{{subject}}</a> 
+      ({{tag}})
+      <span class="author_"> . . . . написано {{Link:user}}</span>
+  </li>
+ {{/TEMPLATE:List_subjects_Item}}
+</ul>
+<a href="?before={{Before}}">Следующая порция</a>
+{{/TEMPLATE:List_subjects}}
+{{TEMPLATE:List_subjects_Empty}}
+<div class="tree_none">Лента пуста</div>
+{{/TEMPLATE:List_subjects_Empty}}
+
+
+
+<!---------------------------------- full ----------------------------------------->
+{{TEMPLATE:List_full}}
+ {{TEMPLATE:List_full_Item}}
+  <table cellspacing="0" cellpadding="5" border="0" width="100%">
+   <tr>
+    <td valign="bottom" class="feed_info{{announce}}">
+     <div class="panel_">
+     <img src={{images}}time.gif class="time_" border="0" alt="" /> {{dt}}
+     <div class="access_"><b>Доступ:</b> {{security_title}}</div>
+     <div class="crossposted_">{{crossposted}}</div>
+     </div>
+     <div class="feed_title">{{subject}}</div>
+    </td>
+   </tr>
+  </table>
+  <div class="feed_body">
+  {{?Href:announced}}{{@actions/feed.html:AnnouncedDoc}}{{?/}}
+  {{body_post}}
+  {{@actions/feed.html:CommentPanel}}
+  </div>
+ {{/TEMPLATE:List_full_Item}}
+
+<a href="?before={{Before}}">Следующая порция</a>
+{{/TEMPLATE:List_full}}
+{{TEMPLATE:List_full_Empty}}
+<div class="tree_none">Лента пуста</div>
+{{/TEMPLATE:List_full_Empty}}
+
+{{TEMPLATE:AnnouncedDoc}}
+ <ul><li>Ссылка на документ: {{Link:announced}}</li></ul>
+{{/TEMPLATE:AnnouncedDoc}}
+{{TEMPLATE:CommentPanel}}
+   <div class="panel_">
+    <a href="{{Href:tag}}" title="permalink">&#149;</a> 
+    {{?Href:announced}}      | <a href="{{Href:announced}}" >Анонсированный документ</a>{{?/}}
+    {{?number_comments}}     | <a href="{{Href:comments_target}}/comments#comments" >Комментарии</a> ({{number_comments}}){{?/}}
+    {{?!disallow_comments}}  | <a href="{{Href:comments_target}}/comments/add#comments_add" >Добавить комментарий</a>{{?/}}
+   </div>
+{{/TEMPLATE:CommentPanel}}
+
+<!---------------------------------- friends ----------------------------------------->
+<!--- Эта лента будет выводится внутри friends.html, а не record.html ---------------->
+<!--- только в адресах вида http://npj.sky.ru/npj/kuso/friends        ---------------->
+<!--- это чтобы можно было делать чанки по записям ----------------------------------->
+{{TEMPLATE:List_friends}}
+ {{TEMPLATE:List_friends_Item}}
+  <table cellspacing="0" cellpadding="5" border="0" width="100%">
+   <tr>
+    <td valign="bottom" class="feed_info{{announce}}">
+     <div class="panel_">
+     {{Link:user}} <strong>({{edited_user_name}})</strong> <br />
+     <img src={{images}}time.gif class="time_" border="0" alt="" /> {{dt}}
+     <div class="access_"><b>Доступ:</b> {{security_title}}</div>
+     <div class="crossposted_">{{crossposted}}</div>
+     </div>
+     <div class="feed_title">{{subject}}</div>
+    </td>
+    <td class="feed_userpic{{announce}}"><img src="{{images}}z.gif" width="100" height="1" border="0" alt="" /><br />{{userpic}}</td>
+   </tr>
+  </table>
+  <div class="feed_body">
+  {{?Href:announced}}{{@actions/feed.html:AnnouncedDoc}}{{?/}}
+  {{body_post}}
+  {{@actions/feed.html:CommentPanel}}
+  </div>
+ {{/TEMPLATE:List_friends_Item}}
+
+<a href="?before={{Before}}">Следующая порция</a>
+{{/TEMPLATE:List_friends}}
+{{TEMPLATE:List_friends_Empty}}
+<div class="tree_none">Лента пуста</div>
+{{/TEMPLATE:List_friends_Empty}}
+
+
+
+<!---------------------------------- members ----------------------------------------->
+<!--- Это как правила лента сообщества. Важно, что здесь показываются юзерпики  ------>
+{{TEMPLATE:List_members}}
+ {{TEMPLATE:List_members_Item}}
+  <table cellspacing="0" cellpadding="5" border="0" width="100%">
+   <tr>
+    <td valign="bottom" class="feed_info{{announce}}">
+     <div class="panel_">
+       {{Link:user}} <strong>({{edited_user_name}})</strong> <br />
+       <img src={{images}}time.gif class="time_" border="0" alt="" /> {{dt}}
+       <div class="access_"><b>Доступ:</b> {{security_title}}</div>
+     </div>
+     <div class="feed_title">{{subject}}</div>
+    </td>
+    <td class="feed_userpic{{announce}}"><img src="{{images}}z.gif" width="100" height="1" border="0" alt="" /><br />{{userpic}}</td>
+   </tr>
+  </table>
+  <div class="feed_body">
+  {{?Href:announced}}{{@actions/feed.html:AnnouncedDoc}}{{?/}}
+  {{body_post}}
+  {{@actions/feed.html:CommentPanel}}
+  </div>
+ {{/TEMPLATE:List_members_Item}}
+
+<a href="?before={{Before}}">Следующая порция</a>
+{{/TEMPLATE:List_members}}
+{{TEMPLATE:List_members_Empty}}
+<div class="tree_none">Лента пуста</div>
+{{/TEMPLATE:List_members_Empty}}
+
+
+
+
+<!---------------------------------- poloskuns ----------------------------------------->
+<!--- Это как правила лента сообщества. Важно, что здесь показываются юзерпики  ------>
+{{TEMPLATE:List_poloskuns}}
+<style>
+.feed_poloskuns {} 
+.feed_poloskuns .feed_title { margin-top:0; margin-left:0; font:bold italic 110% Arial } 
+.feed_poloskuns .feed_info0, .feed_poloskuns .feed_info1, .feed_poloskuns .feed_info2 
+  { width:200px; }
+.feed_poloskuns .feed_body { padding:5px; width:100%; color:#444444; font-size:90% } 
+.feed_poloskuns .panel- { font:11px Tahoma; padding-top:10px }
+.feed_poloskuns .access- td { color:#444444; font:11px Tahoma; background:#DCDCB6 }
+</style>
+ <table cellspacing="2" cellpadding="5" border="0" class="feed_poloskuns" width="100%">
+ {{TEMPLATE:List_poloskuns_Item}}
+   <tr>
+    <td nowrap="nowrap" valign="top" class="feed_info{{announce}}">
+       <strong>{{Link:user}}</strong> 
+       <img src={{images}}time.gif class="time_" border="0" alt="" /> {{dt}}
+       {{@actions/feed.html:CommentPanel_poloskuns}}
+    </td>
+    <td valign="top" class="feed_body">
+       {{?security_pic}}
+        <table cellspacing="0" cellpadding="0" border="0" class="access-">
+        <tr><td>&nbsp;&nbsp;<b>Доступ:</b>
+            <td><img src="{{images}}security_{{security_pic}}.gif" class="security_{{security}}" /></td>
+            <td>{{security_title}}&nbsp;&nbsp;</td>
+        </tr></table>
+       {{?/}}
+       {{?subject}}<div class="feed_title">{{subject}}</div> 
+      {{?Href:announced}}{{@actions/feed.html:AnnouncedDoc}}{{?/}}
+      {{body_post}}
+    </td>
+   </tr>
+ {{/TEMPLATE:List_poloskuns_Item}}
+</table>
+<a href="?before={{Before}}">Следующая порция</a>
+{{/TEMPLATE:List_poloskuns}}
+{{TEMPLATE:List_poloskuns_Empty}}
+<div class="tree_none">Лента пуста</div>
+{{/TEMPLATE:List_poloskuns_Empty}}
+
+{{TEMPLATE:CommentPanel_poloskuns}}
+   <div class="panel-">
+    <!-- --> 
+    {{?number_comments}}     <a href="{{Href:comments_target}}/comments#comments" >Комменты</a>&nbsp;({{number_comments}}) | {{?/}}
+    <!-- --> 
+    {{?!disallow_comments}}  <a href="{{Href:comments_target}}/comments/add#comments_add" >Комментировать</a>{{?/}}
+   </div>
+{{/TEMPLATE:CommentPanel_poloskuns}}

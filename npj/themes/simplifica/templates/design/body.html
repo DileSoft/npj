@@ -1,0 +1,34 @@
+
+<div class="no-print">
+<br />
+</div>
+
+<table class="body-wrapper w100" cellspacing="0" cellpadding="0" border="0">
+<tr>
+  <td class="userzone- no-print" rowspan="2">
+    {{#UserpicZone}}
+  </td>
+  <td class="content-">
+    <table class="w100" cellspacing="0" cellpadding="0">
+    <tr>
+    <td class="w100">
+      {{#RecordControls}}
+      {{@record_content.html}}
+    </td>
+    <td><img class="block" src="{{images}}z.gif" width="20" height="1" alt="" /></td>
+    </tr>
+    </table>
+
+    <!-- Рубрики для модератора -->
+    {{#ModRef}}
+
+    <!-- Комментарии где-то тут -->
+    <a name="comments"></a>
+    {{#RecordComments}}
+  
+
+  </td>
+</tr>
+</table>
+
+

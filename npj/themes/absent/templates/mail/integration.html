@@ -1,0 +1,206 @@
+{{TEMPLATE:Hello}}
+ {{@mail/css.html}}
+ {{@mail/integration.html:FromNode}}
+ <!--{{NPJCODE}}<hr />-->
+ {{?Mail.NeedHello}}
+ {{!Mail:Hello}} {{Mail.UserName}} ({{Link:Mail.Login}})!
+ <br /><br />
+ {{?/}}
+{{/TEMPLATE:Hello}}
+
+{{TEMPLATE:Goodbye}}
+ <br /><br />
+ <hr />
+ {{!Mail:Goodbye}}<br />
+ {{Link:Host}}
+{{/TEMPLATE:Goodbye}}
+
+<!-- ============================ С КАКОГО УЗЛА ========================================== -->
+{{TEMPLATE:FromNode}}
+Уведомление с узла: <strong>{{Link:Node}} &mdash; {{NodeName}}</strong>
+<hr />
+{{/TEMPLATE:FromNode}}
+
+<!-- ============================ КОММЕНТАРИЙ ========================================== -->
+{{TEMPLATE:Comment_ToRecord}}
+ <div style="font-size:125%">
+ Только что ({{Mail.Comment.DT}}) {{Link:Mail.Comment.User}} откомментировал(а) <a href="{{Href:Mail.Record}}">вашу запись</a>:
+ </div>
+{{/TEMPLATE:Comment_ToRecord}}
+
+{{TEMPLATE:Comment_ToParent}}
+ <div style="font-size:125%">
+ Только что ({{Mail.Comment.DT}}) {{Link:Mail.Comment.User}} ответил(а) на <a href="{{Href:Mail.Parent}}">ваш комментарий</a>:
+ </div>
+{{/TEMPLATE:Comment_ToParent}}
+
+{{TEMPLATE:Comment_ToAll}}
+ <div style="font-size:125%">
+ Только что ({{Mail.Comment.DT}}) {{Link:Mail.Comment.User}} откомментировал <a href="{{Href:Mail.Record}}">запись</a>, 
+ за которой Вы тем или иным образом наблюдаете:
+ </div>
+{{/TEMPLATE:Comment_ToAll}}
+
+
+<!-- ОБЩИЕ ЧАСТИ КОММЕНТАРИЯ ------------------------------------------------------------- -->
+{{TEMPLATE:Comment_Subject}}
+{{Mail.Comment.Subject_Text}}
+{{/TEMPLATE:Comment_Subject}}
+
+{{TEMPLATE:Comment}}
+ <style>
+  div.mi { margin-left:0; padding-left:15px; border-left: 2px solid #000000 }
+  div.mi-subj { font-weight:bold; margin-bottom:10px }
+ </style>
+ <div class="mi">
+  <div class="mi-subj">
+  <strong>{{Mail.Parent.Subject}}</strong>
+  <div>
+    {{@mail/integration.html:Record_Ref}}
+  </div>
+  {{?!Href:Mail.Parent}}<br />{{?/}}
+  </div>
+  {{Mail.Parent.Body}}
+ </div>
+ <br /><br />
+ <div style="font-size:125%">
+ Добавленный комментарий вот такой:
+ </div>
+ <div class="mi">
+   <div class="mi-subj">
+   <strong>{{Mail.Comment.Subject}}</strong>
+   </div>
+   {{Mail.Comment.Body}}
+ </div>
+ <hr />
+{{/TEMPLATE:Comment}}
+
+{{TEMPLATE:Comment_Reply}}<br />
+ Вы можете:
+ <ul>
+ <li><a href="{{Href:Mail.Record}}/comments">Перейти к дереву комментариев</a></li>
+ <li><a href="{{Href:Mail.Comment}}/add">Ответить на комментарий</a></li>
+ <li>Нажать кнопку "Reply" вашего почтового клиента и ответить на комментарий</li>
+ </ul>
+{{/TEMPLATE:Comment_Reply}}
+
+
+<!-- ==================================== ЗАПИСЬ ======================================== -->
+{{TEMPLATE:Record_Add}}
+ Только что ({{Mail.Record.DT}}) {{Link:Mail.Record.User}} добавил(а) <a href="{{Href:Mail.Record}}">документ</a> в кластер/фасет, за которым Вы наблюдаете.
+{{/TEMPLATE:Record_Add}}
+
+{{TEMPLATE:Record_Post}}
+ Только что ({{Mail.Record.DT}}) {{Link:Mail.Record.User}} добавил(а) <a href="{{Href:Mail.Record}}">сообщение</a> в кластер/фасет, за которым Вы наблюдаете.
+{{/TEMPLATE:Record_Post}}
+
+{{TEMPLATE:Record_Diff}}
+ Только что ({{Mail.Record.DT}}) {{Link:Mail.Record.User}} изменил(а) <a href="{{Href:Mail.Record}}">документ</a> в кластере/фасете, за которым Вы наблюдаете.
+{{/TEMPLATE:Record_Diff}}
+
+{{TEMPLATE:Record_Moder}}
+ Только что ({{Mail.Record.DT}}) {{Link:Mail.Record.User}} добавил(а) <a href="{{Href:Mail.Record}}">сообщение</a> в модерируемое Вами сообщество.
+{{/TEMPLATE:Record_Moder}}
+
+{{TEMPLATE:Record_Subject_Add}}
+Новая запись{{Mail.Record.Subject2}}
+{{/TEMPLATE:Record_Subject_Add}}
+
+{{TEMPLATE:Record_Subject_Post}}
+Новая запись{{Mail.Record.Subject2}}
+{{/TEMPLATE:Record_Subject_Post}}
+
+{{TEMPLATE:Record_Subject_Diff}}
+Запись изменилась{{Mail.Record.Subject2}}
+{{/TEMPLATE:Record_Subject_Diff}}
+
+{{TEMPLATE:Record_Subject_Moder}}
+Новая запись для модерации{{Mail.Record.Subject2}}
+{{/TEMPLATE:Record_Subject_Moder}}
+
+{{TEMPLATE:Record_Ref}}
+ {{?Mail.Record.Keywords}}
+   <div><small>{{!Keyworded}} {{Mail.Record.Keywords}}</small></div>
+ {{?/}}
+ {{?Mail.Record.Crossposted}}
+   <div><small>{{!Crossposted}} {{Mail.Record.Crossposted}}</small></div>
+ {{?/}}
+{{/TEMPLATE:Record_Ref}}
+
+{{TEMPLATE:Record_Body_Add}}
+ <style>
+  blockquote.mi { padding-left:10px; border:0; border-left: 1px solid #000000 }
+ </style>
+ <br /><br />
+ Добавленная запись вот такая:<br />
+ <blockquote class="mi">
+   <strong>{{Mail.Record.Subject}}</strong>
+   <div>
+     {{@mail/integration.html:Record_Ref}}
+   </div>
+   <br />
+   {{Mail.Record.Body}}
+ </blockquote>
+ <hr />
+{{/TEMPLATE:Record_Body_Add}}
+
+{{TEMPLATE:Record_Body_Post}}
+ <style>
+  blockquote.mi { padding-left:10px; border:0; border-left: 1px solid #000000 }
+ </style>
+ <br /><br />
+ Добавленное сообщение вот такое:<br />
+ <blockquote class="mi">
+   <strong>{{Mail.Record.Subject}}</strong>
+   <div>
+     {{@mail/integration.html:Record_Ref}}
+   </div>
+   <br />
+   {{Mail.Record.Body}}
+ </blockquote>
+ <hr />
+{{/TEMPLATE:Record_Body_Post}}
+
+{{TEMPLATE:Record_Body_Diff}}
+ <style>
+  blockquote.mi { padding-left:10px; border:0; border-left: 1px solid #000000 }
+ </style>
+ <br /><br />
+ В записи изменилось следующее:<br />
+ <blockquote class="mi">
+   <strong>{{Mail.Record.Subject}}</strong>
+   <br /><br />
+   {{Mail.Record.Body}}
+ </blockquote>
+ <hr />
+{{/TEMPLATE:Record_Body_Diff}}
+
+{{TEMPLATE:Record_Body_Moder}}
+ <style>
+  blockquote.mi { padding-left:10px; border:0; border-left: 1px solid #000000 }
+ </style>
+ <br /><br />
+ Запись, нуждающаяся в модерации, вот такая:<br />
+ <blockquote class="mi">
+   <strong>{{Mail.Record.Subject}}</strong>
+   <div>
+     {{@mail/integration.html:Record_Ref}}
+   </div>
+   <br />
+   {{Mail.Record.Body}}
+ </blockquote>
+ <hr />
+{{/TEMPLATE:Record_Body_Moder}}
+
+
+
+<!-- ОБЩИЕ ЧАСТИ ЗАПИСИ ------------------------------------------------------------- -->
+
+{{TEMPLATE:Record_Reply}}<br />
+ Вы можете:
+ <ul>
+ <li><a href="{{Href:Mail.Record}}">Перейти к записи</a></li>
+ <li><a href="{{Href:Mail.Record}}/comments/add#comments_add">Прокомментировать её</a></li>
+ <li>Нажать кнопку "Reply" вашего почтового клиента и послать комментарий почтой</li>
+ </ul>
+{{/TEMPLATE:Record_Reply}}

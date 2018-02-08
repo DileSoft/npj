@@ -1,0 +1,21 @@
+{{TEMPLATE:List}}
+<style>
+.trako-interface-buttons { font-size:1em }
+.trako-interface-buttons td { padding: 0 10px 0 0 }
+.trako-interface-buttons .button-issue_edit_- { width:190px }
+.trako-interface-buttons .button-issue_assign_self- { width:130px }
+</style>
+
+<form method="get" action="{{/}}">
+<table class="trako-interface-buttons" cellspacing="0" cellpadding="0" border="0" >
+<tr>
+  {{TEMPLATE:List_Item}}
+  <td><button class="button-{{_Title}}-" name="{{_Title}}" 
+       onclick="location.href='{{_Href}}'; return false;">{{_Text}}</button></td>
+  {{/TEMPLATE:List_Item}}
+</tr>
+</table>
+</form>
+{{/TEMPLATE:List}}
+{{TEMPLATE:List_Empty}} {{/TEMPLATE:List_Empty}}
+

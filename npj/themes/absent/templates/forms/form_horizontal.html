@@ -1,0 +1,91 @@
+<!-- Как выглядит форма -->
+
+
+{{TEMPLATE:Form}}
+{{Form}}
+<!-- !!!! We need to move wikiedit & dedit out of here -->
+<script language="JavaScript" src="{{theme}}/js/dedit.js"></script> 
+<script type="text/javascript" src="{{theme}}/js/wikiedit.js"></script>
+<script type="text/javascript" src="{{theme}}/js/autosave.js"></script>
+<input type="hidden" name="__form_present" value="{{FormName}}">
+
+{{CUSTOM}}
+
+{{TEMPLATE:Form_Item}}
+<script language="JavaScript">
+ flipGroupAdd('{{GroupID}}');
+</script>
+<div class="form_group">
+<div class="form_group" onload="flipGroupAdd({{GroupID}})">
+<div class="form_group_title{{GroupHidden}}" id="group_{{GroupID}}_title" 
+     onmouseover = "flipGroupLit('{{GroupID}}');"
+     onmouseout  = "flipGroupDim('{{GroupID}}');"
+     onclick="flipGroup('{{GroupID}}'); return false;"
+     ondblclick="flipOpenAll('{{GroupID}}'); return false;";
+     >
+ <a href="javascript:;" 
+    onkeypress="Key = event.keyCode;  if (Key==0) Key = event.charCode; return flipGroupKey(Key, '{{GroupID}}');"
+    onfocus     = "flipGroupLit('{{GroupID}}');"
+    onblur      = "flipGroupDim('{{GroupID}}');"
+    onmouseover = "flipGroupLit('{{GroupID}}');"
+    onmouseout  = "flipGroupDim('{{GroupID}}');"
+    onkeypress="return flipGroupKey(event.keyCode, '{{GroupID}}');"
+   ><img name="group_{{GroupID}}_icon" src="{{theme_images}}hidegroup{{GroupState}}.gif" width="12" height="12" align="right" alt="свернуть/развернуть группу" title="свернуть/развернуть группу" border="0" /></a>
+{{GroupName}}</div>
+<div id="group_{{GroupID}}_body" class="form_group_body{{GroupHidden}}">
+<table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td class="form_border">
+<table cellspacing="1" cellpadding="5" border="0" width="100%">
+<tr>
+{{FIELDS}}
+</tr>
+</table>
+</td></tr></table>
+</div>
+</div>
+{{/TEMPLATE:Form_Item}}
+<div class="form_buttons">
+<table cellspacing="1" cellpadding="5" border="0" width="100%">
+{{BUTTONS}}
+</table>
+</div>
+{{/Form}}
+{{/TEMPLATE:Form}}
+
+
+{{TEMPLATE:Form_Empty}}
+[to be supplied.]
+В форме нет полей. Увы и ах.
+{{/TEMPLATE:Form_Empty}}
+
+
+<!-- как линкуются кнопочки -->
+{{TEMPLATE:Buttons}}
+<tr><td class="form_left"><img src="{{theme_images}}z.gif" width="200" height="1" alt="" border="0" /></td>
+    <td style="width:100%" class="form_right">
+  {{TEMPLATE:Buttons_Item}}[do not applicable.]{{/TEMPLATE:Buttons_Item}}
+</td></tr>
+{{/TEMPLATE:Buttons}}
+
+
+{{TEMPLATE:Buttons_Wysiwyg}}
+<tr><td class="form_right" style='text-align:right'>
+  {{TEMPLATE:Buttons_Wysiwyg_Item}}[do not applicable.]{{/TEMPLATE:Buttons_Wysiwyg_Item}}
+</td></tr>
+{{/TEMPLATE:Buttons_Wysiwyg}}
+
+
+{{TEMPLATE:Buttons_Empty}}&nbsp;{{/TEMPLATE:Buttons_Empty}}
+
+
+<!-- Как выглядят отдельные строки формы -->
+{{TEMPLATE:Row_Hidden}}
+{{/TEMPLATE:Row_Hidden}}
+
+{{TEMPLATE:Row}}
+<td class="form_horiz"><div class="form_span_name">{{_Name}}{{_Nessesary}}</div>{{_Data}}<div>{{_Error}}</div></td>
+{{/TEMPLATE:Row}}
+
+{{TEMPLATE:Row_Described}}
+<td class="form_horiz"><div class="form_span_name">{{_Name}}{{_Nessesary}}</div>{{_Data}}<div>{{_Error}}</div><div class="form_desc">{{_Desc}}</div></td>
+{{/TEMPLATE:Row_Described}}
+

@@ -1,0 +1,42 @@
+<!-- Это обёртка для страницы-рубрики -->
+
+{{TEMPLATE:Wrapper}}
+{{Preparsed:CONTENT}}
+
+<div class="roubric-settings" style="padding:5px">
+  {{#RoubricSettings}}
+
+  <div style="float:left">
+    <h3>Информация по рубрике</h3>
+  </div>
+  <br clear="both" />
+</div>
+
+{{Preparsed:FACET}}
+{{/TEMPLATE:Wrapper}}
+
+{{TEMPLATE:Empty}}
+ <div class="roubric-empty">
+   Список пуст. Попробуйте другой режим.
+ </div>
+{{/TEMPLATE:Empty}}
+
+
+
+
+
+{{TEMPLATE:SettingsPanel}}
+  <div class="mode-">
+   <b>Режим:</b>
+   {{TEMPLATE:SettingsPanel_Item}}
+     {{?is_selected}}
+       {{name}}
+     {{?!is_selected}}
+       <a href="{{Href:name}}">{{name}}</a>
+     {{?/}}
+   {{/TEMPLATE:SettingsPanel_Item}}
+  </div>
+{{/TEMPLATE:SettingsPanel}}
+   {{TEMPLATE:SettingsPanel_Separator}}
+     |
+   {{/TEMPLATE:SettingsPanel_Separator}}

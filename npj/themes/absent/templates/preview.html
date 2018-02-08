@@ -1,0 +1,26 @@
+<script language="JavaScript">
+ flipGroupAdd('auto_preview');
+</script>
+<div class="form_group">
+<div class="form_group_title" id="group_auto_preview_title" 
+     onmouseover = "flipGroupLit('auto_preview');"
+     onmouseout  = "flipGroupDim('auto_preview');"
+     onclick="flipGroup('auto_preview'); return false;"
+     ondblclick="flipOpenAll('auto_preview'); return false;";
+     >
+ <a href="javascript:;" 
+    onkeydown   = "Key = event.keyCode;  if (Key==0) Key = event.charCode; return flipGroupKey(Key, 'auto_preview');"
+    onkeyup     = "this.focus();"
+    onfocus     = "flipGroupLit('auto_preview');"
+    onblur      = "flipGroupDim('auto_preview');"
+    onmouseover = "flipGroupLit('auto_preview');"
+    onmouseout  = "flipGroupDim('auto_preview');"
+   ><img name="group_auto_preview_icon" src="{{theme_images}}hidegroup1.gif" width="12" height="12" align="right" alt="свернуть/развернуть группу" title="свернуть/развернуть группу" border="0" /></a>
+{{!ButtonTextCommentPreview}}</div>
+<div class="form-auto-preview" id="group_auto_preview_body" class="form_group_body">
+  {{Preview}}
+  <br clear="all" />
+</div>
+</div>
+
+

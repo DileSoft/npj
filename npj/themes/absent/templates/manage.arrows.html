@@ -1,0 +1,30 @@
+{{TEMPLATE:Arrows}}
+<span class="gray"><b>Страницы:</b> {{PagesList}}</span>
+<span class="gray">Вы на странице {{PageNo}} из {{PageCount}}</span>
+{{/TEMPLATE:Arrows}}
+{{TEMPLATE:Arrows_Empty}}
+{{/TEMPLATE:Arrows_Empty}}
+
+
+{{TEMPLATE:PagesList}}
+  {{?PagePrev}}
+   [<a title="{{!PagesPrev}}" href="{{Url}}{{Link:PagePrev}}">&laquo;&laquo;</a>]
+    |
+  {{?/PagePrev}}
+
+  {{TEMPLATE:PagesList_Item}}
+    {{?_Current}}  <b>{{_PageNo}}</b>
+    {{?!_Current}} <a title="{{!PageNum}}{{_PageNo}}" href="{{Url}}{{Link:_PageNo}}">{{_PageNo}}</a>
+    {{?/_Current}}
+    |  
+  {{/TEMPLATE:PagesList_Item}}
+
+  {{?PageNext}}
+    <a title="{{!PageNextTitle}}" href="{{Url}}{{Link:PageNext}}">Следующая</a>
+  {{?/PageNext}}
+{{/TEMPLATE:PagesList}}
+
+
+{{TEMPLATE:PagesList_Empty}}
+{{!PageAllInOne}}
+{{/TEMPLATE:PagesList_Empty}}

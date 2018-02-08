@@ -1,0 +1,35 @@
+<!------------------- prev_next  ------------------------>
+{{TEMPLATE:PrevNext}}
+
+{{MVC-ARROWS}}
+
+
+{{?show_timeline}}
+ <div class="feed-info0">
+ <div style="padding:5px" class="panel-">
+{{?/}}
+{{?show_past}}
+ <a href="?before={{Before}}">&laquo;&laquo; Более старые сообщения</a>
+{{?/}}
+{{?show_past_and_future}}
+ |
+{{?/}}
+{{?show_future}}
+ <a href="?after={{After}}">Более новые сообщения  &raquo;&raquo;</a>
+{{?/}}
+{{?show_timeline}}
+ </div>
+ </div>
+{{?/}}
+
+  {{?Milestone:Debug}}
+   <div class="feed-info0">
+   <div style="padding:5px" class="panel-">
+    <b>Времена запросов</b>              
+    | Мои группы: {{Milestone:Feed_Groups}} 
+    | Суперзапрос: {{Milestone:Feed_Super}} 
+    | Тела: {{Milestone:Feed_Bodies}}
+   </div></div>
+  {{?/}}
+
+{{/TEMPLATE:PrevNext}}

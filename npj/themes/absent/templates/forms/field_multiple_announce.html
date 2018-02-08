@@ -1,0 +1,48 @@
+{{TEMPLATE:Plain}}
+{{PRESETS}}
+<div id="items_for_{{_Field}}" >
+<input type="hidden" name="_items_in{{_Field}}" value="{{_ItemsIn}}">
+<table cellspacing="0" cellpadding="2" border="0" width="100%">
+<tr>
+    <td valign="top" class="form_right_t"><nobr>{{_RightSubject}}</nobr><div class="items-all-">{{ITEMS_ALL}}</div></td>
+    <td style="vertical-align:middle">
+<input type='button' onClick='moveIn("{{_Field}}");' value='&gt;&gt;' /><br /><br />
+<input type='button' onClick='moveOut("{{_Field}}");' value='&lt;&lt;' />
+    </td>
+    <td width="50%" valign="top" class="form_right_t"><strong>{{_LeftSubject}}</strong><div class="items-">{{_Items_Title}}{{ITEMS}}</div></td>
+    <td width="50%" class="form_right_t" align="center" style="color:#999999">скоро здесь будет публикация в&nbsp;рубрики сообществ</td>
+</tr>
+</table>
+</div>
+<script>
+initMultiple("{{_Field}}","{{FormName}}");
+</script>
+{{/TEMPLATE:Plain}}
+
+<!-- основной сложный селект для итемов -->
+{{TEMPLATE:Plain_Items}}
+<select multiple="1" class="w100" name="list_{{_Type}}{{_Field}}" size="{{_Size}}">
+  {{TEMPLATE:Plain_Items_Item}}
+   <option value="{{_Href}}" />{{_Text}}</option>
+  {{/TEMPLATE:Plain_Items_Item}}
+</select>
+{{/TEMPLATE:Plain_Items}}
+{{TEMPLATE:Plain_Items_Empty}}
+<select multiple="1" class="w100" name="list_{{_Type}}{{_Field}}" size="{{_Size}}">
+</select>
+{{/TEMPLATE:Plain_Items_Empty}} 
+
+
+<!-- пресеты итемов -->
+{{TEMPLATE:Plain_Presets}}
+<input type="hidden" name="{{_Field}}" value="-10" />
+  {{TEMPLATE:Plain_Presets_Item}}
+  {{/TEMPLATE:Plain_Presets_Item}}
+{{/TEMPLATE:Plain_Presets}}
+{{TEMPLATE:Plain_Presets_Empty}}
+{{/TEMPLATE:Plain_Presets_Empty}} 
+  {{TEMPLATE:Plain_Presets_Item_Current}}
+  {{/TEMPLATE:Plain_Presets_Item_Current}}
+
+
+

@@ -1,0 +1,20 @@
+  /*
+     NOTICE: this is Magick formatter.
+     
+     PURPOSE: Conditional skipping of template`s parts with recursion available
+     SYNTAX:
+              {{?IsBig}}  next text to be shown if IsBig != 0
+                          there could be a lot of text
+              {{?!IsBig}} else this text would be shown
+                          if is IsBig == 0. 
+                          You could use only {?!...} combination
+                          w/o first part.
+              {{?/IsBig}} 
+
+            This example suppose $tpl->Assign("IsBig", 1 or 0)
+
+     NB: Recursive including makes this a bit slower. 
+         Note that you should use {{??IsBig}}, {{??!IsBig}}, {{??/IsBig}} patterns for recursion if any
+         Link "skip_simple" to "?", if you don`t need any recursion.
+  */ 
+

@@ -1,0 +1,97 @@
+{{TEMPLATE:List_ul}}
+<ul class="tree">
+ {{TEMPLATE:List_ul_Item}}
+  <li><a title="{{tag}} | {{subject}}" href="{{Link:tag}}">{{title}}</a> {{by}} </li>
+ {{/TEMPLATE:List_ul_Item}}
+</ul>
+{{/TEMPLATE:List_ul}}
+{{TEMPLATE:List_ul_Empty}}
+<div class="tree-none">Поиск не обнаружил совпадений</div>
+{{/TEMPLATE:List_ul_Empty}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:List_ol}}
+<ol class="tree">
+ {{TEMPLATE:List_ol_Item}}
+  <li><a title="{{tag}} | {{subject}}" href="{{Link:tag}}">{{title}}</a> {{by}}</li>
+ {{/TEMPLATE:List_ol_Item}}
+</ol>
+{{/TEMPLATE:List_ol}}
+{{TEMPLATE:List_ol_Empty}}
+<div class="tree-none">Поиск не обнаружил совпадений</div>
+{{/TEMPLATE:List_ol_Empty}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:List_br}}
+<div class="tree">
+ {{TEMPLATE:List_br_Item}}
+  <a title="{{tag}} | {{subject}}" href="{{Link:tag}}">{{title}}</a> {{by}}<br />
+ {{/TEMPLATE:List_br_Item}}
+</div>
+{{/TEMPLATE:List_br}}
+{{TEMPLATE:List_br_Empty}}
+<div class="tree-none">Поиск не обнаружил совпадений</div>
+{{/TEMPLATE:List_br_Empty}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:Form}}
+{{Form:Search}}
+  <table class="action-search" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td>{{!SearchFor}}:&nbsp;</td>
+    <td><input name="_phrase" size="40" value="{{phrase}}" /> 
+    <input type="submit" value="{{!SearchButtonText}}" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="checkbox" name="_topic" {{checked}} id="checkboxSearch">
+        <label for="checkboxSearch">{{!TopicSearchText}}</label><br />
+        <input type="checkbox" name="_where" {{checked2}} id="checkboxSearchWhere">
+        <label for="checkboxSearchWhere">{{!AccountSearchText}}</label><br />
+    </td>
+  </tr>
+</table><br />
+{{/Form}}
+{{/TEMPLATE:Form}}
+
+
+
+
+
+
+
+<!-- для default show parameter ============================================= -->
+{{TEMPLATE:List_context}}
+ {{TEMPLATE:List_context_Item}}
+   <div class="link-">
+    <a title="{{subject}}  
+изменил: {{edited_user_name}}" href="{{Link:tag}}">{{tag}}</a>
+   </div>
+ {{/TEMPLATE:List_context_Item}}
+{{/TEMPLATE:List_context}}
+
+{{TEMPLATE:List_context_Empty}}
+<div class="link-">Искомой фразы не найдено</div>
+{{/TEMPLATE:List_context_Empty}}
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:Form_context}}
+{{Form:Search}}
+  <table class="action-search" border="0" cellspacing="5" cellpadding="0">
+    <tr>
+    <td class="w100"><input name="_phrase" maxlen="500" class="w100" size="18" value="{{phrase}}" /></td>
+    <td><input type="submit" value="{{!SearchButtonText}}" /></td>
+  </tr>
+  <tr>
+    <td colspan="2" class="dt-2"><input type="checkbox" name="_topic" {{checked}} id="checkboxSearch">
+        <label for="checkboxSearch">{{!TopicSearchText}}</label>
+        <br />
+        <input type="checkbox" name="_where" {{checked2}} id="checkboxSearchWhere">
+        <label for="checkboxSearchWhere">{{!AccountSearchText}}</label>
+        <br />
+  </tr>
+</table>{{/Form}}
+{{/TEMPLATE:Form_context}}

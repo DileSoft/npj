@@ -1,0 +1,67 @@
+{{TEMPLATE:Plain}}
+{{GROUPS}}
+{{/TEMPLATE:Plain}}
+
+{{TEMPLATE:Plain_Groups}}
+<table cellspacing="3" cellpadding="0" border="0" width="100%">
+  {{TEMPLATE:Plain_Groups_Item}}
+   <tr>
+    <td><input {{_OnChange}} id="chk{{_Field}}_{{_Count}}" type="radio" name="{{_Field}}" value="{{_Href}}" /></td>
+    <td width="100%" class="form_right_t"><label for="chk{{_Field}}_{{_Count}}">{{_Text}}</label></td>
+   </tr>
+  {{/TEMPLATE:Plain_Groups_Item}}
+</table>
+{{/TEMPLATE:Plain_Groups}}
+{{TEMPLATE:Plain_Groups_Empty}}
+{{/TEMPLATE:Plain_Groups_Empty}} 
+
+  {{TEMPLATE:Plain_Groups_Item_Current}}
+   <tr>
+    <td><input {{_OnChange}} id="chk{{_Field}}_{{_Count}}" type="radio" name="{{_Field}}" checked value="{{_Href}}" /></td>
+    <td width="100%" class="form_right_t"><label for="chk{{_Field}}_{{_Count}}">{{_Text}}</label></td>
+   </tr>
+  {{/TEMPLATE:Plain_Groups_Item_Current}}
+
+
+{{TEMPLATE:Select}}
+<select {{_OnChange}} name="{{_Field}}">
+{{GROUPS}}
+</select>
+{{/TEMPLATE:Select}}
+
+{{TEMPLATE:Select_Groups}}
+  {{TEMPLATE:Select_Groups_Item}}
+   <option value="{{_Href}}" />{{_Text}}</option>
+  {{/TEMPLATE:Select_Groups_Item}}
+{{/TEMPLATE:Select_Groups}}
+{{TEMPLATE:Select_Groups_Empty}}
+{{/TEMPLATE:Select_Groups_Empty}} 
+
+  {{TEMPLATE:Select_Groups_Item_Current}}
+   <option value="{{_Href}}" selected/>{{_Text}}</option>
+  {{/TEMPLATE:Select_Groups_Item_Current}}
+
+{{TEMPLATE:Select_Js}}
+<select onchange="Select_PasteValueTo('id_{{_Field}}', this.options[this.selectedIndex].value, '{{__StringSelectAdd}}');{{?__StringSelectAdd}}this.selectedIndex=0;{{?/}} " name="{{_Field}}_Select">
+<option value="">(по умолчанию)</option>
+{{GROUPS}}
+</select>
+{{/TEMPLATE:Select_Js}}
+
+
+{{TEMPLATE:Links}}{{GROUPS}}{{/TEMPLATE:Links}}
+{{TEMPLATE:Links_Js}}
+<table cellspacing="0" cellpadding="2" border="0" width="100%">
+<tr><td valign="top" class="form_right_t" nowrap="nowrap">{{_Preface}}</td><td class="form_right_t">{{GROUPS}}</td></tr></table>
+
+{{/TEMPLATE:Links_Js}}
+
+{{TEMPLATE:Links_Groups}}
+  {{TEMPLATE:Links_Groups_Item}}
+   <a onclick="Select_PasteValueTo('id_{{_Field}}', '{{_Href}}', '{{__StringSelectAdd}}' ); return false" href="javascript:;">{{_Text}}</a> &nbsp;
+  {{/TEMPLATE:Links_Groups_Item}}
+{{/TEMPLATE:Links_Groups}}
+{{TEMPLATE:Links_Groups_Empty}}{{!Form.emptylist}}{{/TEMPLATE:Links_Groups_Empty}} 
+  {{TEMPLATE:Links_Groups_Item_Current}}
+   <a onclick="Select_PasteValueTo('id_{{_Field}}', '{{_Href}}', '{{__StringSelectAdd}}' ); return false" href="javascript:;">{{_Text}}</a> &nbsp;
+  {{/TEMPLATE:Links_Groups_Item_Current}}

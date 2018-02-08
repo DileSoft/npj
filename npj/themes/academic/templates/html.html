@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+  <head>
+    <meta content="text/html; charset=windows-1251" http-equiv="Content-Type" />
+    <title>{{Html:TITLE}} -- {{NodeName}}</title>
+    <link rel="stylesheet" href="{{theme}}/css/default.css" type="text/css" />
+    <link rel="stylesheet" href="{{theme}}/css/rubrika.css" type="text/css" />
+
+    <link rel="stylesheet" href="{{skin}}/css/wacko.css" type="text/css" /> <!-- возможно, после оверрайда подключать -->
+    <link rel="stylesheet" href="{{skin}}/css/override.css" type="text/css" />
+    <link rel="stylesheet" href="{{skin}}/css/handlers.css" type="text/css" />
+    <link rel="stylesheet" href="{{skin}}/css/actions.css" type="text/css" />
+    <link rel="stylesheet" href="{{skin}}/css/userpanel.css" type="text/css" />
+
+    {{?Preparsed:PRINT}}
+    <link rel="stylesheet" href="{{skin}}/css/print.css" type="text/css" />
+    {{?!Preparsed:PRINT}}
+    <link rel="stylesheet" href="{{skin}}/css/print.css" media="print" type="text/css" />
+    {{?/}}
+
+    <link rel="SHORTCUT ICON" href="{{theme_images}}favicon/node.ico" />
+
+    <script type="text/javascript" src="{{theme}}/js/default.js"></script>
+    <script type="text/javascript" src="{{theme}}/js/console.js"></script>
+    <script type="text/javascript" src="{{theme}}/js/travel.js"></script>
+    <script type="text/javascript" src="{{skin}}/js/override.js"></script>
+    <script type="text/javascript" src="{{skin}}/js/userpanel.js"></script>
+    <script type="text/javascript"> 
+     var imgDir="{{skin}}/images/calendar/"; 
+    </script>
+    <style type="text/css"> 
+      #formcommentsan {display:none;}
+    </style>
+    <script type="text/javascript" src="{{theme}}/js/calendar.js"></script>
+    {{&header}}
+  </head>
+<body id='idBody' onload='travelInit();preloadSkinImages("{{images}}");preloadImages("{{theme_images}}");npjInit("{{/!}}", "{{UserPanel.Guest}}");{{&onload}}'>
+<a id='top' name='top'></a>
+
+{{@commentsan.html}}
+
+{{html_body}}
+
+</body>
+</html>

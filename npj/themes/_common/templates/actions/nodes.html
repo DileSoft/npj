@@ -1,0 +1,53 @@
+<!------------------------------------------------------------------------->
+{{TEMPLATE:List_td}}
+<style type="text/css">
+.a-nodetwins { color:#222222; }
+.a-nodetwins .link- { font-size:80%; font-weight:bold }
+.a-nodetwins .name- { font-size:80%; }
+.a-nodetwins .hd- { font-size:80%; background-color: #ECECEC;}
+.a-nodetwins .dt- { color:#666666; font: 60% Tahoma }
+</style>
+
+<!------
+          title,
+    	  node_id,
+    	  url,
+    	  is_local,
+    	  created_datetime,
+    	  user_pictures_dir,
+    	  email
+ --------------->
+<table cellspacing="2" cellpadding="3" border="0" class="a-nodetwins">
+  <tr>
+   <td class="hd-">node id</td>
+   <td class="hd-">title</td>
+   <td class="hd-">url</td>
+   <td class="hd-">placement</td>
+   <td class="hd-">created datetime</td>
+  </tr>
+ {{TEMPLATE:List_td_Item}}
+  <tr>
+   <td class="name-">{{Link:node}}</td>
+   {{?title}}
+   <td class="name-">{{title}}</td>
+   {{?!title}}
+   <td class="name-">&nbsp;</td>
+   {{?/}}
+   <td class="name-"><a href="{{url}}">{{_url}}</a></td>
+
+   {{?is_local}}
+   <td class="name-"> local node</td>
+   {{?!is_local}}
+   <td class="name-"> outer node</td>
+   {{?/}}
+   <td class="name-">{{created_datetime}}</td>
+  </tr>
+ {{/TEMPLATE:List_td_Item}}
+</table>
+{{/TEMPLATE:List_td}}
+{{TEMPLATE:List_td_Empty}}
+<div class="tree_none">Нет знакомых узлов</div>
+{{/TEMPLATE:List_td_Empty}}
+
+
+<!------------------------------------------------------------------------->

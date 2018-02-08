@@ -1,0 +1,50 @@
+{{TEMPLATE:Body}}
+<div class="userpic-">
+ <table align="center" cellspacing="0" cellpadding="0">
+  <tr>  
+   <td>
+     <div class="subtitle-">Вы в журнале:</div>
+     <div class="title-">{{JournalHead.Title}}</div>
+   </td>
+  </tr>
+  <tr>
+   <td class="border-">
+   <!-- -->
+   <a href="{{Href:Userpic}}" title="{{Title:Userpic}}">{{JournalHead.UserPic}}</a>
+   <!-- -->
+   </td>
+  </tr>
+  <tr>
+   <td>
+     {{Menu}}
+   </td>
+  </tr>
+ </table>
+
+</div>
+{{/TEMPLATE:Body}}
+
+
+{{TEMPLATE:List}}
+<div class="menu-">
+{{TEMPLATE:List_Item}}
+ {{?_Text}}
+   <div class="item-">
+     {{??!_Title}}<a href="{{_Href}}">{{??/_Title}}
+     <!-- -->
+     {{_Text}}
+     {{??!_Title}}</a>{{??/_Title}}
+   </div>
+ {{?!_Text}}
+   <br />
+   <hr />
+ {{?/}}
+{{/TEMPLATE:List_Item}}
+</div>
+{{/TEMPLATE:List}}
+
+{{TEMPLATE:List_Empty}}
+{{/TEMPLATE:List_Empty}}
+
+
+

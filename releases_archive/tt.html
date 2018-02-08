@@ -1,0 +1,44 @@
+<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />    
+  <title>D!</title>
+  <script type="text/javascript" language="javascript">
+    var Auth = [];
+    function _wr( what ) // never use this from setTimeout handler
+    {
+      document.writeln(what);
+    }
+    function wr( what ) // safe writeln. buggy in MSIE with <scri pt>
+    {
+      var line  = document.createElement("span");
+      line.innerHTML = what;
+      document.getElementById("idWr").appendChild( line );
+    }
+    function wrS( src ) // safe script invasion
+    {
+      var scr = document.createElement("script");
+      scr.src = src;
+      document.body.appendChild( scr );
+    }
+
+    function omfg() // ask for one random script
+    {
+      var k1 = ""+Math.random()*200;
+      wrS('tt.php?kt='+k1);
+    }
+  </script>
+</head>
+<body>
+  <div id="idWr"></div>
+  <script type="text/javascript" language="javascript">
+    wr("ok ");
+    Auth["kk"] = "OK";
+    document.writeln('<meta http-equiv="refresh" content="100;url=http://passport.yandex.ru/passport?mode=passport">');
+    window.setTimeout('omfg()', 100);
+    window.setTimeout('omfg()', 200);
+    window.setTimeout('wr("I am wrong = " +Auth["wtf"])', 5000);
+  </script>
+</body>
+</html>

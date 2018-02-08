@@ -1,0 +1,54 @@
+<!------------------------------------------------------------------------->
+{{TEMPLATE:Form}}
+<style>
+.a-facetfilter { color:#222222 }
+.a-facetfilter .tag- { font-size:80%; }
+.a-facetfilter .select- { font-size:70%; }
+</style>
+
+{{Form:FacetFilter}}
+{{?STRICTS}}
+<div><strong>Также по рубрикам:</strong> {{STRICTS}}
+</div>
+{{?/}}
+{{CHECKBOXES}}
+<br />
+<table cellspacing="0" cellpadding="0" border="0" width="100%" class="a-facetfilter">
+<tr>
+ <td nowrap="nowrap" class="select-">Показать 
+     <select name="_operator">
+      <option value="and" {{?add}}selected{{?/}} >связанные со всеми выбранными</option>
+      <option value="or"   {{?or}}selected{{?/}} >связанные хотя бы с одной из выбранных</option>
+     </select>
+ </td>
+ <td class="tag-">&nbsp;&nbsp;&nbsp;</td> 
+ <td class="w100">
+    <input type="submit" value="Показать" />
+    <input type="hidden" name="_do" value="facetfilter" />
+</div>
+</table>
+{{/Form}}
+{{/TEMPLATE:Form}}
+
+{{TEMPLATE:Results}}
+<div style="font-size:70%; padding-bottom:10px"><strong>Сводка по рубрикам:</strong> {{STRICTS}}
+(<a title="выбрать другой фильтр" href={{url}}>...</a>)
+</div>
+{{RESULTS}}
+{{/TEMPLATE:Results}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:Checkboxes}}
+<table cellspacing="2" cellpadding="0" border="0" width="100%" class="a-facetfilter">
+ {{ROWS}}
+</table>
+{{/TEMPLATE:Checkboxes}}
+{{TEMPLATE:Checkboxes_Item}}
+  <td><input type="checkbox" id="ff_{{id}}" value="z" name="_{{id}}" /></td>
+  <td width="{{pct}}%" class="tag-"><label for="ff_{{id}}" title="{{subject}}">{{tag}}</label></td>
+{{/TEMPLATE:Checkboxes_Item}}
+{{TEMPLATE:Checkboxes_Empty}}
+ Нет ни одного ключевого слова в вашем распоряжении, увы.
+ Уж извините нас, мы старались. Попробуйте смягчить условия, полить почву там, туда-сюда.
+{{/TEMPLATE:Checkboxes_Empty}}

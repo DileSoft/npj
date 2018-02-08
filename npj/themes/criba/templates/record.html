@@ -1,0 +1,94 @@
+<!-- панелька пользователя, на самом деле она будет вверху -->
+<div class="menu-block" id="menu-block">
+  {{#UserPanel}}
+</div>
+
+<div class="cbl" id="content-block"> <!-- блок "под привязанной шапкой" -->
+
+<!-- шапка -->
+ <table class="flippers" cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tr><td><img src="{{images}}z.gif" id="flipper_pic" class="block" width="45" height="1" alt="" border="0" /></td>
+   <td class="w100">
+    <div class="sitepath">
+      {{#Path}} {{?Record.Stats.ChangedDT}}({{Record.Stats.ChangedDT}}){{?/}}
+      {{??Record.Stats.Address}}
+       {{??Record.Stats.Journal1}}&mdash; <a href="{{Href:Account}}/friends">члены сообщества</a>{{??/Record.Stats.Journal1}}
+       {{??Record.Stats.Journal2}}&mdash; <a href="{{Href:Account}}/friends">состав рабочей группы</a>{{??/Record.Stats.Journal2}}
+      {{??/Record.Stats.Address}}
+    </div>
+   </td>
+    {{#ControlIcons}}
+   <td><img src="{{images}}z.gif" class="block" width="30" height="1" alt="" border="0" /></td>
+  </tr>
+ </table>
+
+<!-- враппер, который создаёт отступы слева и справа -->
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td id="wrapper_0" width="1%"><img id="wrapper_pic" src="{{images}}z.gif" class="block" width="45" height="1" alt="" border="0" /></td>
+{{?Preparsed:READABLE}}
+<td id="wrapper_1" width="70%"><img src="{{images}}z.gif" class="block" width="650" height="1" alt="" border="0" />
+{{?!Preparsed:READABLE}}
+<td id="wrapper_1" width="100%">
+{{?/}}
+<!-- (его "закрывашка" в самом низу шаблона) -->
+
+<!-- Заголовок -->
+<h1 class="title">{{Preparsed:TITLE}}{{Record.Announce.Top}}</h1>
+{{??!UserPanel.Guest}} <!-- -->
+ {{??!404}} 
+ {{??!Record.Stats.Security.IsPublic}}<div class="title-security"><b>Доступ:</b> {{Record.Stats.Security}}</div>{{??/Record.Stats.Security.IsPublic}}
+ {{??/404}} 
+{{??/UserPanel.Guest}} <!-- -->
+
+<!-- Рубрики -->
+<div class="top-ref">
+{{Record.Stats.Ref}}
+</div>
+
+{{?!Preparsed:TIGHT}}
+<br />
+{{?/}}
+
+<!-- Тело -->
+{{??Preparsed:CONTENT}}
+{{DCLICK}}
+<div class="wrapper" 
+  {{??Preparsed:TIGHT_COMMENTS}}
+    style="padding-bottom:0; margin-bottom:0"
+  {{??/Preparsed:TIGHT_COMMENTS}}
+ >
+{{Preparsed:CONTENT}}
+</div>
+{{??/Preparsed:CONTENT}}
+
+
+<!-- конец враппера -->
+</td><td><img src="{{images}}z.gif" class="block" width="30" height="1" alt="" border="0" /></td>
+</tr>
+</table>
+
+
+<!-- Рубрики для модератора -->
+{{#ModRef}}
+
+<!-- Комментарии где-то тут -->
+<a name="comments"></a>
+{{#RecordComments}}
+
+
+<!-- Подножие -->
+<div class="footer">
+{{#Debug}}
+<div class="copy-">
+<div style="float:right" >{{#KeepAlive}}</div>
+&laquo; c r i b a &raquo; &mdash; лёгкий НПЖ-дизайн.
+
+Разработчики ПО НПЖ: {{~npjdev@npj}}. Контактный E-mail: 
+<span class="nobr"><a href="mailto:info@npj.ru" title="Написать письмо
+(вызов вашей почтовой программы)"><img src="{{theme_images}}i_mail.gif" align="middle" class="mail" border="0" title="Написать письмо
+(вызов вашей почтовой программы)" alt="почта" />info@npj.ru</a></span>
+</div>
+</div>
+
+</div> <!-- конец блока "под привязанной шапкой" -->
+

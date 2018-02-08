@@ -1,0 +1,112 @@
+{{TEMPLATE:TITLE}}<!-- -->{{/TEMPLATE:TITLE}}
+
+{{TEMPLATE:BODY}}
+ <style>
+  .trako-issue h2 { padding-left:5px; margin-top:0 }
+  .trako-issue .details- .title- { font-weight:bold; 
+                                 }
+  .trako-issue .details- .data-  { border-top:1px #cdcdcd solid;
+                                   padding:5px }
+  .trako-issue .ticket- { 
+                          border-left:   1px #999999 dashed;
+                          border-right:  1px #999999 dashed;
+                          border-bottom: 1px #999999 dashed;
+                          padding:10px
+                        }
+  .trako-issue table { font-size:1em }
+  .trako-issue .header- { 
+                          border:   1px #999999 solid;
+                        }
+  .trako-issue .header- header-td- { background: #ffffff }
+  .trako-issue .header- .no- { font-size:14px; color:#FFFFFF; font-weight:bold; }
+
+  .trako-issue .header- .reporter- { font-size:100%; padding-left:10px }
+  .trako-issue .header- .ttl-      { font-size:85%; color: #777777; font-weight:bold }
+  .trako-issue .header- .ttl2-     { font-size:85%; color: #888888; }
+  .trako-issue .header- .reported- { font-size:80%; color: #777777; font-family:Tahoma }
+  .trako-issue .header- .reported2- { font-size:80%; color: #444444; font-family:Tahoma }
+  .trako-issue .header- .rubrika-  { color:#888888; font-size:95%}
+  .trako-issue .header- .cons- { font-size:85%; color: #555555; padding:0 5px 0 10px; line-height:1em;  }
+  .trako-issue .header- .cons- { color:#888888 }
+
+  .trako-issue .header- .no- { background:#999999 }
+  .trako-issue .header- td { vertical-align:middle }
+
+  .trako-issue .light- { background:#cccccc; color:#222222 }
+  .trako-issue .right- { text-align:right; }
+  .trako-issue .l10- { padding-left:10px; width:1% }
+
+  .trako-issue .priority-   { font-size:95%; background:#dddddd; }
+  .trako-issue .priority- .symbol-   { font: 14px Arial }
+  .trako-issue .severity-   { font-size:95%; background:#dddddd; color:#444444 }
+  .trako-issue .status-   { font-weight:bold; font-size:95%; }
+
+  .trako-issue .header- .titles-  { color:#888888; font-size:95%; text-align:right }
+ </style>
+ {{@styleblock.html}}
+
+<div class="trako-issue">
+  {{@interface.html:1}}
+  <table class="header-" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td class="header-td-">
+      <table cellspacing="1" cellpadding="5" border="0" width="100%">
+       <tr>
+        <td nowrap="nowrap" class="no-"><div>№&nbsp;{{issue_no_aligned}}</div></td>
+        <td colspan="4" class="rubrika- light-" width="45%">{{keywords}}</td>
+        <!--
+        <td nowrap="nowrap" class="cons- light- w100"><b>воспроизводимость:</b><br />{{consistency}}</td>
+        -->
+        <td colspan="2" class="reporter- right- light-" width="55%">
+         <span class="ttl-">репортёр:</span> {{reporter>Link:user}}
+         <nobr><span class="reported-">@ {{created_dt}}</span></nobr>
+        </td>
+       </tr>
+       <tr>
+        <td class="titles- light-">Важность:</td>
+        <td class="severity- light-" colspan="3"><b>{{severity_class_text}}</b>, {{severity_value_text}}</td>
+        <td class="rubrika- light- l10-">Приоритет:</td>
+        <td class="priority- light-bg-" nowrap="nowrap"><span class="priority-{{priority}}"><span class="symbol-">{{priority_symbol}}</span> {{priority_text}}</span></td>
+        
+        <td class="cons- light-">
+          <b>воспроизводимость: </b><nobr>{{consistency}}</nobr>
+        </td>
+       </tr>
+       <tr>
+        <td class="titles- light-">Статус:</td>
+        <td class="status- status-{{status}} state-{{state}}" >{{status_text}}</td>
+        <td class="rubrika- light- right- l10-" >разработчик:</td>
+        {{?!developer>is_none}}
+         <td class="rubrika- light-" width="30%" >{{developer>Link:user}}</td>
+        {{?developer>is_none}}
+         <td class="rubrika- light-" >не&nbsp;назначен</td>
+        {{?/}}
+        
+        <td nowrap="nowrap" colspan="3" class="reporter- right- light-">
+         <span class="ttl2-">последнее изменение сделано</span>
+         <span class="reported2-">@ {{user_dt}}</span>
+        </td>
+       </tr>
+      </table>
+      
+    </td>
+   </tr>
+  </table>
+
+  <div class="ticket-">
+    <h2>{{subject}}</h2>
+    
+    <div class="details-">
+     <div class="data-">
+       {{body}}
+     </div>
+
+     {{#InterfaceButtons}}
+
+    </div>
+  </div>
+
+  {{@self_report.html}}
+
+</div>
+{{/TEMPLATE:BODY}}

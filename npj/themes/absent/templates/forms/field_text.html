@@ -1,0 +1,78 @@
+{{TEMPLATE:HtmlArea}}
+
+{{&js:htmlarea}}
+{{&js:word_cleaner}}
+{{&js:os_templates}}
+{{&js:os_functions}}
+{{&js:os_config}}
+{{&onload:forms/field_text.html:HtmlArea_Onload}}
+{{&script:forms/field_text.html:HtmlArea_Init}}
+
+<script type="text/javascript">
+ var _thiscfg = hmaProduceConfig();
+ _thiscfg.JsHeight = '{{__height_px}}';
+
+ {{__modals}}
+
+ editors.push( new HTMLArea('{{_Field}}',_thiscfg) );
+ editors_plugins.push('TableOperations,ContextMenu');
+ HTMLArea.loadPlugin("TableOperations");
+ HTMLArea.loadPlugin("ContextMenu");
+ var _project_url = '{{cms/}}';
+</script>
+<textarea name="{{_Field}}" 
+          rows="{{__rows}}" cols="{{__cols}}" 
+          class="w100" style='height:{{__height_px}}' 
+          wrap="soft" 
+          id="{{_Field}}">
+<html>
+<head>
+<base href="{{Host}}" />
+<style>
+table {border-collapse:collapse}
+table td, table th{ border:1px solid #000000}
+
+body {padding:5px;}
+</style>
+</head>
+<body class='wrapper'>
+{{?_Value}}
+ {{_Value}}
+{{?!_Value}}
+ <p></p>
+{{?/_Value}}
+</body>
+</html>
+</textarea>
+
+{{/TEMPLATE:HtmlArea}}
+
+{{TEMPLATE:HtmlArea_modal}}
+{{TEMPLATE:HtmlArea_modal_Item}}
+ _thiscfg.registerButton({
+   id        : "button_{{_Href}}",
+   tooltip   : "{{_Text}}",
+   image     : _editor_url + "images/{{_Href}}.gif",
+   textMode  : false,
+   action    : function(editor, id) { JSTInsert( editor, "{{_Href}}" ) }
+ }); 
+ var bar = _thiscfg.toolbar[_thiscfg.toolbar.length-1];
+ bar[bar.length] = bar[bar.length-1]; bar[bar.length-2] = bar[bar.length-3]; 
+ bar[bar.length-3] = "button_{{_Href}}";
+{{/TEMPLATE:HtmlArea_modal_Item}}
+{{/TEMPLATE:HtmlArea_modal}}
+
+{{TEMPLATE:HtmlArea_modal_Empty}}
+{{/TEMPLATE:HtmlArea_modal_Empty}}
+
+{{TEMPLATE:HtmlArea_Onload}}
+  GenerateEditors(editors,editors_plugins);tpl.Load();
+{{/TEMPLATE:HtmlArea_Onload}}
+
+{{TEMPLATE:HtmlArea_Init}}
+  var editors = new Array();
+  var editors_plugins = new Array();
+  _editor_lang = "ru";
+  _editor_url = "{{HtmlArea}}";
+  _base_url = "{{project_url}}";
+{{/TEMPLATE:HtmlArea_Init}}

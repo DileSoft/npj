@@ -1,0 +1,31 @@
+{{TEMPLATE:Arrows}}
+<style>
+.arrows-current { font-weight:bold; color:#999999 }
+</style>
+Страницы: {{PagesList}}
+{{ PageNo}} {{ PageCount}}
+{{/TEMPLATE:Arrows}}
+{{TEMPLATE:Arrows_Empty}}
+{{/TEMPLATE:Arrows_Empty}}
+
+
+{{TEMPLATE:PagesList}}
+  {{?PagePrev}}
+   [<a title="К предыдущей странице" href="{{Url}}{{Link:PagePrev}}">&laquo;</a>]
+  {{?/PagePrev}}
+
+  {{TEMPLATE:PagesList_Item}}
+    {{?_Current}}  <span class="arrows-current">{{_PageNo}}</span>
+    {{?!_Current}} <a title="страница {{_PageNo}}" href="{{Url}}{{Link:_PageNo}}">{{_PageNo}}</a>
+    {{?/_Current}}
+  {{/TEMPLATE:PagesList_Item}}
+
+  {{?PageNext}}
+   <a title="К следующей странице" href="{{Url}}{{Link:PageNext}}">Следующая &rarr;</a>
+  {{?/PageNext}}
+{{/TEMPLATE:PagesList}}
+
+
+{{TEMPLATE:PagesList_Empty}}
+{{ PageAllInOne}}
+{{/TEMPLATE:PagesList_Empty}}

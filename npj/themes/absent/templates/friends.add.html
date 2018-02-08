@@ -1,0 +1,106 @@
+{{TEMPLATE:Main}}
+{{Form:Add}}
+
+{{ERROR}}
+
+<table cellspacing="5" cellpadding="0" border="0" align="center">
+<tr><td><input type="" name="_user" size="40" maxlen="42" value="{{$Npj:Friend}}"></td>
+    <td><input type="submit" value="Добавить его!" /></td>
+</tr>
+</table>
+
+<div class="friends_text">
+Если вы нажмёте на кнопку, вы добавите пользователя, НпжАдрес которого указан чуть выше в группы, которые
+помечены галочкой чуть ниже. Вы ещё можете изменить расстановку галочек, точно.
+{{?IsFriendAlready}}
+  <br />
+  <div class="friends__hint">
+  Серый фон вокруг галочек показывает, что этот пользователь уже занесён в соответствующую группу.
+  Убрав там галочку, вы вычеркнете пользователя из этой группы.
+  </div>
+{{?/IsFriendAlready}}
+</div>
+
+<table cellspacing="10" cellpadding="0" border="0" width="100%">
+<tr>
+ <td width="50%">
+  {{List0}}
+ </td>
+  <td class="br"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></td>
+ <td width="50%">
+  {{List1}}
+ </td>
+</tr>
+</table>
+
+{{/Form}}
+{{/TEMPLATE:Main}}
+
+
+{{TEMPLATE:All}}
+<table cellspacing="2" cellpadding="0" border="0" align="center">
+   <tr>
+    <td><div class="friends_checkbox{{All.Checked}}"><input type="checkbox" CHECKED name="_group_{{All.ID}}" id="idgrp_{{All.ID}}" /></div></td>
+    <td class="friends_group_all"><label for="idgrp_{{All.ID}}">{{All.Name}}</label>
+   </tr>
+</table>
+{{/TEMPLATE:All}}
+
+{{TEMPLATE:Groups}}
+  {{@friends.add.html:All}}
+  <table cellspacing="0" cellpadding="0" border="0" align="center" >
+  {{TEMPLATE:Groups_Item}}
+   <tr>
+    <td><div class="friends_checkbox{{_Title}}"><input type="checkbox" {{_Title}} name="_group_{{_Href}}" id="idgrp_{{_Href}}"/></div></td>
+    <td class="friends_group_name"><label for="idgrp_{{_Href}}">{{_Text}}</label></td>
+   </tr>
+  {{/TEMPLATE:Groups_Item}}
+  </table>
+{{/TEMPLATE:Groups}}
+
+{{TEMPLATE:Groups_Empty}}
+  {{@friends.add.html:All}}
+<div class="friends_group_none">
+Ещё не создано подгрупп. <br />
+Вы можете <a href="{{Href:Account}}/friends/groups/edit/{{All.Rank}}">создать</a>
+{{?AreConfidents}}
+парочку, чтобы было проще выделять права доступа.
+{{?/AreConfidents}}
+{{?AreReporters}}
+парочку, чтобы было проще просматривать ленты.
+{{?/AreReporters}}
+
+</div>
+{{/TEMPLATE:Groups_Empty}}
+
+{{TEMPLATE:Error}}
+<div class="error">
+  {{?IsForeign}}
+    Пользователь {{Npj:Friend}} &mdash; с другого узла и ни разу у нас не был.
+    <br />
+    <br />
+    Попросите его зайти на наш узел, чтобы наша система о нём узнала.
+    <br />
+    Тогда Вы сможете добавить его себе в конфиденты или корреспонденты.
+    <br />
+    Просто пришлите ему эту ссылку: <a href="{{Href:authto}}">{{Href:authto}}</a>
+  {{?!IsForeign}}
+    Пользователь {{Npj:Friend}} неизвестен системе, 
+    поэтому не может быть добавлен в списки конфидентов или корреспондентов.
+  {{?/}}
+</div><br />
+{{/TEMPLATE:Error}}
+
+
+{{TEMPLATE:Done}}
+Ура!
+Пользователь <a href="{{Href:Friend}}">{{Npj:Friend}}</a> успешно добавлен в ваши друзья (конфиденты, корреспонденты или и то и другое).
+<br /><br />
+<strong>Что вы сейчас можете сделать, так это:</strong>
+<ul>
+ <li>ещё <a href="{{Href:Account}}/friends/add">кого-нибудь добавить</a>;</li>
+ <li>почитать <a href="{{Href:Account}}/friends">ленту корреспондентов</a>;</li>
+ <li><a href="{{Href:Account}}/friends/groups/edit">распределить друзей по группам</a>;</li>
+ <li>или <a href="{{Href:Account}}/friends/edit">вычеркнуть</a> кого-нибудь.</li>
+</ul>
+{{/TEMPLATE:Done}}

@@ -1,0 +1,27 @@
+{{TEMPLATE:Item}}
+  <div>
+   <div>
+   <span style="font:11px Tahoma; color:#666666">@{{user_datetime}}</span>
+   <b><a href="{{Href:tag}}">{{subject}}</a></b>
+   </div>
+   <div style="margin:2px 0px 10px">{{Digest:body}}</div>
+  </div>
+{{/TEMPLATE:Item}}
+
+{{TEMPLATE:List}}
+ <ul>
+ <!-- -->
+ {{TEMPLATE:List_Item}}   <!-- -->
+  <li>
+   {{Digest:compiled}}     <!-- -->
+  </li>
+ {{/TEMPLATE:List_Item}}
+ <!-- -->
+ </ul>
+{{/TEMPLATE:List}}
+
+{{TEMPLATE:List_Empty}}
+<div>
+«а указанный период сообщений не было
+</div>
+{{/TEMPLATE:List_Empty}}

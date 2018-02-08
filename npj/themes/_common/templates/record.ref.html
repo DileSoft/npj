@@ -1,0 +1,53 @@
+{{TEMPLATE:Keywords}}
+  <div>
+  <strong>Рубрики:</strong>
+    {{TEMPLATE:Keywords_Item}}<a href="{{href}}">{{subject}}</a>{{/TEMPLATE:Keywords_Item}}
+  </div>
+{{/TEMPLATE:Keywords}}
+{{TEMPLATE:Keywords_Empty}} {{/TEMPLATE:Keywords_Empty}}
+{{TEMPLATE:Keywords_Separator}}, {{/TEMPLATE:Keywords_Separator}}
+
+
+{{TEMPLATE:Communities}}
+  <div>
+  <strong>Опубликовано в:</strong>
+    {{TEMPLATE:Communities_Item}}{{Link:account}}{{?announce}}&nbsp;(как&nbsp;анонс){{?/}}{{/TEMPLATE:Communities_Item}}
+  </div>
+{{/TEMPLATE:Communities}}
+{{TEMPLATE:Communities_Empty}} {{/TEMPLATE:Communities_Empty}}
+{{TEMPLATE:Communities_Separator}}, {{/TEMPLATE:Communities_Separator}}
+
+{{TEMPLATE:Moderate}}
+<div class="body-panel">
+  <div class="body-panel-title">
+    Опубликовано:
+  </div>
+  <div class="body-panel-info-bottom">
+    <ul>
+    {{TEMPLATE:Moderate_Item}}
+     <li>
+      {{?!is_mod}} {{Link:account}} {{??announce}}<b>&nbsp;(как&nbsp;анонс)</b>{{??/announce}} &#151; {{user_name}}  {{?/}}
+      {{?need_mod}}  
+        <div class="need-mod-">
+        {{Link:account}} {{??announce}}&nbsp;(как&nbsp;анонс){{??/announce}} &#151; <b>{{user_name}}</b> &#151; <strong>нужна модерация</strong>
+        <form method="post" action="{{Href:account}}/manage/moderate/{{Record.Stats.Ref.RecordId}}">
+         <input class="confirm-" type="submit" name="approve" value="Подтвердить" />
+         &nbsp;или&nbsp;
+         <input class="decline-"type="submit" name="decline" value="Отклонить" />
+         или <a href="{{Href:account}}/ban/{{Npj:Account}}">забанить {{Npj:Account}}</a>
+        </form>
+        </div>
+      {{?/}}
+      {{?done_mod}}  {{Link:account}} &#151; <b>{{user_name}}</b> &#151; отмодерировано 
+                     (<b><a href="{{href}}/manage/moderate/{{Record.Stats.Ref.RecordId}}">отклонить</a></b>
+                     |
+                     <a href="{{href}}/manage/moderate/{{Record.Stats.Ref.RecordId}}/reset">временно сбросить</a>){{?/}}
+     </li>
+    {{/TEMPLATE:Moderate_Item}}
+    </ul>
+  </div>
+  <br clear="all" /><br />
+</div>
+{{/TEMPLATE:Moderate}}
+{{TEMPLATE:Moderate_Empty}}
+{{/TEMPLATE:Moderate_Empty}}

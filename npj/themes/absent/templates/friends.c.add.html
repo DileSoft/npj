@@ -1,0 +1,158 @@
+{{TEMPLATE:Main1}}
+{{Form:Add}}
+
+{{ERROR}}
+
+<table cellspacing="5" cellpadding="0" border="0" align="center">
+<tr><td><input type="" name="_user" size="40" maxlen="42" value="{{$Npj:Friend}}"></td>
+    <td><input type="submit" value="Добавить его!" /></td>
+</tr>
+<tr><td colspan="2">
+  {{Groups}}
+</td>
+</tr>
+</table>
+
+<div class="friends_text">
+Если вы нажмёте на кнопку, вы добавите пользователя, НпжАдрес которого указан чуть выше, в сообщество.
+{{?IsFriendAlready}}
+  <br />
+  <div class="friends__hint">
+  Этот пользователь, надо заметить, уже <strong>состоит в&nbsp;сообществе</strong>, его текущий статус
+  указан выше.
+  </div>
+{{?/IsFriendAlready}}
+</div>
+{{/Form}}
+{{/TEMPLATE:Main1}}
+
+
+
+{{TEMPLATE:Main2}}
+{{Form:Add}}
+{{ERROR}}
+<table cellspacing="5" cellpadding="0" border="0" align="center">
+<tr><td><input type="" name="_user" size="40" maxlen="42" value="{{$Npj:Friend}}"></td>
+    <td><input type="submit" value="Добавить его!" /></td>
+</tr>
+<tr><td colspan="2">
+  {{Groups}}
+</td>
+</tr>
+</table>
+
+<div class="friends_text">
+Если вы нажмёте на кнопку, вы добавите пользователя, НпжАдрес которого указан чуть выше, в рабочую группу.
+{{?IsFriendAlready}}
+  <br />
+  <div class="friends__hint">
+  Этот пользователь, надо заметить, уже <strong>состоит в&nbsp;рабочей группе</strong>, его текущий статус
+  указан выше.
+  </div>
+{{?/IsFriendAlready}}
+</div>
+{{/Form}}
+{{/TEMPLATE:Main2}}
+
+<!------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------>
+{{TEMPLATE:Groups}}
+<div class="friends_group_name">
+Добавить в:
+</div>
+  <table cellspacing="0" cellpadding="0" border="0" >
+  {{TEMPLATE:Groups_Item}}
+   <tr>
+    <td><div class="friends_checkbox{{_Title}}">
+        <input type="radio" {{_Title}} name="_group" value="{{_Href}}" id="idgrp_{{_Href}}"/></div></td>
+    <td class="friends_group_name{{_Title}}"><label for="idgrp_{{_Href}}">{{_Text}}</label></td>
+   </tr>
+  {{/TEMPLATE:Groups_Item}}
+  </table>
+{{/TEMPLATE:Groups}}
+{{TEMPLATE:Groups_Empty}}
+<div class="friends_group_none">
+(что-то невероятное случилось. Системных групп нет)
+</div>
+{{/TEMPLATE:Groups_Empty}}
+  {{TEMPLATE:Groups_Item_Current}}
+   <tr>
+    <td><div class="friends_checkbox{{_Title}}">
+        <input type="radio" CHECKED {{_Title}} name="_group" value="{{_Href}}" id="idgrp_{{_Href}}"/></div></td>
+    <td class="friends_group_name{{_Title}}"><label for="idgrp_{{_Href}}">{{_Text}}</label>&nbsp;</td>
+   </tr>
+  {{/TEMPLATE:Groups_Item_Current}}
+
+
+<!------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------>
+{{TEMPLATE:Error}}
+<div class="error">
+  {{?IsForeign}}
+    Пользователь {{Npj:Friend}} &mdash; с другого узла и ни разу у нас не был.
+    <br />
+    <br />
+    Попросите его зайти на наш узел, чтобы наша система о нём узнала.
+    <br />
+    Тогда Вы сможете добавить его себе в члены сообщества/группы.
+    <br />
+    Просто пришлите ему эту ссылку: <a href="{{Href:authto}}">{{Href:authto}}</a>
+  {{?!IsForeign}}
+    Пользователь {{Npj:Friend}} неизвестен системе, 
+    поэтому не может быть добавлен в сообщество никоим образом.
+  {{?/}}
+</div><br />
+{{/TEMPLATE:Error}}
+
+
+<!------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------>
+{{TEMPLATE:Done1}}
+Ура!
+Пользователь <a href="{{Href:Friend}}">{{Npj:Friend}}</a> стал каким-то членом вашего сообщества.
+<br /><br />
+<strong>Что вы сейчас можете сделать, так это:</strong>
+<ul>
+ <li>ещё <a href="{{Href:Account}}/friends/add">кого-нибудь добавить</a>;</li>
+ <li>или <a href="{{Href:Account}}/friends/edit">вычеркнуть или понизить</a> кого-нибудь или всех сразу.</li>
+</ul>
+{{/TEMPLATE:Done1}}
+{{TEMPLATE:Done2}}
+Ура!
+Пользователь <a href="{{Href:Friend}}">{{Npj:Friend}}</a> стал каким-то членом вашей рабочей группы.
+<br /><br />
+<strong>Что вы сейчас можете сделать, так это:</strong>
+<ul>
+ <li>ещё <a href="{{Href:Account}}/friends/add">кого-нибудь добавить</a>;</li>
+ <li>или <a href="{{Href:Account}}/friends/edit">вычеркнуть или понизить</a> кого-нибудь или всех сразу.</li>
+</ul>
+{{/TEMPLATE:Done2}}
+
+<!------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------>
+{{TEMPLATE:DoneRemove1}}
+Ура!
+Пользователь <a href="{{Href:Friend}}">{{Npj:Friend}}</a> исключён из сообщества.
+<br /><br />
+<strong>Что вы сейчас можете сделать, так это:</strong>
+<ul>
+ <li><a href="{{Href:Account}}/friends/edit">вычеркнуть или понизить</a> кого-нибудь или всех сразу.</li>
+</ul>
+{{/TEMPLATE:DoneRemove1}}
+{{TEMPLATE:DoneRemove2}}
+Ура!
+Пользователь <a href="{{Href:Friend}}">{{Npj:Friend}}</a> исключён из рабочей группы.
+<br /><br />
+<strong>Что вы сейчас можете сделать, так это:</strong>
+<ul>
+ <li><a href="{{Href:Account}}/friends/edit">вычеркнуть или понизить</a> кого-нибудь или всех сразу.</li>
+</ul>
+{{/TEMPLATE:DoneRemove2}}
+<!------------------------------------------------------------------------------------>
+{{TEMPLATE:UserFrozen}}
+<div class="error">
+Аккаунт пользователя {{Npj:Friend}} заморожен в системе,
+поэтому не может быть добавлен в сообщество никоим образом.
+
+</div><br />
+{{/TEMPLATE:UserFrozen}}

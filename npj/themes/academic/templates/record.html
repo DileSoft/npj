@@ -1,0 +1,80 @@
+
+<!-- панелька пользователя, вверху -->
+{{#UserPanel}}
+{{#UserPanelTop}}
+
+<!-- шапка -->
+<div class="sitepath">
+  {{#Path}} {{?Record.Stats.ChangedDT}}({{Record.Stats.ChangedDT}}){{?/}}
+      {{??Record.Stats.Address}}
+       {{??Record.Stats.Journal1}}&mdash; <a href="{{Href:Account}}/friends">члены сообщества</a>{{??/Record.Stats.Journal1}}
+       {{??Record.Stats.Journal2}}&mdash; <a href="{{Href:Account}}/friends">состав рабочей группы</a>{{??/Record.Stats.Journal2}}
+      {{??/Record.Stats.Address}}
+</div>
+
+
+
+<!-- враппер, который создаёт отступы слева и справа -->
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td id="wrapper_0" width="1%"><img id="wrapper_pic" src="{{images}}z.gif" class="block" width="15" height="1" alt="" border="0" /></td>
+<td id="wrapper_1" width="100%">
+<!-- (его "закрывашка" в самом низу шаблона) -->
+
+<!-- Заголовок -->
+<h1 class="title">{{Preparsed:TITLE}}{{Record.Announce.Top}}</h1>
+{{??!UserPanel.Guest}} <!-- -->
+ {{??!404}} 
+ {{??!Record.Stats.Security.IsPublic}}<div class="title-security"><b>Доступ:</b> {{Record.Stats.Security}}</div>{{??/Record.Stats.Security.IsPublic}}
+ {{??/404}} 
+{{??/UserPanel.Guest}} <!-- -->
+
+
+
+<!-- Рубрики -->
+<div class="top-ref">
+{{Record.Stats.Ref}}
+</div>
+
+{{?!Preparsed:TIGHT}}
+<br />
+{{?/}}
+
+<!-- Тело -->
+{{?Preparsed:CONTENT}}
+{{DCLICK}}
+<div class="wrapper">
+{{Preparsed:CONTENT}}
+</div>
+{{?/}}
+
+
+<!-- конец враппера -->
+</td><td><img src="{{images}}z.gif" class="block" width="30" height="1" alt="" border="0" /></td>
+</tr>
+</table>
+
+
+<!-- Рубрики для модератора -->
+{{#ModRef}}
+
+<!-- Комментарии где-то тут -->
+<a name="comments"></a>
+{{#RecordComments}}
+
+
+
+<!-- что можно сделать тут -->
+<div class="control-icons"><strong>Что можно сделать</strong>{{#ControlIcons}}</div>
+
+<!-- панелька пользователя, внизу -->
+{{#UserPanelBottom}}
+
+
+<!-- Подножие -->
+<div class="footer">
+<div class="copy-">
+<div style="float:right" >{{#KeepAlive}}</div>
+НПЖ &laquo; a c a d e m i c &raquo; 
+</div>
+</div>
+

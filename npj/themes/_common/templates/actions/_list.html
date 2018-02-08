@@ -1,0 +1,99 @@
+{{TEMPLATE:Item}}
+ {{?is_empty1}}
+    {{non_empty_subject}}&nbsp;{{content_count}} <small class="tree-create">&#151; <a href="{{Href:add}}">создать</a> </small>
+ {{?is_not_digest}}
+    {{non_empty_subject}}&nbsp;{{content_count}} <small class="tree-create">&#151; не дайджест</small>
+ {{?!is_empty}}
+    <a href="{{Href:tag}}">{{non_empty_subject}}</a> {{content_count}}
+ {{?/}}
+{{/TEMPLATE:Item}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:List_ul}}
+<ul class="tree">
+ {{TEMPLATE:List_ul_Item}}
+  <li>{{@actions/_list.html:Item}}</li>
+  {{childs}}
+ {{/TEMPLATE:List_ul_Item}}
+</ul>
+{{@actions/_prevnext.html:PrevNext}}
+{{/TEMPLATE:List_ul}}
+{{TEMPLATE:List_ul_Empty}}
+<div class="tree-none">{{data_empty}}</div>
+{{/TEMPLATE:List_ul_Empty}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:List_ol}}
+<ol class="tree">
+ {{TEMPLATE:List_ol_Item}}
+  <li>{{@actions/_list.html:Item}}</li>
+  {{childs}}
+ {{/TEMPLATE:List_ol_Item}}
+</ol>
+{{@actions/_prevnext.html:PrevNext}}
+{{/TEMPLATE:List_ol}}
+{{TEMPLATE:List_ol_Empty}}
+<div class="tree-none">{{data_empty}}</div>
+{{/TEMPLATE:List_ol_Empty}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:List_indent}}
+<div class="tree">
+ {{TEMPLATE:List_indent_Item}}
+  <a class="index-letter-a" name="letter_{{id}}">{{letter}}</a>
+  <div class="indent-">{{@actions/_list.html:Item}}
+    {{childs}}
+  </div>
+ {{/TEMPLATE:List_indent_Item}}
+</div>
+{{@actions/_prevnext.html:PrevNext}}
+{{/TEMPLATE:List_indent}}
+{{TEMPLATE:List_indent_Empty}}
+<div class="tree-none">{{data_empty}}</div>
+{{/TEMPLATE:List_indent_Empty}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:List_br}}
+<div class="tree">
+ {{TEMPLATE:List_br_Item}}
+  <a class="index-letter-a" name="letter_{{id}}">{{letter}}</a>
+  {{@actions/_list.html:Item}}<br />
+  {{childs}}
+ {{/TEMPLATE:List_br_Item}}
+</div>
+{{@actions/_prevnext.html:PrevNext}}
+{{/TEMPLATE:List_br}}
+{{TEMPLATE:List_br_Empty}}
+<div class="tree-none">{{data_empty}}</div>
+{{/TEMPLATE:List_br_Empty}}
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:NotFound}}
+<div class="tree-none">{{data_empty}}</div>
+{{/TEMPLATE:NotFound}}
+
+
+
+
+
+
+<!------------------------------------------------------------------------->
+{{TEMPLATE:List_context}}
+ {{TEMPLATE:List_context_Item}}
+  <div class="link-">
+  {{@actions/_list.html:Item}}
+  </div>
+  {{childs}}
+ {{/TEMPLATE:List_context_Item}}
+{{/TEMPLATE:List_context}}
+{{TEMPLATE:List_context_Empty}}
+<div class="link-">
+{{data_empty}}
+</div>
+{{/TEMPLATE:List_context_Empty}}
+

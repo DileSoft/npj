@@ -1,0 +1,238 @@
+{{TEMPLATE:Body}}
+<style>
+
+  .trako-filter table { font-size:1em }
+  .trako-filter .br- { background:#cccccc; width:1px }
+  .trako-filter .part- { width:27%; font-size:90% }
+  .trako-filter .part2- { width:22%; font-size:90% }
+  .trako-filter .part1- { width:55%; font-size:90% }
+  .trako-filter .title- { font-weight:bold; color:#999999 }
+  .trako-filter .middle- { vertical-align:middle }
+
+  .trako-filter .button- { text-align:right; padding:0 5px }
+
+  .trako-filter .header- { padding:3px 5px; background: #999999; color:#ffffff; cursor:pointer; cursor:hand }
+  .trako-filter .header- a:link    { text-decoration:underline; color:#ffffff }
+  .trako-filter .header- a:visited { text-decoration:underline; color:#ffffff }
+  .trako-filter .header- a:hover   { text-decoration:underline; color:#333333 }
+  .trako-filter .header- a:active  { text-decoration:underline; color:#000000 }
+
+  .trako-filter .body- { background:#eeeeee }
+
+  img.1x1 { display:block; width:1px; height:1px; border:0 }
+</style>
+
+<script language="Javascript">
+  function trako_filter_flip()
+  {
+    var div = document.getElementById("trako_filter_body");
+    if (!div) return false;
+    if (div.className == "hidden") div.className = "visible";
+    else                           div.className = "hidden";
+    return false;
+  }
+</script>
+{{Form:Filter}}
+<div class="trako-filter">
+ <div onclick="trako_filter_flip();" class="header-" title="Свернуть/развернуть панель фильтра">
+  <b><a href="javascript:;" title="Свернуть/развернуть панель фильтра"
+        onclick="return false;">Настройки фильтра трекера</a></b>
+ </div>
+ <div id="trako_filter_body" {{?!show_filter}}class="hidden"{{?/}} >
+ <div class="body-">
+    <table cellspacing="5" cellpadding="0" border="0" width="100%">
+     <tr>
+      <td class="part1-">
+        {{@filter.html:Category}}
+        <hr />
+        <table cellspacing="3" cellpadding="0" border="0" width="100%">
+         <tr>
+          <td class="w100">{{Rendered:severities}}</td>
+          <td>{{@dummy.html}}</td>
+          <td class="br-">{{@dummy.html}}</td>
+          <td>{{@dummy.html}}</td>
+          <td>{{Rendered:priorities}}</td>
+        </table>
+      </td>
+      <td class="br-">{{@dummy.html}}</td>
+      <td class="part2-">
+        <table cellspacing="2" cellpadding="0" border="0" width="100%">
+         {{Rendered:reporters}}
+         {{Rendered:developers}}
+        </table>
+        <hr />
+        {{@filter.html:PageSize}}
+      </td>
+      <td class="br-">{{@dummy.html}}</td>
+      <td class="part-">
+        {{Rendered:status}}
+        {{Rendered:hide_states}}
+        <hr />
+        <div class="button-">
+         <input type="submit" value="    Показать   " />
+        </div>
+      </td>
+     </tr>
+    </table>
+  </div>
+  </div>
+</div>
+</form>
+{{/TEMPLATE:Body}}
+
+<!-- ------------------------------------------------------------------------------------- -->
+{{TEMPLATE:PageSize}}
+        <div class="title-">&nbsp;По сколько показывать:</div>
+        <table cellspacing="2" cellpadding="0" border="0" width="100%">
+         <tr>
+          <td nowrap="nowrap" class="middle- w100">На странице по</td>
+          <td><input type="text" size="2" name="page_size" value="{{page_size}}" /></td>
+          <td class="middle-">шт.</td>
+         </tr>
+         <tr>
+          <td nowrap="nowrap" class="middle- w100">Изменения за</td>
+          <td><input type="text" size="2" name="time_limit" value="{{time_limit}}" /></td>
+          <td class="middle-">часов</td>
+         </tr>
+        </table>
+{{/TEMPLATE:PageSize}}
+
+<!-- ------------------------------------------------------------------------------------- -->
+{{TEMPLATE:Statuses}}
+  <div class="title-">Статус:</div>
+  <select class="w100" name="status">
+  {{TEMPLATE:Statuses_Item}}
+    <option value="{{status_value}}"
+      {{?is_selected}}selected="selected"{{?/}}
+     >{{status_name}}</option>
+  {{/TEMPLATE:Statuses_Item}}
+  </select>
+{{/TEMPLATE:Statuses}}
+{{TEMPLATE:Statuses_Empty}} {{/TEMPLATE:Statuses_Empty}}
+
+<!-- ------------------------------------------------------------------------------------- -->
+{{TEMPLATE:HideStates}}
+  <div class="title-">Скрыть:</div>
+  <table cellspacing="0" cellpadding="0" border="0" width="100%">
+  {{TEMPLATE:HideStates_Item}}
+         <tr>
+          <td><input type="checkbox" name="{{state_value}}" id="chk_state_{{state_value}}" 
+                     {{?is_selected}}checked="checked"{{?/}}
+               /></td>
+          <td class="middle- w100"><label for="chk_state_{{state_value}}">{{state_name}}</label></td>
+         </tr>
+  {{/TEMPLATE:HideStates_Item}}
+  </table>
+{{/TEMPLATE:HideStates}}
+{{TEMPLATE:HideStates_Empty}} {{/TEMPLATE:HideStates_Empty}}
+
+<!-- ------------------------------------------------------------------------------------- -->
+{{TEMPLATE:Severity}}
+  <div class="title-">Важность:&nbsp;</div>
+  <select class="w100" name="severity">
+  {{TEMPLATE:Severity_Item}}
+    <option value="{{severity_value}}"
+      {{?is_selected}}selected="selected"{{?/}}
+     >{{severity_name}}</option>
+  {{/TEMPLATE:Severity_Item}}
+  </select>
+{{/TEMPLATE:Severity}}
+{{TEMPLATE:Severity_Empty}} {{/TEMPLATE:Severity_Empty}}
+
+
+<!-- ------------------------------------------------------------------------------------- -->
+{{TEMPLATE:Priorities}}
+  <div class="title-">Приоритет:&nbsp;</div>
+  <select name="priority">
+  {{TEMPLATE:Priorities_Item}}
+    <option value="{{prio_value}}"
+      {{?is_selected}}selected="selected"{{?/}}
+     >{{prio_name}}</option>
+  {{/TEMPLATE:Priorities_Item}}
+  </select>
+{{/TEMPLATE:Priorities}}
+{{TEMPLATE:Priorities_Empty}} {{/TEMPLATE:Priorities_Empty}}
+
+
+<!-- ------------------------------------------------------------------------------------- -->
+{{TEMPLATE:Reporters}}
+  <tr><td class="middle- title-">Репортёр:&nbsp;</div></td>
+      <td class="w100">
+        <select class="w100" name="reporter">
+        {{TEMPLATE:Reporters_Item}}
+          <option value="{{user_id}}"
+            {{?is_selected}}selected="selected"{{?/}}
+            ><!-- -->
+             {{?is_empty}}{{!Trako.filter_none}}<!-- -->
+             {{?!is_empty}}{{login}}@{{node_id}}<!-- -->
+             {{?/}}<!-- -->
+           </option>
+        {{/TEMPLATE:Reporters_Item}}
+        </select>
+      </td>
+  </tr>
+{{/TEMPLATE:Reporters}}
+{{TEMPLATE:Reporters_Empty}} {{/TEMPLATE:Reporters_Empty}}
+
+
+<!-- ------------------------------------------------------------------------------------- -->
+{{TEMPLATE:Developers}}
+  <tr><td class="middle- title-">Назначен:&nbsp;</div></td>
+      <td class="w100">
+        <select class="w100" name="developer">
+        {{TEMPLATE:Developers_Item}}
+          <option value="{{dev_value}}"
+            {{?is_selected}}selected="selected"{{?/}}
+            >{{dev_name}}</option>
+        {{/TEMPLATE:Developers_Item}}
+        </select>
+      </td>
+  </tr>
+{{/TEMPLATE:Developers}}
+{{TEMPLATE:Developers_Empty}} {{/TEMPLATE:Developers_Empty}}
+
+
+
+<!-- ------------------------------------------------------------------------------------- -->
+{{TEMPLATE:Category}}
+  <table cellspacing="3" cellpadding="0" border="0" width="100%">
+   <tr><td class="middle- title-">Метод&nbsp;выборки:</td>
+       <td class="w100">
+        <select onchange="trako_rubrika_category_rebuild(this.options(this.selectedIndex).value)" 
+                class="w100" name="method">
+          <option {{?method_selected_or}}    selected="selected"{{?/}} value="or" >[OR] - Есть хотя бы в одной</option>
+          <option {{?method_selected_and}}   selected="selected"{{?/}} value="and">[AND] - Обязательно во всех</option>
+          <option {{?method_selected_facet}} selected="selected"{{?/}} value="facet">[FACET] - Фасетная рубрикация</option>
+        </select>
+       </td>
+  </tr></table>
+
+  <style>
+    .rubrika iframe.normal  { width:100%; height:115px }
+    .rubrika iframe.only    { width:100%; height:170px }
+  </style>
+  <div class="title-">&nbsp;Категории:</div>
+  <div id="rubrika_category"></div>
+  <input type="hidden" name="for"  id="id_category" value="{{for_selected}}" />
+  <input type="hidden" name="_for" id="id_category_all" value="{{for_all}}" />
+
+  <script src="{{theme}}/js/rubrika-2-01-imploded.js" language="Javascript"></script>
+  <script language="Javascript">
+    trako_rubrika_category_rebuild( "{{method}}" );
+
+    function trako_rubrika_category_rebuild( method )
+    {
+      var div = document.getElementById( "rubrika_category" );
+      div.innerHTML = "";
+      if (method == "facet")
+        document.rubrika_category_ctrl = new Rubrika( );
+      else
+        document.rubrika_category_ctrl = new Rubrika( "no facets", "Выбрать категории");
+      document.rubrika_category_ctrl.strict_no_add = true;
+      document.rubrika_category_ctrl.Init( "rubrika_category", false, "id_category", "id_category_all" );
+    }
+  </script>
+
+{{/TEMPLATE:Category}}
+
+

@@ -1,0 +1,261 @@
+{{TEMPLATE:Main0}}
+
+<script>
+function State(id, to) 
+{
+ var f = document.forms.the_form;
+ if (to==1) 
+ {
+  if (f.elements["delete_"+id].checked)
+  {
+   f.elements["add_0_"+id].checked = false;
+   f.elements["add_1_"+id].checked = false;
+  } 
+  else
+  {
+   f.elements["add_0_"+id].checked = true;
+   f.elements["add_1_"+id].checked = true;
+  } 
+ }
+ else
+ {
+  if (f.elements["add_0_"+id].checked || f.elements["add_1_"+id].checked)
+  {
+   f.elements["delete_"+id].checked = false;
+  } 
+  else
+  {
+   f.elements["delete_"+id].checked = true;
+  } 
+ }
+}
+</script>
+
+{{Form:Groups}} <input type="hidden" name="do" value="store" />
+<div class="friends_text">
+Здесь перечислены пользователи, входящие хотя бы в одну группу конфидентов/корреспондентов.
+Расставляя галочки, вы можете изменить ситуацию. Запросто.
+  <br />
+  <div class="friends__hint">
+  Серый фон вокруг галочек показывает, что этот пользователь уже занесён в соответствующую группу.
+  Убрав там галочку, вы вычеркнете пользователя из этой группы.
+  </div>
+  <br />
+<small><strong>Показывать только:&nbsp;</strong> {{GroupRanks}}</small>
+</div>
+
+
+<table class="friends_grid" cellspacing="2" cellpadding="3" border="0" align="center">
+<thead><tr>  <td>Пользователь</td><td>Имя</td>{{TitleTD}}
+<td style="background:#ff8888"><div style="color:#ffffff" class="friends_titles">Удалить</div></td>  </tr></thead>
+<tbody>      {{UserList}}  </tbody>
+<tfoot><tr>  <td colspan="2"><a href="{{Href:Account}}/friends/add">Добавить ещё...</a></td>
+ <td colspan="{{ButtonColSpan}}">
+ <input type="submit" value="Сохранить изменения" />
+             </td>
+</tr></tfoot>
+</table>
+
+{{/Form}}
+{{/TEMPLATE:Main0}}
+
+
+{{TEMPLATE:Main1}}
+{{Form:Groups}} <input type="hidden" name="do" value="store" />
+<div class="friends_text">
+Здесь перечислены пользователи, имеющие отношение к сообществу.
+Расставляя галочки, вы можете изменить ситуацию. Запросто.
+  <br />
+  <div class="friends__hint">
+  Серый фон вокруг галочек показывает, что этот пользователь уже занесён в соответствующую группу.
+  Убрав там галочку, вы вычеркнете пользователя из этой группы.
+  </div>
+  <br />
+<small><strong>Показывать только:&nbsp;</strong> {{GroupRanks}}</small>
+</div>
+
+
+<table class="friends_grid" cellspacing="2" cellpadding="3" border="0" align="center">
+<thead><tr>  <td>Пользователь</td><td>Имя</td>{{TitleTD}}
+<td style="background:#ff8888"><div style="color:#ffffff" class="friends_titles">Удалить</div></td>  </tr></thead>
+<tbody>      {{UserList}}  </tbody>
+<tfoot><tr>  <td colspan="2"><a href="{{Href:Account}}/friends/add">Добавить ещё...</a></td>
+ <td colspan="{{ButtonColSpan}}">
+ <input type="submit" value="Сохранить изменения" />
+             </td>
+</tr></tfoot>
+</table>
+
+{{/Form}}
+{{/TEMPLATE:Main1}}
+
+
+{{TEMPLATE:Main2}}
+{{Form:Groups}} <input type="hidden" name="do" value="store" />
+<div class="friends_text">
+Здесь перечислены пользователи, имеющие отношение к рабочей группе.
+Расставляя галочки, вы можете изменить ситуацию. Запросто.
+  <br />
+  <div class="friends__hint">
+  Серый фон вокруг галочек показывает, что этот пользователь уже занесён в соответствующую группу.
+  Убрав там галочку, вы вычеркнете пользователя из этой группы.
+  </div>
+  <br />
+<small><strong>Показывать только:&nbsp;</strong> {{GroupRanks}}</small>
+</div>
+
+
+<table class="friends_grid" cellspacing="2" cellpadding="3" border="0" align="center">
+<thead><tr>  <td>Пользователь</td><td>Имя</td>{{TitleTD}}
+<td style="background:#ff8888"><div style="color:#ffffff" class="friends_titles">Удалить</div></td>  </tr></thead>
+<tbody>      {{UserList}}  </tbody>
+<tfoot><tr>  <td colspan="2"><a href="{{Href:Account}}/friends/add">Добавить ещё...</a></td>
+ <td colspan="{{ButtonColSpan}}">
+ <input type="submit" value="Сохранить изменения" />
+             </td>
+</tr></tfoot>
+</table>
+
+{{/Form}}
+{{/TEMPLATE:Main2}}
+
+
+{{TEMPLATE:Rank}}
+  {{TEMPLATE:Rank_Item}}
+    {{?_Count}}&nbsp;|&nbsp;{{?/_Count}}
+    <a href="{{Href:Account}}/friends/edit/{{_Href}}">{{_Text}}</a>
+  {{/TEMPLATE:Rank_Item}}
+{{/TEMPLATE:Rank}}
+{{TEMPLATE:Rank_Empty}}
+{{/TEMPLATE:Rank_Empty}}
+
+  {{TEMPLATE:Rank_Item_Current}}
+    {{?_Count}}&nbsp;| {{?/_Count}}
+    {{_Text}}
+  {{/TEMPLATE:Rank_Item_Current}}
+
+
+<!---- заголовочная часть сетки ---->
+{{TEMPLATE:Title}}
+{{TEMPLATE:Title_Item}}
+<td><div class="friends_titles">{{_Text}}</div></td>
+{{/TEMPLATE:Title_Item}}
+{{/TEMPLATE:Title}}
+{{TEMPLATE:Title_Empty}}
+{{/TEMPLATE:Title_Empty}}
+
+<!---- сама сетка, из двух колонок ---->
+
+
+<!-- === ПОЛЬЗОВАТЕЛЬ ===================  -->
+{{TEMPLATE:UserList0}}
+ {{TEMPLATE:UserList0_Item}}
+  {{?show}}
+  <tr>
+   <td>{{Link:user}}</td>
+   <td>{{user_name}}</td>
+   <td><div class="friends_checkbox{{state0}}"><input type="checkbox" {{state0}} name="add_0_{{id}}" onclick="State('{{id}}',0)" /></div></td>
+   <td><div class="friends_checkbox{{state1}}"><input type="checkbox" {{state1}} name="add_1_{{id}}" onclick="State('{{id}}',0)" /></div></td>
+   <td style="background:#ffcccc"><div class="friends_checkbox"><input type="checkbox" name="delete_{{id}}" onclick="State('{{id}}',1)" /></div></td>
+  </tr>
+  {{?!show}}
+   <input type="hidden" value="{{set0}}" name="add_0_{{id}}" />
+   <input type="hidden" value="{{set1}}" name="add_1_{{id}}" />
+  {{?/show}}
+ {{/TEMPLATE:UserList0_Item}}
+{{/TEMPLATE:UserList0}}
+{{TEMPLATE:UserList0_Empty}}
+<tr>
+<td>&nbsp;</td>
+<td>Списки пусты. 
+    <br /><br />
+</td>
+<td colspan="{{ButtonColSpan}}">&nbsp;</td>
+</tr>
+{{/TEMPLATE:UserList0_Empty}}
+
+
+<!---- сама сетка, из 4х колонок (сообщества) ---->
+<!-- === СООБЩЕСТВО ===================  -->
+{{TEMPLATE:UserList1}}
+ {{TEMPLATE:UserList1_Item}}
+  {{?show}}
+  <tr>
+   <td>{{Link:user}}</td>
+   <td>{{user_name}}</td>
+   <td><div class="friends_checkbox{{state.0}}" ><input type="radio" {{state.0}}  value=0  name="set_{{id}}" /></div></td>
+   <td><div class="friends_checkbox{{state.5}}" ><input type="radio" {{state.5}}  value=5  name="set_{{id}}" /></div></td>
+   <td><div class="friends_checkbox{{state.10}}"><input type="radio" {{state.10}} value=10 name="set_{{id}}" /></div></td>
+   <td><div class="friends_checkbox{{state.20}}"><input type="radio" {{state.20}} value=20 name="set_{{id}}" /></div></td>
+   <td style="background:#ffcccc"><div class="friends_checkbox"><input type="radio" value=-1 name="set_{{id}}" /></div></td>
+  </tr>
+  {{?!show}}
+   <input type="hidden" value={{default}}  name="set_{{id}}" />
+  {{?/show}}
+ {{/TEMPLATE:UserList1_Item}}
+{{/TEMPLATE:UserList1}}
+{{TEMPLATE:UserList1_Empty}}
+<tr>
+<td>&nbsp;</td>
+<td>Да у вас нет ни одного пользователя в группах сообщества
+    <br /><br />
+</td>
+<td colspan="{{ButtonColSpan}}">&nbsp;</td>
+</tr>
+{{/TEMPLATE:UserList1_Empty}}
+
+<!---- сама сетка, из ?х колонок (рабочая группа) ---->
+<!-- === РАБОЧАЯ ГРУППА ===================  -->
+{{TEMPLATE:UserList2}}
+ {{TEMPLATE:UserList2_Item}}
+  {{?show}}
+  <tr>
+   <td>{{Link:user}}</td>
+   <td>{{user_name}}</td>
+   <td><div class="friends_checkbox{{state.0}}" ><input type="radio" {{state.0}}  value=0  name="set_{{id}}" /></div></td>
+   <td><div class="friends_checkbox{{state.5}}" ><input type="radio" {{state.5}}  value=5  name="set_{{id}}" /></div></td>
+   <td><div class="friends_checkbox{{state.10}}"><input type="radio" {{state.10}} value=10 name="set_{{id}}" /></div></td>
+   <td><div class="friends_checkbox{{state.20}}"><input type="radio" {{state.20}} value=20 name="set_{{id}}" /></div></td>
+   <td style="background:#ffcccc"><div class="friends_checkbox"><input type="radio" value=-1 name="set_{{id}}" /></div></td>
+  </tr>
+  {{?!show}}
+   <input type="hidden" value={{default}}  name="set_{{id}}" />
+  {{?/show}}
+ {{/TEMPLATE:UserList2_Item}}
+{{/TEMPLATE:UserList2}}
+{{TEMPLATE:UserList2_Empty}}
+<tr>
+<td>&nbsp;</td>
+<td>Да у вас нет ни одного пользователя в группах сообщества
+    <br /><br />
+</td>
+<td colspan="{{ButtonColSpan}}">&nbsp;</td>
+</tr>
+{{/TEMPLATE:UserList2_Empty}}
+
+<!-- результаты отработки действия --------------------------------------------------------------->
+{{TEMPLATE:Done0}}
+ Ваши дальнейшие действия:
+ <ul>
+ <li><a href="{{Href:Account}}/friends/groups/edit">раскидать друзей по группам</a></li>
+ <li><a href="{{Href:Account}}/friends/edit">вычеркнуть ещё кого-нибудь</a></li>
+ </ul>
+{{/TEMPLATE:Done0}}
+
+{{TEMPLATE:Done1}}
+ Ваши дальнейшие действия:
+ <ul>
+ <li>перейти к <a href="{{Href:Account}}">ленте сообщества</a></li>
+ <li>перейти к <a href="{{Href:Account}}/moderatefeed">списку на модерацию</a></li>
+ <li>посмотреть <a href="{{Href:Account}}/friends/edit">как сохранилось</a>.</li>
+ </ul>
+{{/TEMPLATE:Done1}}
+
+{{TEMPLATE:Done2}}
+ Ваши дальнейшие действия:
+ <ul>
+ <li>перейти к <a href="{{Href:Account}}">ленте рабочей группы</a></li>
+ <li>перейти к <a href="{{Href:Account}}/moderatefeed">списку на модерацию</a></li>
+ <li>посмотреть <a href="{{Href:Account}}/friends/edit">как сохранилось</a>.</li>
+ </ul>
+{{/TEMPLATE:Done2}}

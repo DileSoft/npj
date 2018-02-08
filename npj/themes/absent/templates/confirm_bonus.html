@@ -1,0 +1,22 @@
+{{TEMPLATE:CommentDelete}}
+ <ul>
+  <li><a href="{{Href:Record}}/comments#comments">Вернуться к дискуссии</a></li>
+  {{?have_parent}}
+  <li><a href="{{Href:Parent}}">Перейти на уровень выше</a></li>
+  {{?/}}
+ </ul>  
+{{/TEMPLATE:CommentDelete}}
+
+
+{{TEMPLATE:RecordDelete}}
+ <ul>
+  <li><a href="{{Href:Account}}">Перейти к корню журнала</a></li>
+ </ul>  
+{{/TEMPLATE:RecordDelete}}
+
+{{TEMPLATE:AccountDelete}}
+ <ul>
+  <li><a href="{{/}}">Перейти к корню узла</a></li>
+ </ul>  
+{{/TEMPLATE:AccountDelete}}
+

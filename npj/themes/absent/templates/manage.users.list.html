@@ -1,0 +1,36 @@
+{{TEMPLATE:List}}
+ {{ARROWS}}
+ <hr />
+ <ul>
+  {{TEMPLATE:List_Item}}
+   <li style='margin-bottom:10px'>
+    <b>{{login}}@{{node_id}}</b> &#151; {{user_name}}
+
+    <div style='font-size:11px'>
+    {{?!alive}}
+     <a href="{{/}}{{login}}/manage/alive">визировать анкету</a> |
+    {{?/alive}}
+
+    {{?is_banned}}  <a href="{{/}}{{login}}/manage/alive">оживить</a> |
+    {{?!is_banned}} <a href="{{/}}{{login}}/manage/suspend/">блокировать</a> |
+    {{?/is_banned}}
+
+    {{?is_local}}  местный пользователь 
+    {{?!is_local}} гость с другого узла
+    {{?/is_local}}
+    | 
+     <a href="{{/}}{{login}}/profile">профиль</a>
+    
+    </div>
+   </li>
+  {{/TEMPLATE:List_Item}}
+ </ul>
+ <hr />
+ {{ARROWS}}
+{{/TEMPLATE:List}}
+
+
+
+{{TEMPLATE:List_Empty}}
+Список пуст
+{{/TEMPLATE:List_Empty}}

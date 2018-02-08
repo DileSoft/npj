@@ -1,0 +1,29 @@
+<!-- Заголовок -->
+<h1 class="title">{{Preparsed:TITLE}}{{Record.Announce.Top}}</h1>
+{{??!UserPanel.Guest}} <!-- -->
+ {{??!404}} 
+ {{??!Record.Stats.Security.IsPublic}}<div class="title-security"><b>Доступ:</b> {{Record.Stats.Security}}</div>{{??/Record.Stats.Security.IsPublic}}
+ {{??/404}} 
+{{??/UserPanel.Guest}} <!-- -->
+
+<!-- Рубрики -->
+<div class="top-ref">
+{{Record.Stats.Ref}}
+</div>
+
+{{?!Preparsed:TIGHT}}
+<br />
+{{?/}}
+
+<!-- Тело -->
+{{??Preparsed:CONTENT}}
+{{DCLICK}}
+<div class="wrapper" 
+  {{??Preparsed:TIGHT_COMMENTS}}
+    style="padding-bottom:0; margin-bottom:0"
+  {{??/Preparsed:TIGHT_COMMENTS}}
+ >
+{{Preparsed:CONTENT}}
+</div>
+{{??/Preparsed:CONTENT}}
+

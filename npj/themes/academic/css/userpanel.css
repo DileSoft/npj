@@ -1,0 +1,11 @@
+.userpanel-top    { font-size:80%; color:#444444; background:#cccccc; padding:3px 5px; 
+                    border-bottom:1px #444444 solid }
+.userpanel-bottom { font-size:80%; color:#444444; background:#cccccc; padding:10px 5px; 
+                    border-top:1px #444444 solid;
+                    border-bottom:1px #444444 solid; }
+
+
+.userpanel-bottom .usermenu- { padding: 5px 0 0; font-size:80%; color: #999999 }
+.userpanel-bottom .usermenu- a:link    { color: #444444 }
+.userpanel-bottom .usermenu- a:visited { color: #444444 }
+.userpanel-bottom .usermenu- a:hover   { color: #cc3300; text-decoration:underline }

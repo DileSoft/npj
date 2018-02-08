@@ -1,0 +1,98 @@
+{{TEMPLATE:Hello}}
+ <!--{{NPJCODE}}<hr />-->
+ {{!Mail:Hello}} {{Mail.UserName}} ({{Link:Mail.Login}})!
+ <br /><br />
+{{/TEMPLATE:Hello}}
+{{TEMPLATE:Goodbye}}
+ <br /><br />
+ <hr />
+ {{!Mail:Goodbye}}<br />
+ {{Link:Host}}
+{{/TEMPLATE:Goodbye}}
+
+<!-- ==================================== ОГРАНИЧЕННОЕ СООБЩЕСТВО ======================================== -->
+{{TEMPLATE:JoinLimited_Subject}}
+{{Mail.MemberName}} хочет вступить в сообщество {{Mail.CommunityName}}.
+{{/TEMPLATE:JoinLimited_Subject}}
+
+{{TEMPLATE:JoinLimited}}
+ <br /><br />
+ Вы являетесь модератором сообщества <b>{{Mail.CommunityName}}</b> ({{Link:Community}}).
+ <br /><br />
+ Пользователь {{Mail.MemberName}} ({{Link:Mail.MemberLogin}}) 
+ хочет вступить в это сообщество и уже подал заявку.
+ <br /><br />
+ <hr />
+{{/TEMPLATE:JoinLimited}}
+
+{{TEMPLATE:JoinLimited_Reply}}<br />
+ Вы можете:
+ <ul>
+ <li><a href="{{Href:Community}}/friends/add/{{Npj:Member}}">Добавить его в члены сообщества</a></li>
+ <li><a href="{{Href:Community}}/friends/edit">Посмотреть общий список членов</a></li>
+ </ul>
+{{/TEMPLATE:JoinLimited_Reply}}
+
+
+<!-- ==================================== ОТКРЫТОЕ СООБЩЕСТВО ======================================== -->
+{{TEMPLATE:JoinOpen_Subject}}
+{{Mail.MemberName}} вступил в сообщество {{Mail.CommunityName}}.
+{{/TEMPLATE:JoinOpen_Subject}}
+
+{{TEMPLATE:JoinOpen}}
+ <br /><br />
+ Вы являетесь модератором сообщества <b>{{Mail.CommunityName}}</b> ({{Link:Community}}).
+ <br /><br />
+ Пользователь {{Mail.MemberName}} ({{Link:Mail.MemberLogin}}) 
+ хочет вступить в это сообщество и уже вступил в него. Потому что сообщество открытое.
+ <br /><br />
+ <hr />
+{{/TEMPLATE:JoinOpen}}
+
+{{TEMPLATE:JoinOpen_Reply}}<br />
+ Вы можете:
+ <ul>
+ <li><a href="{{Href:Community}}/friends/add/{{Npj:Member}}">Изменить его статус</a></li>
+ <li><a href="{{Href:Community}}/friends/edit">Посмотреть общий список членов</a></li>
+ </ul>
+{{/TEMPLATE:JoinOpen_Reply}}
+
+
+<!-- -------------------------------------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------------------------------------- -->
+
+<!-- Оповещение о смене статуса в сообществе -->
+
+{{TEMPLATE:State_Subject}}Изменение статуса вашего аккаунта{{/TEMPLATE:State_Subject}}
+
+
+{{TEMPLATE:State}}
+
+Ваш аккаунт (<b>{{Login@Node}}</b>) изменил свой статус в сообществе
+<b>{{Mail.CommunityName}} ({{Link:Community}})</b>.
+<br /><br />
+Сейчас вы входите в группу:
+<ul><li><b>{{State}}</b></li></ul>
+
+<br /><br />
+Правда, здорово?
+<br /><br />
+Изменить ситуацию вы можете попробовать <a href="{{Href:Mail.Account}}/friends/add">здесь</a>, предварительно залогинившись.
+
+{{/TEMPLATE:State}}
+
+
+<!-- Совсем фатальное изменение -- принудительный отказ -->
+{{TEMPLATE:Remove_Subject}}Исключение из сообщества{{/TEMPLATE:Remove_Subject}}
+
+{{TEMPLATE:Remove}}
+
+Сегодня один из модераторов лишил Ваш аккаунт 
+(<b>{{Login@Node}}</b>) участия в сообществе
+<b>{{Mail.CommunityName}} ({{Link:Community}})</b>.
+
+<br /><br />
+Изменить ситуацию вы можете, обратившись к модераторам сообщества.
+
+{{/TEMPLATE:Remove}}

@@ -1,0 +1,98 @@
+/* user-menu */
+.user-links { }
+.user-links .sep- { vertical-align:bottom }
+.user-links .item- 
+                  { vertical-align:top; font: 11px Tahoma }
+.user-links .item- div {  }
+
+.user-info { vertical-align:bottom; padding:2px; color:#999999; font: bold 11px Tahoma }
+
+.user-links .item- a:link, 
+.user-links .item- a:visited { color:#444444; }
+
+.user-links .item- a:hover, 
+.user-links .item- a:active { color:#cc2000; }
+
+
+.user-links .add-,
+.user-links .add- a:link, 
+.user-links .add- a:visited { color:#888888; }
+
+.user-links .add- a:hover, 
+.user-links .add- a:active { color:#cc2000; }
+
+/* user-opts */
+.user-opts { width:100%; }
+.user-opts #user-info { padding-top:8px }
+
+.user-opts .sep- { background: #e5e5f0 }
+.user-opts .item2-,
+.user-opts .item- 
+                  { background:#cccccc;
+                    vertical-align:top; font: bold 11px Tahoma }
+.user-opts .item- div  { padding:10px 10px 4px 10px }
+.user-opts .item2- div { padding:10px 5px 4px 5px }
+
+.user-opts .item- a:link, 
+.user-opts .item- a:visited { color:#0020aa; }
+
+.user-opts .item- a:hover, 
+.user-opts .item- a:active { color:#cc2000; }
+
+
+/* head ---------- */
+.user-panel-hr { height:1px; color:#555555; background:#555555}
+
+.bg { background:#e5e5f0 }
+.w100 { width: 100% }
+
+.login-guest-status-ok { vertical-align:bottom; background:#F04000; }
+.login-status-ok       { vertical-align:bottom; background:#0064D8; }
+.login-status-foreign  { vertical-align:bottom; background:#009C03; }
+
+.user-panel { width:100%; vertical-align:bottom; background:#e5e5f0; }
+.user-panel .user-pic- { padding:10px 10px 0 }
+.user-panel .user-pic-guest- { padding:0px 5px 0 }
+
+.user-panel .user- { padding:3px 0; } 
+.user-panel .user- .name- { font: bold 14px Arial; color: #444444; }
+.user-panel .opts- { font: 11px Tahoma; color: #999999; }
+.user-panel .user- { padding:3px 0; font: bold 14px Arial; color: #444444; }
+
+/* login form */
+.user-panel .login- td { font: 11px Tahoma; color: #444444; vertical-align:middle }
+
+/* links */
+.user-panel .opts- a:link,
+.user-panel .opts- a:visited { color: #999999; }
+
+.node-menu .text- a:link, 
+.node-menu .text- a:visited { color:#0020aa; }
+
+.user-panel .opts- a:hover,
+.user-panel .opts- a:active,
+.node-menu .text- a:hover, 
+.node-menu .text- a:active { color:#cc2000; }
+
+.visible   { display:normal; }
+.hidden    { display:none; }
+
+/* общеузловые ссылки */
+.node-menu .text- { font:11px Tahoma; color:#999999; }
+.node-menu .icon- { width:16px; text-align:right; }
+.node-menu .icon- img {  }
+
+/* маленькая панелька */
+.user-panel-small { width:100%; vertical-align:bottom; background:#e5e5f0; }
+.user-panel-small .info- { padding:4px 7px; color:#999999; font: bold 11px Tahoma }
+.user-panel-small .opts- { font: 11px Tahoma; color: #999999; }
+.user-panel-small .opts- a:link,
+.user-panel-small .opts- a:visited { color: #999999; }
+.user-panel-small .opts- a:hover,
+.user-panel-small .opts- a:active { color:#cc2000; }
+
+
+.brbr1 { background:#808080 }
+.brbr2 { background:#ffffff }
+.brbr3 { background:#d4d0c8 }
+.brbr4 { background:#404040 }

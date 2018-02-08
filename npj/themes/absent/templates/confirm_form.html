@@ -1,0 +1,26 @@
+{{TEMPLATE:Confirm}}
+  <h1 class="title-confirm">{{!ConfirmForm.Title}}</h1>
+  {{!ConfirmForm.Confirm}}
+  
+  {{Form}}
+  <input type=submit value="{{!ConfirmForm.ConfirmButton}}" />
+  &nbsp;&nbsp;
+  <input type=button onclick="if (window.name) window.close(); else history.back();" 
+    value="{{!ConfirmForm.CancelButton}}" />
+  {{/Form}}
+  
+{{/TEMPLATE:Confirm}}
+
+
+{{TEMPLATE:Granted}}
+  <h1 class="title-confirm">{{!ConfirmForm.Title}}</h1>
+  {{!ConfirmForm.Granted}}
+  
+{{/TEMPLATE:Granted}}
+
+
+{{TEMPLATE:Denied}}
+  <h1 class="title-confirm">{{!ConfirmForm.Title}}</h1>
+  {{!ConfirmForm.Denied}}
+  
+{{/TEMPLATE:Denied}}

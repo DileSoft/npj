@@ -1,0 +1,153 @@
+{{TEMPLATE:Main0}}
+<div class="friends_text">
+Здесь перечислены пользователи, входящие хотя бы в одну группу конфидентов/корреспондентов.
+
+</div>
+
+<table class="friends_grid" cellspacing="2" cellpadding="3" border="0" align="center">
+<thead><tr>  <td>Пользователь</td><td>Имя</td>{{TitleTD}}</td></tr></thead>
+<tbody>      {{UserList}}  </tbody>
+</table>
+
+{{/TEMPLATE:Main0}}
+
+
+<!---- сама сетка, из двух колонок ---->
+{{TEMPLATE:UserList0}}
+ {{TEMPLATE:UserList0_Item}}
+  <tr>
+   <td>{{Link:user}}</td>
+   <td>{{user_name}}</td>
+   <td><div class="friends_checkbox{{state0}}">&nbsp;</div></td>
+   <td><div class="friends_checkbox{{state1}}">&nbsp;</div></td>
+  </tr>
+ {{/TEMPLATE:UserList0_Item}}
+{{/TEMPLATE:UserList0}}
+{{TEMPLATE:UserList0_Empty}}
+<tr>
+<td>&nbsp;</td>
+<td>Списки пусты. 
+    <br /><br />
+<td colspan="{{ButtonColSpan}}">&nbsp;</td>
+</tr>
+{{/TEMPLATE:UserList0_Empty}}
+
+<!-- =================== СООБЩЕСТВА =============================== -->
+
+
+{{TEMPLATE:Main1}}
+<div class="friends_text">
+Здесь перечислены пользователи, имеющие отношение к сообществу.
+
+{{?is_moderator}}
+Смотрите, вы <a href="{{Href:Account}}/friends/edit">можете изменить ситуацию</a>. Запросто.
+{{?/is_moderator}}
+  <br />
+
+</div>
+
+
+<table class="friends_grid" cellspacing="2" cellpadding="3" border="0" align="center">
+<thead><tr>  <td>Пользователь</td><td>Имя</td>{{TitleTD}}</tr></thead>
+<tbody>      {{UserList}}  </tbody>
+<tfoot><tr>  <td colspan="2"><hr size="1" noshade="noshade" /><a href="{{Href:Account}}/join">Присоединяйтесь?</a></td>
+ <td colspan="{{ButtonColSpan}}">
+&nbsp;             </td>
+</tr></tfoot>
+</table>
+{{/TEMPLATE:Main1}}
+
+
+<!---- заголовочная часть сетки ---->
+{{TEMPLATE:Title}}
+{{TEMPLATE:Title_Item}}
+<td><div class="friends_titles">{{_Text}}</div></td>
+{{/TEMPLATE:Title_Item}}
+{{/TEMPLATE:Title}}
+{{TEMPLATE:Title_Empty}}
+{{/TEMPLATE:Title_Empty}}
+
+<!---- сама сетка, из 4х колонок (сообщества) ---->
+{{TEMPLATE:UserList1}}
+ {{TEMPLATE:UserList1_Item}}
+  {{?show}}
+  <tr>
+   <td>{{Link:user}}</td>
+   <td>{{user_name}}</td>
+   <td><div class="friends_checkbox{{state.5}}" >&nbsp;</div></td>
+   <td><div class="friends_checkbox{{state.10}}">&nbsp;</div></td>
+   <td><div class="friends_checkbox{{state.20}}">&nbsp;</div></td>
+  </tr>
+  {{?!show}}
+   <input type="hidden" value={{default}}  name="set_{{id}}" />
+  {{?/show}}
+ {{/TEMPLATE:UserList1_Item}}
+{{/TEMPLATE:UserList1}}
+{{TEMPLATE:UserList1_Empty}}
+<tr>
+<td>&nbsp;</td>
+<td>В сообществе ещё нет ни одного пользователя, что удивительно
+    <br /><br />
+    <a href="{{Href:Account}}/join">Присоединяйтесь!</a>
+<td colspan="{{ButtonColSpan}}">&nbsp;</td>
+</tr>
+{{/TEMPLATE:UserList1_Empty}}
+
+
+
+
+
+
+
+<!-- =================== РАБОЧИЕ ГРУППЫ =============================== -->
+
+
+{{TEMPLATE:Main2}}
+<div class="friends_text">
+Здесь перечислены пользователи, имеющие отношение к рабочей группе.
+
+{{?is_moderator}}
+Смотрите, вы <a href="{{Href:Account}}/friends/edit">можете изменить ситуацию</a>. Запросто.
+{{?/is_moderator}}
+  <br />
+
+</div>
+
+
+<table class="friends_grid" cellspacing="2" cellpadding="3" border="0" align="center">
+<thead><tr>  <td>Пользователь</td><td>Имя</td>{{TitleTD}}</tr></thead>
+<tbody>      {{UserList}}  </tbody>
+<tfoot><tr>  <td colspan="2"><hr size="1" noshade="noshade" /><a href="{{Href:Account}}/join">Присоединяйтесь?</a></td>
+ <td colspan="{{ButtonColSpan}}">
+&nbsp;             </td>
+</tr></tfoot>
+</table>
+{{/TEMPLATE:Main2}}
+
+
+<!---- сама сетка, из 4х колонок (сообщества) ---->
+{{TEMPLATE:UserList2}}
+ {{TEMPLATE:UserList2_Item}}
+  {{?show}}
+  <tr>
+   <td>{{Link:user}}</td>
+   <td>{{user_name}}</td>
+   <td><div class="friends_checkbox{{state.5}}" >&nbsp;</div></td>
+   <td><div class="friends_checkbox{{state.10}}">&nbsp;</div></td>
+   <td><div class="friends_checkbox{{state.20}}">&nbsp;</div></td>
+  </tr>
+  {{?!show}}
+   <input type="hidden" value={{default}}  name="set_{{id}}" />
+  {{?/show}}
+ {{/TEMPLATE:UserList2_Item}}
+{{/TEMPLATE:UserList2}}
+{{TEMPLATE:UserList2_Empty}}
+<tr>
+<td>&nbsp;</td>
+<td>В сообществе ещё нет ни одного пользователя, что удивительно
+    <br /><br />
+    <a href="{{Href:Account}}/join">Присоединяйтесь!</a>
+<td colspan="{{ButtonColSpan}}">&nbsp;</td>
+</tr>
+{{/TEMPLATE:UserList2_Empty}}
+

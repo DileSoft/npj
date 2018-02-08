@@ -1,0 +1,56 @@
+{{TEMPLATE:Body}}
+<a name="log"></a> 
+ <style>
+  .trako-log { padding:5px 30px 0px 45px; color:#666666; }
+  .trako-log h3.title- { padding:0; margin: 0 }
+  .trako-log .empty- { color: #999999; font-size:80% }
+
+  .trako-log-table .one- .when- { font: 60% Tahoma; color:#888888; }
+  .trako-log-table .one- .who-  { font-size:70%; color:#888888; padding-bottom:5px }
+  .trako-log-table .one- .subject-  { font-size:80%; color:#666666; font-weight:bold; }
+  .trako-log-table .one- .details-  { font-size:70%; color:#999999 }
+
+  .trako-log-table .one- td { background: #dddddd; padding: 5px }
+  .trako-log-table .tr1- td { background: #eeeeee;  }
+  .trako-log-table .one- td.w- { background: #ffffff;}
+  .trako-log-table .one- td.l- { width:40% }
+  .trako-log-table .one- td.r- { width:60% }
+ </style>
+<div class="trako-log">
+  <h3 class="title-">Лог действий над рапортом</h3>
+</div>
+  {{log_data}}
+<br /><br />
+{{/TEMPLATE:Body}}
+
+
+{{TEMPLATE:List}}
+ <table class="trako-log-table" cellspacing="1" cellpadding="0" border="0" width="100%">
+  {{TEMPLATE:List_Item}}
+  <tr class="one- tr{{even}}-">
+    <td class="w-"><img src="{{images}}z.gif" class="block" border="0" alt="" width="30" height="1" /></td>
+    <td nowrap="nowrap">
+      <div class="who-"><b>{{Link:npj}}</b>
+<!--        {{user_name}} -->
+      </div>
+    </td>
+    <td class="l-">
+     <div class="subject-">{{subject}}</div>
+     <div class="when-">@ {{time}} &mdash; {{date}}</div>
+    </td>
+    <td class="r-">
+     <div class="details-">{{body_post}}</div>
+    </td>
+    <td class="w-"><img src="{{images}}z.gif" class="block" border="0" alt="" width="30" height="1" /></td>
+  </tr>
+  {{/TEMPLATE:List_Item}}
+ </table>
+{{/TEMPLATE:List}}
+{{TEMPLATE:List_Empty}} 
+<div class="trako-log">
+ <div class="empty-">
+   С момента начала записи действий над рапортами в логи
+   с этим рапортом ничего не делали.
+ </div>
+</div>
+{{/TEMPLATE:List_Empty}}

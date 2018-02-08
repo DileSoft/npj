@@ -1,0 +1,86 @@
+<!-- GRID template -------------------------------------------------------------- -->
+{{TEMPLATE:Grid}}
+
+ <style>
+  .trako-todo { }
+  .trako-todo table { font-size:1em; }
+
+  .trako-todo tbody .subj-    { font-weight:bold; font-size:100%; margin: 2px 0 0 0 }
+  .trako-todo tbody .more-    { font-size:70%; color:#999999;
+                                margin: 0 0 7px 0 }
+  .trako-todo tbody .comment- { font-size:70%; color:#cccccc; padding:5px 4px 0; text-align:right }
+
+  .trako-todo tbody .subj- a:link    { color: #444444; text-decoration:none }
+  .trako-todo tbody .subj- a:visited { color: #444444; text-decoration:none }
+  .trako-todo tbody .subj- a:hover   { color: #800000; text-decoration:underline }
+  .trako-todo tbody .subj- a:active  { color: #FF0000; text-decoration:underline }
+  .trako-todo h3 { margin:0; padding:0 }
+ </style>
+ {{@styleblock.html}}
+ <style>
+ </style>
+
+ <div class="trako-todo"> 
+  {{@panel_todo.html:AddToolbar}}
+
+  <form method="post" action="{{Href:Trako}}/mass">
+  <input type="hidden" name="state" value="solved" <!-- NB: tempsolution !!!! --> />
+  <table cellspacing="1" cellpadding="0" border="0" class="w100">
+    <tbody>
+    {{TEMPLATE:Grid_Item}}
+     {{#PanelOrderSplit}}
+     <tr class="even{{even}}">
+       <td nowrap="nowrap" class="comment-">{{@panel_todo.html:CommentPane}}</td>
+       <td><input 
+              onclick = "this.checked=true; return this.form.submit();"
+              title="Решить этот рапорт" type="checkbox" name="no_{{issue_no}}" /></td>
+       <td class="w100">
+         <div class="subj-">
+           {{?can_edit}}
+             <a title="Редактировать рапорт" href="{{Href:tag}}/edit">{{subject}}</a>
+           {{?!can_edit}}
+             {{subject}}
+           {{?/}}
+         </div>
+         <div class="more-">
+           {{severity_class_text}}, {{severity_value_text}} {{non_empty_abstract}}
+         </div>
+       </td>
+     </tr>
+    {{/TEMPLATE:Grid_Item}}
+    </tbody>
+  </table>
+  </form>
+  {{@self_report.html}}
+ </div>
+{{/TEMPLATE:Grid}}
+{{TEMPLATE:Grid_Empty}} 
+  {{@panel_todo.html:AddToolbar}}
+  {{@self_report.html}}
+{{/TEMPLATE:Grid_Empty}}
+
+
+{{TEMPLATE:AddToolbar}}
+  <table style="font-size:1em" cellspacing="5" cellpadding="0" border="0" class="w100">
+   <tr>
+    <td class="w100">
+      {{?Href:Trako/sub}}
+      <b><a href="{{Href:Trako/sub}}/add">Добавить рапорт в эту рубрику...</a></b>
+      &nbsp;&nbsp;&nbsp;&nbsp;|
+      <small>
+       <a href="{{Href:Trako}}/add">Просто добавить...</a>
+       |
+       <a href="{{Href:Trako}}">Вернуться в корень...</a>
+      </small>
+      {{?!Href:Trako/sub}}
+      <b><a href="{{Href:Trako}}/add">Добавить рапорт...</a></b>
+      {{?/}}
+    </td>
+    <td nowrap="nowrap">&nbsp;{{ARROWS}}</td>
+   </tr>
+  </table>
+{{/TEMPLATE:AddToolbar}}
+
+{{TEMPLATE:CommentPane}}
+  <a title="Подробнее о рапорте" href="{{Href:comments_target}}/comments" >#{{issue_no}}</a>
+{{/TEMPLATE:CommentPane}}

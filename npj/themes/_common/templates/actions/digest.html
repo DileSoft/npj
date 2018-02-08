@@ -1,0 +1,224 @@
+<!-- форма конфигурирования дайджеста -->
+{{TEMPLATE:Body}}
+<style>
+div.digest hr  { height:1px; border:0; background:#999999; color:#999999; }
+div.digest td  { color:#444444; font-size: 80% }
+div.digest div { margin: 5px 0; color:#444444; font-size: 80% }
+div.digest .result- { border:1px #666666 solid; padding:5px; margin:5px; 
+                      background:#ffffff; font: 70% Tahoma  }
+</style>
+
+<script language="javascript">
+var wrapperUrl = new Array(
+                            "{{destination}}",  // prefix
+                            "",  // postfix
+                            "&", // param separator
+                            "=", // name/value separator
+                            "",  // start quote
+                            "",  // end quote
+                            'URL для создания такого дайджеста',
+                            'url'
+                          );
+var wrapperAction = new Array(
+                            "{"+"{Digest ",  // prefix
+                            "}"+"}",  // postfix
+                            " ",      // param separator
+                            "=",      // name/value separator
+                            '"',      // start quote
+                            '"',      // end quote
+                            'Для вставки в вака-редактор',
+                            'action'
+                          );
+function ComposeCode( form, wrapper )
+{
+  var result = wrapper[0];
+  var params = new Array( "feed", "dtlast", "dtfrom", "dtto", "filter", "targetmask", "template", "formatting" );
+  var results = new Array();
+  for (var i=0; i<params.length; i++)
+  {
+    var res = ComposeParam( form, wrapper, params[i] );
+    if (res != "") 
+     results = results.concat( res );
+  }
+  result += results.join( wrapper[2] );
+  result += wrapper[1];
+  if (wrapper[7] == "url") result = "<a href=\""+result+"\">"+result+"</a>";
+  result = "<strong>"+wrapper[6]+"</strong><br /><br />"+result;
+  return result;
+}
+function ComposeParam( form, wrapper, name )
+{
+  var value = form.elements[name].value;
+  if (value == 0) return "";
+  if (value == undef()) return "";
+  if (value == "default") return "";
+  return name + wrapper[3] + wrapper[4] + value + wrapper[5];
+}
+</script>
+
+{{Form:Digest}}
+<table cellspacing="0" cellpadding="0" border="0" ><tr><td>
+<div class="digest">
+
+{{?hide_feed}}
+ <input type="hidden" name="feed" value="{{feed}}" />
+{{?!hide_feed}}
+ <div>
+ Адрес ленты: <input type="text" name="feed" value="{{feed}}" size="40" />
+ </div>
+{{?hide_dt}}
+ <input type="hidden" name="dtlast" value="{{dtlast}}" />
+ <input type="hidden" name="dtfrom" value="{{dtfrom}}" />
+ <input type="hidden" name="dtto"   value="{{dtto}}" />
+{{?!hide_dt}}
+  <table cellspacing="2" cellpadding="0" width="100%" border="0">
+   <tr>
+    <td><img src="{{images}}z.gif" class="block" width="1" height="1" alt="" border="0" /></td>
+    <td><img src="{{images}}z.gif" class="block" width="1" height="1" alt="" border="0" /></td>
+    <td><img src="{{images}}z.gif" class="block" width="1" height="1" alt="" border="0" /></td>
+    <td width="100%"><img src="{{images}}z.gif" class="block" width="1" height="1" alt="" border="0" /></td>
+   </tr>
+   <tr>
+    <td>&nbsp;</td>
+    <td><input type="radio" name="dtlast" id="dtlast_1" value="1" {{?dtlast}}CHECKED{{?/}} /></td>
+    <td colspan="2"><label for="dtlast_1">со&nbsp;времени последнего дайджеста</label></td>
+   </tr>
+   <tr>
+    <td>&nbsp;</td>
+    <td><input type="radio" name="dtlast" id="dtlast_0" value="0" {{?!dtlast}}CHECKED{{?/}} /></td>
+    <td nowrap><label for="dtlast_0">за&nbsp;период с&nbsp;</label></td>
+    <td><input type="text" size="10" name="dtfrom" value="{{dtfrom}}" />
+           <!-- -->
+           &nbsp;<img name="popcal" src="{{theme_images}}calendar/button.gif" align="top" width="30" height="25" border="0" 
+           alt="Выбрать по календарю" title="Выбрать по календарю" 
+           style='cursor:hand'
+           onclick="imgDir='{{theme_images}}calendar/'; initCalendar();
+                    popUpCalendar(this, dtfrom, 'd.mm.yyyy');
+                    return false;" /></td>
+
+   </tr>
+   <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td align="right"><label for="dtlast_0">по&nbsp;</label></td>
+    <td ><input type="text" size="10" name="dtto" value="{{dtto}}" />
+           <!-- -->
+           &nbsp;<img name="popcal" src="{{theme_images}}calendar/button.gif" align="top" width="30" height="25" border="0" 
+           alt="Выбрать по календарю" title="Выбрать по календарю" 
+           style='cursor:hand'
+           onclick="imgDir='{{theme_images}}calendar/'; initCalendar();
+                    popUpCalendar(this, dtto, 'd.mm.yyyy');
+                    return false;" /></td>
+   </tr>
+  </table>
+{{?hide_filter}}
+ <input type="hidden" name="filter" value="{{filter}}" />
+{{?!hide_filter}}
+ <div>
+  Плотность: <select name="filter">
+               <option value=0 {{filter_0}}>Все сообщения</option>
+               <option value="announce"  {{filter_announce}} >Все анонсы</option>
+               <option value="events"    {{filter_events}}   >Только анонсы событий</option>
+               <option value="documents" {{filter_documents}}>Только анонсы документов</option>
+             </select>
+ </div>
+{{?/}}
+
+<hr />
+
+{{?hide_targetmask}}
+ <input type="hidden" name="targetmask" value="{{targetmask}}" />
+{{?!hide_targetmask}}
+ <div>
+ Маска имени дайджеста: <input type="text" name="targetmask" value="{{targetmask}}" size="40" />
+ </div>
+{{?/}}
+
+{{??hide_mode}}
+ <input type="hidden" name="mode" value="{{mode}}" />
+ <input type="hidden" name="template" value="{{template}}" />
+ <input type="hidden" name="formatting" value="{{formatting}}" />
+ <input type="hidden" name="html" value="{{html}}" />
+{{??/hide_mode}}
+{{??!hide_mode}}
+ <div style="margin-bottom:0"> Черновик дайджеста: </div>
+ {{@actions/digest_mask.html}}
+{{??/hide_mode}}
+
+<div id="digest_result" style="display:none" class="result-"></div>
+<!-- КНОПКИ-КНОПКИ --------------------------------------------------------->
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+ <td valign="top">
+  {{?!hide_build}}
+   <div>
+   <input class="InsertBtn" 
+    onmouseover='this.className="InsertBtn_";' 
+    onmouseout ='this.className="InsertBtn";' 
+    type="submit" align="top" 
+    value="Редактировать
+дайджест" 
+    style='width:200px;height:60px' />
+   </div>
+  {{?!hide_quick}}
+   <div>
+   <input name="_digest" class="CancelBtnSmall" 
+      onmouseover='this.className="CancelBtnSmall_";' 
+      onmouseout ='this.className="CancelBtnSmall";' 
+      type="button" align="top" 
+      style="width:200px"
+      disabled = "disabled"
+      onclick = "alert('!!! без черновика !!!');"
+      value="Создать без черновика" />
+   </div>
+  {{?/}}
+  &nbsp;
+ </td>
+ <td>&nbsp;&nbsp;</td>
+ <td valign="top">
+  {{?!hide_url}}
+   <div>
+   <input name="_url" class="CancelBtnSmall" 
+      onmouseover='this.className="CancelBtnSmall_";' 
+      onmouseout ='this.className="CancelBtnSmall";' 
+      type="button" align="top" 
+      style="width:200px"
+      onclick = " res=document.getElementById('digest_result');if (res) { res.innerHTML=ComposeCode(this.form, wrapperUrl); res.style.display='block'; }"
+      value="Генерировать URL на память" />
+   </div>
+  {{?!hide_digest}}
+   <div>
+   <input name="_digest" class="CancelBtnSmall" 
+      onmouseover='this.className="CancelBtnSmall_";' 
+      onmouseout ='this.className="CancelBtnSmall";' 
+      type="button" align="top" 
+      style="width:200px"
+      onclick = "res=document.getElementById('digest_result');if (res) { res.innerHTML=ComposeCode(this.form, wrapperAction); res.style.display='block'; }"
+      value="Генерировать {{`Digest... }}" />
+   </div>
+  {{?!hide_email}}
+   <div><img src="{{images}}z.gif" class="block" width="1" height="15" alt="" border="0" /><br />
+   <input name="_email" class="CancelBtnSmall" 
+      onmouseover='this.className="CancelBtnSmall_";' 
+      onmouseout ='this.className="CancelBtnSmall";' 
+      type="button" align="top" 
+      disabled = "disabled"
+      style="width:200px"
+      onclick = "alert('!!! by email !!!');"
+      value="Выслать черновик на email" />
+   </div>
+  {{?/}}
+ </td>
+</tr>
+</table>
+<!-- ============= --------------------------------------------------------->
+
+</div>
+</td></tr></table>
+{{/Form}}
+
+{{/TEMPLATE:Body}}
+
+
+
+

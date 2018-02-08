@@ -1,0 +1,347 @@
+{{TEMPLATE:Main}}
+{{Form:Edit}} <input type="hidden" name="_do" value="store" />
+
+<div class="friends_text">
+На этой странице вы можете редактировать группы своих разнообразных. Для нормальной работы этой 
+страницы у вас должен быть включен JavaScript.</p>
+
+<p><strong>Обратите внимание:</strong> Если вы хотите удалить группу и сделать новую, 
+<strong>не делайте этого</strong> посредством переименования существующей и удаления/добавления в неё 
+пользователей. Если вы поступите подобным образом, то все записи, доступные "старой" группе, будут также 
+доступны и "новой".</p><p>
+
+<p><strong>Обратите внимание:</strong> Если у вас ещё нет никаких "знакомых", то нет смысла распределять их по группам.
+Сначала нужно <a href="{{Href:Account}}/friends/add">добавить нового знакомого</a>.
+</div>
+
+<!---------------------------------------------------------------------------------->
+
+<hr size="1" noshade="noshade" />
+<div class="friends_selector">
+{{GroupRanks}}
+</div>
+
+<!---------------------------------------------------------------------------------->
+
+<input type="hidden" size="60" name="users_groups" value="{{GroupContents}}" />
+<input type="hidden" size="60" name="groups_names" value="{{GroupNames}}" />
+<input type="hidden" name="users_all" value="{{AllUsers}}" />
+<script LANGUAGE="JavaScript">
+
+ var selectedGroup = 0;
+
+  if(isIE || isO){
+    document.ondblclick=groupDblClick;
+  }else if (isMZ) {
+    document.addEventListener("dblclick", groupDblClick, true);
+  }
+
+ function array_diff(from, to) 
+ { 
+   var result = new Array(); var c=0; 
+   for (var i in from) 
+   { 
+     var f=0; 
+     for (var k=1; k<array_diff.arguments.length; k++)  
+     for (var j in array_diff.arguments[k]) 
+      if (from[i] == array_diff.arguments[k][j]) f=1; 
+     if (!f) result[c++] = from[i]; 
+   } 
+   return result; 
+ }
+ 
+ function groupDblClick(ev) 
+ {
+   if (isMZ) var e = ev.target.parentNode;
+   else var e = event.srcElement;
+   if (e.name=='list_out') moveItems(document.fg.list_out, document.fg.list_in);
+   else moveItems(document.fg.list_in, document.fg.list_out);
+ }
+
+ function groupClick()
+ {
+   var selIndex;
+
+   var form = document.fg;
+   var grouplist = form.list_groups;
+   var inlist = form.list_in;
+   var outlist = form.list_out;
+   
+   // кликнули на...
+   selIndex = grouplist.selectedIndex;
+   if (selIndex == -1) { return; }
+   var groupname = grouplist.options[selIndex].text;
+
+   var newSelGroup = grouplist.options[selIndex].value;
+   if (newSelGroup == selectedGroup) { return; }
+   selectedGroup = newSelGroup;
+   
+   // очистим содержимое групп
+   clearSelect(inlist);
+   clearSelect(outlist);
+ 
+   // получим массив членов группы
+   var g = form.users_groups;
+   var groups = g.value.split("|");
+   for (i=0; i<groups.length; i=i+2) 
+    if (groups[i]==selectedGroup) break;
+   if (groups[i]!=selectedGroup) return;
+   var ing = groups[i+1].split(",");
+   var all = form.users_all.value.split(",");
+   var outg = array_diff(all, ing);
+
+   // раскидаем их налево-направо
+   var i;
+   for (i=0; i<ing.length; i++) {
+     var optionName = new Option(ing[i], ing[i], false, false);
+     inlist.options[inlist.length] = optionName;
+   }
+   for (i=0; i<outg.length; i++) {
+     var optionName = new Option(outg[i], outg[i], false, false);
+     outlist.options[outlist.length] = optionName;
+   }
+ }
+
+ function moveItems (from, to)
+ {
+   var selindex;
+   while ((selindex=from.selectedIndex) != -1)
+   {
+     var i;
+     var item = new Option(from.options[selindex].text,
+                           from.options[selindex].value,
+                           false, true);
+
+     from.options[selindex] = null;
+     //to.options[to.options.length] = item;
+
+     // find spot to put new item
+     for (i=0; i<to.options.length && to.options[i].text!="" && to.options[i].text < item.text; i++) { }
+     var newindex = i;
+
+     // move everything else down
+     for (i=to.options.length; i>newindex; i--) {
+       if (to.options[i-1].text!="")  
+         to.options[i] = new Option(to.options[i-1].text, to.options[i-1].value,
+                                    false, to.options[i-1].selected);
+     }
+     to.options[newindex] = item;
+
+   }
+   dumpState();
+ }
+
+ function dumpState()
+ {
+   var se = document.fg.list_in;
+   var g = document.fg.users_groups;
+   var groups = g.value.split("|");
+
+   for (i=0; i<groups.length; i=i+2) 
+    if (groups[i]==selectedGroup) break;
+
+   if (groups[i]!=selectedGroup) return;
+   groups[i+1] = "";
+
+   for (j=0; j<se.options.length; j++) { 
+     if (groups[i+1]+se.options[j].value!='') 
+       groups[i+1] = groups[i+1]+se.options[j].value+","; 
+   }
+
+   g.value = groups.join("|");
+ }
+
+ function moveLeft ()
+ {
+   if (!selectedGroup) { return; }
+   moveItems(document.fg.list_out, document.fg.list_in);
+ }
+
+ function moveRight ()
+ {
+   if (!selectedGroup) { return; }
+   moveItems(document.fg.list_in, document.fg.list_out);
+ }
+
+ function renameGroup ()
+ {
+   var list = document.fg.list_groups;
+   var selindex = list.selectedIndex;
+   if (selindex==-1) { return; }
+   var item = list.options[selindex];
+
+   var newtext = item.text;
+   newtext = prompt("Переименовать эту группу в:", newtext);
+   if (newtext==null || newtext == "") { return; }
+
+   var g = document.fg.groups_names;
+   var groups = g.value.split("|");
+
+   for (j=0; j<groups.length; j++) { 
+     if (groups[j]==item.text) 
+       groups[j] = newtext; 
+   }
+
+   g.value = groups.join("|");
+
+   item.text = newtext;
+
+ }
+
+ function deleteGroup ()
+ {
+   var list = document.fg.list_groups;
+   var selindex = list.selectedIndex;
+   if (selindex==-1) { return; }
+   var item = list.options[selindex];
+
+   if (!confirm("Вы уверены, что хотите удалить группу? Если вы сохраните, то отменить не удастся.")) { 
+     return; 
+   }
+
+   // clear group
+   var g = document.fg.users_groups;
+   var groups = g.value.split("|");
+   for (i=0; i<groups.length; i=i+2) 
+    if (groups[i]==selectedGroup) break;
+   if (groups[i]!=selectedGroup) return;
+   groups[i] = null;
+   groups[i+1] = null;
+   g.value = groups.join("|");
+
+   // clear group name
+   var g = document.fg.groups_names;
+   var groups = g.value.split("|");
+   for (i=0; i<groups.length; i=i+2) 
+    if (groups[i]==selectedGroup || (groups[i]=="" && groups[i+1]==selectedGroup.substr(5))) break;
+   if (groups[i]==selectedGroup || (groups[i]=="" && groups[i+1]==selectedGroup.substr(5)))
+   {
+    groups[i] = null;
+    groups[i+1] = null;
+    g.value = groups.join("|");
+   }
+
+   // удалить из списков
+   list.options[selindex] = null;
+   clearSelect(document.fg.list_in);
+   clearSelect(document.fg.list_out);
+ }
+
+ function clearSelect (select)
+ {
+   while (select.length) {
+     select.options[0] = null;
+   }
+ }
+
+
+ function newGroup ()
+ {
+   var form = document.fg;
+   var i;
+   var gnum = i;
+   var groupname = prompt("Название новой группы:", "");
+   if (groupname==null || groupname=="") { return; }
+
+   var g = document.fg.groups_names;
+   var groups = g.value.split("|");
+   i=groups.length;
+   if (i==1) i=0;
+   groups[i] = "";
+   groups[i+1] = groupname;
+   g.value = groups.join("|");
+
+   var g = document.fg.users_groups;
+   var groups = g.value.split("|");
+   i=groups.length;
+   if (i==1) i=0;
+   groups[i] = "newg_" + groupname;
+   groups[i+1] = "";
+   g.value = groups.join("|");
+
+   var item = new Option(groupname, "newg_" + groupname, false, true);
+   var list = form.list_groups;
+   list.options[list.options.length] = item;
+   list.options.selectedIndex = list.options.length-1;
+   groupClick();
+ }
+
+</SCRIPT>
+
+<table cellspacing='5'>
+<tr valign='bottom'>
+<td nowrap='nowrap' class="friends_group_title"><strong>Ваши группы:</strong></td>
+<td nowrap='nowrap' class="friends_group_title" colspan='2'><strong>Не входят в группу:</strong></td>
+<td nowrap='nowrap' class="friends_group_title"><strong>Входят в группу:</strong></td>
+</tr>
+<tr valign='top'>
+<td>{{GroupSelect}}&nbsp;</td>
+<td><select name='list_out' multiple='1' size='15' class='friends_group_list'><option value=''>---------------</option></select></td>
+<td valign='middle'><input type='button' onClick='moveLeft();' value='&gt;&gt;' /><br /><br />
+<input type='button' onClick='moveRight();' value='&lt;&lt;' />
+</td>
+<td>
+<select name='list_in' multiple='1' size='15' class='friends_group_list'><option value=''>---------------</option></select>
+</td></tr><tr><td colspan='4'>
+<fieldset ><legend class="friends_group_legend">Работа с группами:</legend>
+<div class="friends_group_fieldset">
+<nobr><input type='button' value='Создать' onClick='newGroup();' /> 
+<input type='button' value='Удалить' onClick='deleteGroup();' /> 
+<input type='button' value='Переименовать' onClick='renameGroup();' />&nbsp;&nbsp;</nobr>
+</div>
+</fieldset>
+</td></tr></table>
+
+
+<!---------------------------------------------------------------------------------->
+
+<div style='margin:20px'>
+ <input type="submit" style='height:40px' value="Сохранить изменения" />
+</div>
+<div style='font-size:80%; color:#666666; margin:5px 0 20px 20px; white-space:nowrap'>
+ Чтобы сделанные Вами изменения сохранились, необходимо нажать на эту кнопочку.
+</div>
+
+
+{{/Form}}
+{{/TEMPLATE:Main}}
+
+
+{{TEMPLATE:Select}}
+<select name='list_groups' style='width: 150px;' size='15' onchange='groupClick();'>
+  {{TEMPLATE:Select_Item}}
+    <option value='{{_Href}}'>{{_Text}}</option>
+  {{/TEMPLATE:Select_Item}}
+</select>
+{{/TEMPLATE:Select}}
+{{TEMPLATE:Select_Empty}}
+<select name='list_groups' style='width: 150px;' size='15' onchange='groupClick();'>
+</select>
+{{/TEMPLATE:Select_Empty}}
+
+
+
+{{TEMPLATE:Done}}
+ Ваши дальнейшие действия:
+ <ul>
+ <li><a href="{{Href:Account}}/friends/groups/edit">посмотреть как сохранилось</a></li>
+ <li><a href="{{Href:Account}}/friends/edit">вычеркнуть кого-нибудь</a></li>
+ </ul>
+{{/TEMPLATE:Done}}
+
+
+{{TEMPLATE:Rank}}
+<strong>Типы групп:&nbsp;&nbsp; </strong>
+  {{TEMPLATE:Rank_Item}}
+    {{?_Count}}&nbsp;|&nbsp;{{?/_Count}}
+    <a href="{{Href:Account}}/friends/groups/edit/{{_Href}}">{{_Text}}</a>
+  {{/TEMPLATE:Rank_Item}}
+{{/TEMPLATE:Rank}}
+{{TEMPLATE:Rank_Empty}}
+{{/TEMPLATE:Rank_Empty}}
+
+  {{TEMPLATE:Rank_Item_Current}}
+    {{?_Count}}&nbsp;| {{?/_Count}}
+    {{_Text}}
+  {{/TEMPLATE:Rank_Item_Current}}
+

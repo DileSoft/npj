@@ -1,0 +1,138 @@
+{{TEMPLATE:HiddenNone}}
+<div class="comments-hidden" {{?Preparsed:TIGHT_COMMENTS}}style="margin-top:5px;"{{?/}}>
+Комментариев нет.
+<a href="{{Href:Object}}/comments/add#comments_add">Добавить?</a>
+</div>
+{{/TEMPLATE:HiddenNone}}
+
+{{TEMPLATE:Announce_HiddenNone}}
+<div class="comments-hidden" {{?Preparsed:TIGHT_COMMENTS}}style="margin-top:5px;"{{?/}}>
+Комментариев к <a href="{{Href:Announced}}">анонсированному документу</a> нет.
+<a href="{{Href:Announced}}/comments/add#comments_add">Добавить?</a>
+</div>
+{{/TEMPLATE:Announce_HiddenNone}}
+
+{{TEMPLATE:Hidden}}
+<div class="comments-hidden" {{?Preparsed:TIGHT_COMMENTS}}style="margin-top:5px;"{{?/}}>
+Уже есть <a href="{{Href:Object}}/comments#comments">несколько комментариев</a> ({{CommentCount}}).
+<a href="{{Href:Object}}/comments/add#comments_add">Добавить ещё?</a>
+</div>
+{{/TEMPLATE:Hidden}}
+
+{{TEMPLATE:Announce_Hidden}}
+<div class="comments-hidden">
+К <a href="{{Href:Announced}}">анонсированному документу</a> уже есть <a href="{{Href:Announced}}/comments#comments">несколько комментариев</a> ({{CommentCount}}).
+<a href="{{Href:Announced}}/comments/add#comments_add">Добавить ещё?</a>
+</div>
+{{/TEMPLATE:Announce_Hidden}}
+
+{{TEMPLATE:SettingsPanel}}
+  <div class="comments-mode">
+   {{?Href:Comments/tree}} <a href="{{Href:Comments/tree}}#comments">краткое дерево</a> 
+   {{?!Href:Comments/tree}} краткое дерево 
+   {{?/}}
+   | 
+   {{?Href:Comments/full}} <a href="{{Href:Comments/full}}#comments">всё дерево</a> 
+   {{?!Href:Comments/full}} всё дерево 
+   {{?/}}
+   | 
+   {{?Href:Comments/plain}} <a href="{{Href:Comments/plain}}#comments">по времени поступления</a> 
+   {{?!Href:Comments/plain}} по времени поступления
+   {{?/}}
+  </div>
+{{/TEMPLATE:SettingsPanel}}
+
+{{TEMPLATE:Visible}}
+<div class="comments-visible" {{?Preparsed:TIGHT_COMMENTS}}style="margin-top:5px;"{{?/}}>
+  {{@comments.html:SettingsPanel}}
+  <div style="float:left">
+    <a href="{{Href:Record}}/comments/no">Скрыть&nbsp;комментарии</a> | 
+    <a href="{{Href:Record}}/comments/add#comments_add">Добавить&nbsp;комментарий</a>
+  </div>
+  <br clear="both" />
+</div>
+{{/TEMPLATE:Visible}}
+
+{{TEMPLATE:Partial}}
+<div class="comments-{{?Href:LevelUp}}deep{{?!Href:LevelUp}}visible{{?/}}" {{?Preparsed:TIGHT_COMMENTS}}style="margin-top:5px;"{{?/}}>
+  {{@comments.html:SettingsPanel}}
+  <div style="float:left">
+    <strong><a href="{{Href:Record}}/comments#comments">Показать все комментарии</a></strong>
+    {{?Href:LevelUp}}
+    | <a href="{{Href:LevelUp}}#comments">На уровень выше</a>
+    {{?/}}
+  </div>
+  <br clear="both" />
+</div>
+{{/TEMPLATE:Partial}}
+
+{{TEMPLATE:Record}}
+<div class="body-panel">
+  <div class="body-panel-title">
+    Ветвь дискуссии к записи:
+  </div>
+  <div class="body-panel-info-bottom">
+   <ul><li><strong>{{Link:Record}}</strong></li>
+       <li>Воспользуйтесь ссылкой, чтобы перейти к записи или к перечню <a href="{{Href:Record}}/comments#comments">всех комментариев</a>.</li>
+   </ul>
+  </div>
+  <br clear="all" /><br />
+</div>
+{{/TEMPLATE:Record}}
+
+{{TEMPLATE:Add}}
+<div class="comments-hidden">
+Уже есть <a href="{{Href:Record}}/comments#comments">несколько комментариев</a> ({{CommentCount}}).
+</div>
+<a name="comments_add"></a>
+<div class="comments-add">
+Добавить комментарий:
+</div>
+{{/TEMPLATE:Add}}
+
+
+{{TEMPLATE:CommentAdd}}
+<div class="comments-hidden">
+Уже есть <a href="{{Href:Record}}/comments/{{CommentID}}#comments">несколько комментариев</a> ({{CommentCount}}).
+</div>
+<a name="comments_add"></a>
+<br />
+<div class="comments-add">
+Добавить комментарий:
+</div>
+{{/TEMPLATE:CommentAdd}}
+
+{{TEMPLATE:AddNone}}
+<a name="comments_add"></a>
+<br />
+<div class="comments-add">
+Добавить комментарий:
+</div>
+{{/TEMPLATE:AddNone}}
+
+
+{{TEMPLATE:Preview}}
+<a name="comments_add"></a>
+<div class="comments-add">
+Предварительный просмотр комментария:
+</div>
+<div class="comments-preview">
+ {{Preview}}
+</div>
+<div class="comments-add">
+Внесите исправления, если они нужны:
+</div>
+{{/TEMPLATE:Preview}}
+
+
+{{TEMPLATE:Done}}
+Ваш комментарий был успешно добавлен.
+<br /><br />
+Теперь вы можете:
+<ul>
+ <li><a href="{{Href:Record}}/comments/{{id}}#comments">посмотреть на&nbsp;него</a>;</li>
+ <li>перечитать <a href="{{Href:Record}}/comments#comments">всю ветвь дискуссии</a>;</li>
+ <li>или вернуться <a href="{{Href:Record}}">к&nbsp;записи</a>.</li>
+</ul>
+{{/TEMPLATE:Done}}
+

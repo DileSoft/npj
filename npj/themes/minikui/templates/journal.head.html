@@ -1,0 +1,147 @@
+{{TEMPLATE:User}}
+<div class="journal_bg">
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+ <td width="70%" valign="bottom" class="journal_bg">
+   <div class="journal">
+    <div class="journal_title">{{JournalHead.Title}}</div>
+    <div class="journal_desc">{{JournalHead.Desc}}</div>
+   </div>
+ </td>
+ <td width="30%" valign="bottom" class="journal_userpic"><img src="{{images}}userpic_corner.gif" width="6" height="6" hspace="0" vspace="0" alt="" border="0" /><a href="{{Href:Userpic}}">{{JournalHead.UserPic}}</a></td>
+</tr>
+<tr>
+ <td class="journal_bg">
+  <table cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tr><td><img src="{{images}}journal_pad.gif" width="18" height="24" alt="" border="0" /></td>
+ {{JournalHead.Panel1}}{{JournalHead.Panel2}}{{JournalHead.Panel3}}
+  </tr>
+  </table>
+ </td>
+ {{JournalHead.Panel4}}
+</tr>
+</table>
+</div>
+{{/TEMPLATE:User}}
+
+
+{{TEMPLATE:Community}}
+<div class="journal_bg">
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+ <td width="70%" valign="bottom" class="journal_bg">
+   <div class="journal">
+    <div class="journal_title">{{JournalHead.Title}}</div>
+    <div class="journal_desc">{{JournalHead.Desc}}</div>
+   </div>
+ </td>
+ <td width="30%" valign="bottom" class="journal_userpic"><img src="{{images}}userpic_corner.gif" width="6" height="6" hspace="0" vspace="0" alt="" border="0" /><a href="{{Href:Userpic}}">{{JournalHead.UserPic}}</a></td>
+</tr>
+<tr>
+ <td class="journal_bg">
+  <table cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tr><td><img src="{{images}}journal_pad.gif" width="18" height="24" alt="" border="0" /></td>
+ {{JournalHead.Panel1}}{{JournalHead.Panel2}}
+  </tr>
+  </table>
+ </td>
+ {{JournalHead.Panel3}}
+</tr>
+</table>
+</div>
+{{/TEMPLATE:Community}}
+
+
+{{TEMPLATE:WorkGroup}}
+<div class="journal_bg">
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+ <td width="70%" valign="bottom" class="journal_bg">
+   <div class="journal">
+    <div class="journal_title">{{JournalHead.Title}}</div>
+    <div class="journal_desc">{{JournalHead.Desc}}</div>
+   </div>
+ </td>
+ <td width="30%" valign="bottom" class="journal_userpic"><img src="{{images}}userpic_corner.gif" width="6" height="6" hspace="0" vspace="0" alt="" border="0" /><a href="{{Href:Userpic}}">{{JournalHead.UserPic}}</a></td>
+</tr>
+<tr>
+ <td class="journal_bg">
+  <table cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tr><td><img src="{{images}}journal_pad.gif" width="18" height="24" alt="" border="0" /></td>
+ {{JournalHead.Panel1}}{{JournalHead.Panel2}}{{JournalHead.Panel3}}
+  </tr>
+  </table>
+ </td>
+ <td class="journal_bg">
+  <table cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tr>
+ {{JournalHead.Panel4}}{{JournalHead.Panel5}}
+  </tr>
+  </table>
+ </td>
+</tr>
+</table>
+</div>
+{{/TEMPLATE:WorkGroup}}
+
+
+
+
+{{TEMPLATE:Panel}}
+ <td style="background-image:url({{images}}journal_panel_bg.gif)" width="{{JournalHead.Panel.Width}}" class="journal_panel">
+  <img src="{{images}}journal_panel.gif" width="5" height="24" alt="" border="0" align="left" hspace="0" vspace="0" />
+  <div class="journal_panel_text">
+   {{JournalHead.Panel.Link}}
+  </div>
+ </td>
+{{/TEMPLATE:Panel}}
+
+
+{{TEMPLATE:Panel_Current}}
+ <td width="{{JournalHead.Panel.Width}}" class="journal_panel_current">
+  <img src="{{images}}journal_panel_current.gif" width="5" height="24" alt="" border="0" align="left" hspace="0" vspace="0" />
+  <div class="journal_panel_text">
+   {{JournalHead.Panel.Link}}
+  </div>
+ </td>
+{{/TEMPLATE:Panel_Current}}
+
+{{TEMPLATE:Panel_Here}}
+ <td width="{{JournalHead.Panel.Width}}" class="journal_panel_here">
+  <img src="{{images}}journal_panel_here.gif" width="5" height="24" alt="" border="0" align="left" hspace="0" vspace="0" />
+  <div class="journal_panel_text">
+   {{JournalHead.Panel.Link}}
+  </div>
+ </td>
+{{/TEMPLATE:Panel_Here}}
+
+
+
+
+
+
+
+
+
+{{TEMPLATE:Node}}
+<div class="journal_bg">
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+ <td width="100%" valign="bottom" class="journal_bg">
+   <div class="journal">
+    <div class="journal_title">{{JournalHead.Title}}</div>
+    <div class="journal_desc">{{JournalHead.Desc}}</div>
+   </div>
+ </td>
+</tr>
+<tr>
+ <td class="journal_bg">
+  <table cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tr><td><img src="{{images}}journal_pad.gif" width="100%" height="24" alt="" border="0" /></td>
+  </tr>
+  </table>
+ </td>
+</tr>
+</table>
+</div>
+{{/TEMPLATE:Node}}

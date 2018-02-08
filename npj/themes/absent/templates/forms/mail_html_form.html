@@ -1,0 +1,59 @@
+<!-- Как выглядит форма -->
+ 
+
+{{TEMPLATE:Form}}{{!MailHello}}
+<style>
+.blockquote { padding: 2px 15px; border-left: 5px #cccccc solid; }
+.title      { font-size:120%; font-weight:bold; background:#eeeeee; padding:5px 5px 5px 10px }
+</style>
+
+{{_Preface}}
+<hr>
+Содержимое формы:<br><br>
+{{CUSTOM}}
+<!-- -->
+{{TEMPLATE:Form_Item}}<div class="title">{{GroupName}}</div><div class="blockquote">
+<ul>
+{{FIELDS}}
+</ul>
+</div><!-- -->
+{{/TEMPLATE:Form_Item}}
+<hr>
+{{!MailGoodbye}}
+{{/TEMPLATE:Form}}
+
+{{TEMPLATE:Form_Empty}}<div></div>{{/TEMPLATE:Form_Empty}}
+
+
+<!-- как линкуются кнопочки -->
+{{TEMPLATE:Buttons}}
+  {{TEMPLATE:Buttons_Item}}[do not applicable.]{{/TEMPLATE:Buttons_Item}}
+{{/TEMPLATE:Buttons}}
+{{TEMPLATE:Buttons_Wysiwyg}}
+  {{TEMPLATE:Buttons_Wysiwyg_Item}}[do not applicable.]{{/TEMPLATE:Buttons_Wysiwyg_Item}}
+{{/TEMPLATE:Buttons_Wysiwyg}}
+{{TEMPLATE:Buttons_Empty}}{{/TEMPLATE:Buttons_Empty}}
+{{TEMPLATE:Buttons_WysiwygEmpty}}{{/TEMPLATE:Buttons_WysiwygEmpty}}
+
+
+<!-- Как выглядят отдельные строки формы -->
+{{TEMPLATE:Hidden}}<div></div>{{/TEMPLATE:Hidden}}
+{{TEMPLATE:Row}} <li><b>{{_Name}}</b> &raquo; {{_Data}} <br /></li>
+{{/TEMPLATE:Row}}
+
+{{TEMPLATE:Row_Described}}  <li> <b>{{_Name}}</b> &raquo; {{_Data}} <br /></li>
+{{/TEMPLATE:Row_Described}}
+
+{{TEMPLATE:Row_Hidden}}{{/TEMPLATE:Row_Hidden}}
+
+
+{{TEMPLATE:Row_Span}}  <li> <b>{{_Name}}</b> &raquo; <br /></li>
+{{_Data}}<br />
+{{/TEMPLATE:Row_Span}}
+
+{{TEMPLATE:Row_Span_Described}}  <li> <b>{{_Name}}</b> &raquo; <br />
+{{_Data}}</li><br />
+{{/TEMPLATE:Row_Span_Described}}
+
+
+

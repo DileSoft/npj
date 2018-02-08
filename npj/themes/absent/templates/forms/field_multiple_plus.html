@@ -1,0 +1,101 @@
+{{TEMPLATE:Plain}}
+{{PRESETS}}
+<div id="items_for_{{_Field}}" style="display:{{_ItemsVisible}}">
+<input type="hidden" name="_items_in{{_Field}}" value="{{_ItemsIn}}">
+<table cellspacing="0" cellpadding="2" border="0" width="100%">
+<tr><td width="50%" class="form_right_t"><b>{{_LeftSubject}}</b><br />{{_Items_Title}}{{ITEMS}}</td>
+    <td style="vertical-align:middle">
+<input type='button' onClick='moveOut("{{_Field}}");' value='&gt;&gt;' /><br /><br />
+<input type='button' onClick='moveIn("{{_Field}}");' value='&lt;&lt;' />
+    </td>
+    <td width="50%" class="form_right_t">{{_RightSubject}}<br />{{ITEMS_ALL}}</td>
+</table>
+</div>
+<script>
+initMultiple("{{_Field}}","{{FormName}}");
+</script>
+
+{{/TEMPLATE:Plain}}
+
+<!-- основной сложный селект для итемов -->
+{{TEMPLATE:Plain_Items}}
+<select multiple="1" class="w100" name="list_{{_Type}}{{_Field}}" size="{{_Size}}">
+  {{TEMPLATE:Plain_Items_Item}}
+   <option value="{{_Href}}" {{_Title}} />{{_Text}}</option>
+  {{/TEMPLATE:Plain_Items_Item}}
+</select>
+{{/TEMPLATE:Plain_Items}}
+{{TEMPLATE:Plain_Items_Empty}}
+<select multiple="1" class="w100" name="list_{{_Type}}{{_Field}}" size="{{_Size}}">
+</select>
+{{/TEMPLATE:Plain_Items_Empty}} 
+
+
+<!-- пресеты итемов -->
+{{TEMPLATE:Plain_Presets}}
+<table cellspacing="3" cellpadding="0" border="0" width="100%">
+  {{TEMPLATE:Plain_Presets_Item}}
+   <tr>
+    <td><input id="chk{{_Field}}_{{_Count}}" 
+          onclick="var a=document.getElementById('items_for_{{_Field}}'); a.style.display='{{_Title}}';
+                   {{?_PresetRadio}}document.getElementById('radio_for_{{_Field}}').style.display='block';
+                   {{?!_PresetRadio}}document.getElementById('radio_for_{{_Field}}').style.display='none';
+                   {{?/}}"
+          type="radio" name="{{_Field}}" value="{{_Href}}" /></td>
+    <td width="100%" class="form_right_t"><label for="chk{{_Field}}_{{_Count}}"
+          onclick="var a=document.getElementById('items_for_{{_Field}}'); a.style.display='{{_Title}}';"
+          >{{_Text}}</label>
+          {{_PresetRadio}}
+    </td>
+   </tr>
+  {{/TEMPLATE:Plain_Presets_Item}}
+</table>
+{{/TEMPLATE:Plain_Presets}}
+{{TEMPLATE:Plain_Presets_Empty}}
+{{/TEMPLATE:Plain_Presets_Empty}} 
+
+  {{TEMPLATE:Plain_Presets_Item_Current}}
+   <tr>
+    <td><input id="chk{{_Field}}_{{_Count}}" type="radio" 
+               onclick="var a=document.getElementById('items_for_{{_Field}}'); a.style.display='{{_Title}}';
+                   {{?_PresetRadio}}document.getElementById('radio_for_{{_Field}}').style.display='block';
+                   {{?!_PresetRadio}}document.getElementById('radio_for_{{_Field}}').style.display='none';
+                   {{?/}}"
+               name="{{_Field}}" checked="checked" value="{{_Href}}" /></td>
+    <td width="100%" class="form_right_t"><label for="chk{{_Field}}_{{_Count}}"
+               onclick="var a=document.getElementById('items_for_{{_Field}}'); a.style.display='{{_Title}}';"
+               >{{_Text}}</label>
+          {{_PresetRadio}}
+    </td>
+   </tr>
+  {{/TEMPLATE:Plain_Presets_Item_Current}}
+
+
+<!-- радиовыбор внутри пресета -->
+{{TEMPLATE:Plain_RadioPreset}}
+<div id="radio_for_{{_Field}}" style="display:{{?_IsCurrent}}block{{?!_IsCurrent}}none{{?/}}">
+ <b>Укажите уровень доступа к сообщению:</b>
+ <table cellspacing="0" cellpadding="0" border="0" style="margin-bottom:15px">
+  {{TEMPLATE:Plain_RadioPreset_Item}}
+   <tr>
+    <td><input id="chk{{_Field}}_radio_{{_Count}}" 
+          type="radio" name="{{_Field}}_radio" value="{{_Href}}" /></td>
+    <td nowrap="nowrap"  style="vertical-align:middle" class="form_right_t"><label for="chk{{_Field}}_radio_{{_Count}}"
+          >{{_Text}}</label></td>
+   </tr>
+  {{/TEMPLATE:Plain_RadioPreset_Item}}
+ </table>
+</div>
+{{/TEMPLATE:Plain_RadioPreset}}
+
+{{TEMPLATE:Plain_RadioPreset_Empty}}
+{{/TEMPLATE:Plain_RadioPreset_Empty}}
+  {{TEMPLATE:Plain_RadioPreset_Item_Current}}
+   <tr>
+    <td><input id="chk{{_Field}}_radio_{{_Count}}" 
+          checked="checked"
+          type="radio" name="{{_Field}}_radio" value="{{_Href}}" /></td>
+    <td nowrap="nowrap" style="vertical-align:middle" class="form_right_t"><label for="chk{{_Field}}_radio_{{_Count}}"
+          >{{_Text}}</label></td>
+   </tr>
+  {{/TEMPLATE:Plain_RadioPreset_Item_Current}}

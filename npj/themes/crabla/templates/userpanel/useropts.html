@@ -1,0 +1,54 @@
+<script language="Javascript">
+ preloadPics( "{{images}}user_panel/", 
+              "add", "add_over",
+              "announce_add", "announce_add_over",
+              "post", "post_over",
+              "add", "add_over",
+              "digest", "digest_over" );
+</script>
+
+<table class="user-opts" cellspacing="0" cellpadding="0" border="0" >
+<tr>
+ <td id="user-info" nowrap="nowrap">
+ 
+  <div class="user-info">
+   Вы &#0151; {{Link:Principal}}
+  </div>
+ </td>
+ <td ><img src="{{images}}z.gif" width="20" height="1" alt="" border="0" /></td>
+ <td class="sep-"><img src="{{images}}userpanel_sep.gif" width="2" height="31" alt="" border="0" /></td>
+ {{??M:cms}}
+   <td class="sep-"><img src="{{images}}userpanel_sep.gif" width="2" height="31" alt="" border="0" /></td>
+   <td class="item2-"><div><a href="{{M:cms/}}">CMS</a></div></td>
+ {{??/M:cms}}
+ <td class="sep-"><img src="{{images}}userpanel_sep.gif" width="2" height="31" alt="" border="0" /></td>
+ <td nowrap="nowrap" class="item-"><div style="padding: 0 5px">
+   <!-- -->
+   <a 
+      onmouseover="cI('up_post', 'post_over'); return false;"
+      onmouseout ="cI('up_post', 'post'); return false;"
+      href="{{Href:Principal}}/post"><img name="up_post" hspace="0" vspace="2" src="{{images}}user_panel/post.gif" width="25" height="30" 
+                                          align="absmiddle" alt="+" title="Опубликовать сообщение" border="0" />
+   <!-- -->
+   Писать в блог...</a></div>
+   <!-- -->
+ </td>
+ <td class="sep-"><img src="{{images}}userpanel_sep.gif" width="2" height="31" alt="" border="0" /></td>
+ <td nowrap="nowrap" class="item-"><div style="padding: 0 5px">
+   <!-- -->
+   <a 
+      onmouseover="cI('up_add', 'add_over'); return false"
+      onmouseout ="cI('up_add', 'add'); return false"
+      title="Cоздать документ" href="{{Href:Principal}}/add"><img name="up_add" hspace="0" vspace="2" src="{{images}}user_panel/add.gif" width="25" height="30" 
+                                          align="absmiddle" alt="+" title="Создать документ" border="0" />
+   <!-- -->
+   Создать документ...</a></div>
+   <!-- -->
+ </td>
+ <td class="sep-"><img src="{{images}}userpanel_sep.gif" width="2" height="31" alt="" border="0" /></td>
+ <td nowrap="nowrap" class="item-"><div><a href="{{Href:Principal}}/friends">Корреспонденты</a></div></td>
+ <td class="sep-"><img src="{{images}}userpanel_sep.gif" width="2" height="31" alt="" border="0" /></td>
+ <td class="sep-"><img src="{{images}}userpanel_sep.gif" width="2" height="31" alt="" border="0" /></td>
+ <td class="w100"><img src="{{images}}z.gif" width="20" height="1" alt="" border="0" /></td>
+</tr>
+</table>

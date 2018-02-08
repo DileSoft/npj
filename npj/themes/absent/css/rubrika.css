@@ -1,0 +1,53 @@
+/* css file */
+.rubrika td { vertical-align:top }
+
+.rubrika .left- button { width:150px; }
+.rubrika .mid- { font-size:11px; vertical-align:middle; }
+.rubrika .right- { font-size:11px; vertical-align:middle; }
+.rubrika .none- { color:#999999; font-size:10px }
+.rubrika iframe.normal  { width:300px; height:115px }
+.rubrika iframe.only    { width:300px; height:360px }
+.rubrika .panel- { font-size:10px; width:100px }
+.rubrika .panel- div { margin:5px; color:#999999 }
+
+.rubrika .panel- .new- a:link    { color:#228830; text-decoration:none }
+.rubrika .panel- .new- a:visited { color:#228830; text-decoration:none }
+.rubrika .panel- .new- a:hover   { color:#ff0000; text-decoration:none }
+.rubrika .panel- .new- a:active  { color:#ff0000; text-decoration:none }
+
+.rubrika .panel- .clean- a:link    { color:#666666 }
+.rubrika .panel- .clean- a:visited { color:#666666 }
+.rubrika .panel- .clean- a:hover   { color:#ff0000 }
+.rubrika .panel- .clean- a:active  { color:#ff0000 }
+
+.rubrika .panel- .new- a .plus- { text-decoration:none }
+
+
+.rubrika-collapsed .collapsed- { display:normal }
+.rubrika-collapsed .deployed-  { display:none }
+.rubrika-collapsed .panel-     { display:none }
+
+.rubrika table.dropdown-title- { font-size:1em }
+.rubrika table.dropdown-title- td { font-size:120%; font-weight:bold }
+
+.rubrika-deployed  .deployed-always-,
+.rubrika-deployed  .deployed-always- td { }
+.rubrika-collapsed .deployed-always-,
+.rubrika-collapsed .deployed-always- td { color:#999999; }
+
+.rubrika-deployed .collapsed- { display:none }
+.rubrika-deployed .deployed-  { display:normal }
+.rubrika-deployed .panel-     { display:normal }
+.rubrika-deployed .left- button { border-style:inset; background: #a6b8c0; color:#444444 }
+.rubrika-deployed .mid- { display:none }
+
+.rubrika-contents label { cursor:pointer; cursor:hand; }
+.rubrika-contents label:HOVER { color:#ff0000 }
+.rubrika-contents table { border: none; }
+.rubrika-contents table td { font:11px Tahoma; padding:0 1px;border: none; vertical-align:middle }
+.rubrika-contents .none- { font-size:1px }
+.rubrika-contents .kwd- { }
+.rubrika-contents .invisible- { display:none; }
+.rubrika-contents .visible- { display:normal; }
+
+

@@ -1,0 +1,80 @@
+<!-------- Добавить в банлист ------------------------------>
+{{TEMPLATE:Main}}
+{{Form:Add}}
+
+{{ERROR}}
+
+<table cellspacing="5" cellpadding="0" border="0" align="center">
+<tr><td><input type="" name="_user" size="40" maxlen="42" value="{{$Npj:Friend}}"></td>
+    <td><input type="submit" value="Забанить!" /></td>
+</tr>
+</table>
+
+<div class="friends_text">
+Если вы нажмёте на кнопку, вы добавите пользователя, НпжАдрес которого указан чуть выше, в бан-лист.
+Это означает, что он не сможет больше ни редактировать ваши записи, ни комментировать их,
+даже если права на конкретную запись это позволяют. 
+  <br />
+  <div class="friends__hint">
+    Это очень жестоко, так поступать с пользователями.
+  </div>
+</div>
+
+{{/Form}}
+{{/TEMPLATE:Main}}
+
+
+{{TEMPLATE:Error}}
+<div class="error">
+Пользователь {{Npj:Friend}} неизвестен системе, 
+<br />
+поэтому добавление его в бан-лист не принесёт видимого эффекта сейчас.
+</div><br />
+{{/TEMPLATE:Error}}
+
+
+{{TEMPLATE:Done}}
+Увы!
+Пользователь {{Link:Friend}} успешно добавлен в бан-лист.
+<br /><br />
+<strong>Что вы сейчас можете сделать, так это:</strong>
+<ul>
+ <li>ещё <a href="{{Href:Account}}/ban">кого-нибудь забанить</a>;</li>
+ <li>впрямую <a href="{{Href:Account}}/ban/edit">редактировать бан-лист</a>.</li>
+</ul>
+{{/TEMPLATE:Done}}
+
+
+<!-------- Редактировать банлист ------------------------------>
+{{TEMPLATE:Edit}}
+{{Form:Edit}} <input type="hidden" name="_do" value="store" />
+
+<table width="80%" cellspacing="5" cellpadding="0" border="0" align="center">
+<tr><td><textarea class="w100" rows=10 name="acl">{{$ACL}}</textarea></td></tr>
+<tr><td><input type="submit" value="Сохранить изменения" /></td></tr>
+</table>
+
+<div class="friends_text">
+Ого, здесь списочек всех, кого вы когда-либо банили. Возможно, кто-то встречается здесь даже дважды
+&#151; скажите спасибо вашему склерозу и лени разработчиков.
+  <br />
+  <div class="friends__hint">
+    Заманчиво, написать туда звёздочку, да?
+  </div>
+</div>
+
+{{/Form}}
+{{/TEMPLATE:Edit}}
+
+
+
+{{TEMPLATE:EditDone}}
+Чтож.
+Изменения бан-листа сохранены
+<br /><br />
+<strong>Что вы сейчас можете сделать, так это:</strong>
+<ul>
+ <li><a href="{{Href:Account}}/ban">кого-нибудь забанить</a>;</li>
+ <li>проверить, а <a href="{{Href:Account}}/ban/edit">правильно ли сохранился бан-лист?</a></li>
+</ul>
+{{/TEMPLATE:EditDone}}

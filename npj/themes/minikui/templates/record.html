@@ -1,0 +1,85 @@
+{{#InitPanel}}
+{{#InitContextMenu}}
+<!-- шапка -->
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+  <td valign="top" width="100%" class="head">
+   <div class="head_top">{{#NodeMenu}}
+    <div class="head_top_"><b>{{!NodeIs}}</b>&nbsp;<a href="{{/}}">{{NodeName}}</a></div>
+   </div>
+   {{#PrintMenu}}
+  </td>
+  <td class="head_br"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></td>
+  <td class="head">
+   <div class="head_user">
+    <div>
+    {{#UserInfo}}
+    </div>
+   </div>
+  </td>
+ </tr>
+</table>
+
+
+<!-- тело -->
+{{DCLICK}}
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+ <td valign="top" class="w100">
+  <div class="body_top_br"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></div>
+  <!-- основное поле -->
+  <table cellspacing="0" cellpadding="0" border="0" width="100%" class="body_table"><tr>
+  <td class="body_bg{{?CommentID}}_tight{{?/}}">
+  {{#JournalHead}}
+  {{#RecordStats}}
+  {{?Preparsed:CONTENT}}
+  <table cellspacing="0" cellpadding="0" border="0" width="100%" class="body_table"><tr>
+   <td><img src="{{images}}z.gif" width="30" height="1" alt="" border="0" /></td>
+    <td class="body_wrapper">
+      {{Preparsed:CONTENT}}
+    </td>
+   <td><img src="{{images}}z.gif" width="30" height="1" alt="" border="0" /></td>
+  </tr></table>
+  {{?/}}
+  {{?!Preparsed:TIGHT}}
+  <br clear="all" /><br />
+  {{?/}}
+  {{#RecordRef}}
+  {{Preparsed:ModRef}}
+  {{??!CommentID}}
+  {{#ControlPanel}}
+  {{??/CommentID}}
+  </td></tr></table>
+  <a name="comments"></a>
+  {{Preparsed:COMMENTS}}
+  <!-- /основное поле -->
+ </td>
+ <td valign="top" class="panel_bg" >
+  <div class="panel_top_br"><div class="panel_dot_br"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></div></div>
+  <div class="panel">
+   <!-- правая колонка -->
+   {{#TextSearch}}
+   {{#UserMenu}}
+   {{#NovicePanel}}
+   {{#ContextMenu}}
+   <br /><br /><br />
+   <!-- /правая колонка -->
+  </div>
+ </td>
+</tr>
+<!-- подножие -->
+<tr>
+<td class="footer_br"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></td>
+<td class="footer_br"><img src="{{images}}npj.gif" width="200" height="23" alt="{{!NpjVersion}}" title="{{!NpjVersion}}" border="0" /></td>
+</tr>
+<tr>
+<td class="footer_left"><div>
+ {{@copyrights.html}}
+ {{#Debug}}
+</div></td>
+<td class="footer_right"><div>
+ {{#KeepAlive}}
+
+</div></td>
+</tr>
+</table>

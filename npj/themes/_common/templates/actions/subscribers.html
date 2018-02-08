@@ -1,0 +1,106 @@
+{{TEMPLATE:Totals}}
+<style>
+  .action-subscribers table { font-size:1em }
+</style>
+<div class="action-subscribers">
+ <table cellspacing="5" cellpadding="0" border="0" width="100%">
+  {{TEMPLATE:Totals_Item}}
+   <tr>
+     <td>{{total}}</td>
+     <td>чел.&nbsp;&mdash;</td>
+     <td class="w100">на {{mode_name}}</td>
+   </tr>
+  {{/TEMPLATE:Totals_Item}}
+ </table>
+</div>
+{{/TEMPLATE:Totals}}
+{{TEMPLATE:Totals_Empty}} 
+На эту рубрику/запись никто не подписан.
+{{/TEMPLATE:Totals_Empty}}
+
+
+
+<!---------------------------------- simple ----------------------------------------->
+{{TEMPLATE:List}}
+<style>
+  .action-subscribers table { font-size:1em }
+  .action-subscribers .link- { }
+  .action-subscribers .name- { }
+  .action-subscribers td        { padding:3px 5px }
+  .action-subscribers tr.even1- { background:#fff5ee }
+  .action-subscribers .title- { width:30% }
+  .action-subscribers .subs-  { width:50% }
+  .action-subscribers .corr-  { width:20% }
+
+  .action-subscribers thead td { background:#aaaaaa; color:#ffffff; 
+                                 vertical-align:middle; padding:2px 5px }
+  .action-subscribers tfoot td { background:#eeeeee; color:#999999; 
+                                }
+  .action-subscribers tfoot .right- { text-align:right }
+
+</style>
+<div class="action-subscribers">
+ <table cellspacing="1" cellpadding="5" border="0" class="w100">
+  <thead>
+   <tr>
+    <td class="title-">Пользователь</td>
+    <td {{?only_email}}style="width:100%"{{?/}} class="subs-">Подписчик?</td>
+    {{?!only_email}}
+    <td class="corr-">Корреспондент?</td>
+    {{?/}}
+   </tr>
+  </thead>
+  <tbody>
+  {{TEMPLATE:List_Item}}
+   <tr class="even{{even}}-">
+    <td class="link-">
+      <strong>{{Link:account}}</strong><br />{{user_name}}
+    </td>
+    <td class="name-">{{in_subscribers}}</td>
+    {{?!only_email}}
+    <td class="name-">
+      {{??in_friends}}читает в ленте{{??/in_friends}}
+      {{??!in_friends}}&mdash;{{??/in_friends}}
+    </td>
+    {{?/}}
+   </tr>
+  {{/TEMPLATE:List_Item}}
+  </tbody>
+  <tfoot>
+   <tr>
+    <td nowrap="nowrap" class="left-">
+     {{?PageNo}}
+      Вы на странице {{PageNo}} из {{PageCount}}
+     {{?!PageNo}}
+      &nbsp;
+     {{?/}}
+    </td>
+    <td {{?!only_email}}colspan="2"{{?/}} class="right-">
+     {{?PageNo}}
+       {{SUB-ARROWS}}
+     {{?!PageNo}}
+      Весь список поместился на одной странице
+     {{?/}}
+    </td>
+   </tr>
+  </tfoot>
+ </table>
+</div>
+{{/TEMPLATE:List}}
+
+{{TEMPLATE:List_Empty}}
+На эту рубрику/запись никто не подписан.
+{{/TEMPLATE:List_Empty}}
+
+
+
+<!--- ----------------------------------->
+{{TEMPLATE:Modes}}
+ Подписан по почте на:
+ <ul>
+  {{TEMPLATE:Modes_Item}}
+    <li>{{_Text}}</li>
+  {{/TEMPLATE:Modes_Item}}
+ </ul>
+{{/TEMPLATE:Modes}}
+{{TEMPLATE:Modes_Empty}}&mdash;{{/TEMPLATE:Modes_Empty}}

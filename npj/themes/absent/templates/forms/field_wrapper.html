@@ -1,0 +1,51 @@
+<!-- Блоки для субполей -->
+{{TEMPLATE:Simple_Rows}}
+<tr>
+ <td class="form-wrapper"><b>{{_Name}}</b></td>
+ <td class="form-wrapper">{{_Data}}</td>
+</tr>
+{{?_Error}}
+<tr><td colspan="2">{{_Error}}</td></tr>
+{{?/}}
+{{/TEMPLATE:Simple_Rows}}
+
+{{TEMPLATE:Simple_Cols}}
+ {{?_Name}}
+ <td class="form-wrapper-left"><b>{{_Name}}</b></td>
+ {{?/}}
+ <td class="form-wrapper">{{_Data}}
+   {{?_Error}}<div>{{_Error}}</div>{{?/}}
+ </td>
+{{/TEMPLATE:Simple_Cols}}
+
+
+{{TEMPLATE:Simple}}
+<td class="form-wrapper">{{_Data}}</td>
+{{/TEMPLATE:Simple}}
+
+
+<!-- Оформление метаполя -->
+{{TEMPLATE:Row_Rows}}
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+{{_FIELDS}}
+</table>
+{{/TEMPLATE:Row_Rows}}
+
+{{TEMPLATE:Row}}
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+{{_FIELDS}}
+</tr>
+</table>
+{{/TEMPLATE:Row}}
+
+
+<!-- Оформление метаполя -->
+{{TEMPLATE:Row_w100}}
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+{{_FIELDS}}
+<td class="w100">&nbsp;</td>
+</tr>
+</table>
+{{/TEMPLATE:Row_w100}}

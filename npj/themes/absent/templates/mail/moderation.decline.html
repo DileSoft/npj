@@ -1,0 +1,31 @@
+<!-- Оповещение об отклонении вашего сообщения из сообщества/РГ -->
+
+{{TEMPLATE:DeclineSubject}}{{!Mail:Subject}}{{/TEMPLATE:DeclineSubject}}
+
+
+{{TEMPLATE:Decline}}
+ <style>
+  div.mi { margin-left:0; padding-left:15px; border-left: 2px solid #000000 }
+  div.mi-subj { font-weight:bold; margin-bottom:10px }
+ </style>
+
+{{!Mail:Hello}} {{UserName}} ({{Link:Login}})!
+<br /><br />
+
+{{!Mail:MainText}}
+
+<div class="mi">
+{{Reason}}
+</div>
+
+<hr size="1" noshade="noshade" />
+
+{{!Mail:Message}}{{Link:Record}} -- {{Subject}}<br />
+{{!Mail:Comm}}{{Link:Account}}<br />
+{{!Mail:Mod}}{{Link:Principal}}<br />
+
+<hr />
+{{!Mail:Goodbye}}<br />
+{{Link:Host}}
+
+{{/TEMPLATE:Decline}}

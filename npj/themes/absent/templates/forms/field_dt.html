@@ -1,0 +1,31 @@
+{{TEMPLATE:DateTime}}
+<input type="text" size="10" name="{{_Field}}_Date" value="{{_Value_Date}}" />
+&nbsp;время:
+<input type="text" size="10" name="{{_Field}}_Time" value="{{_Value_Time}}" />
+{{/TEMPLATE:DateTime}}
+
+
+
+{{TEMPLATE:DateTime_Calendar}}
+<input type="text" size="10" name="{{_Field}}_Date" id="{{_Field}}_Date" value="{{_Value_Date}}" />
+&nbsp;<img name="popcal" src="{{theme_images}}calendar/button.gif" align="top" width="30" height="25" border="0" 
+           alt="Выбрать по календарю" title="Выбрать по календарю" 
+           style='cursor:hand'
+           onclick="imgDir='{{theme_images}}calendar/'; initCalendar();
+                    popUpCalendar(this, document.getElementById('{{_Field}}_Date'), 'd.mm.yyyy');
+                    return false;" />
+
+&nbsp;&nbsp;время:
+<input type="text" size="10" name="{{_Field}}_Time" value="{{_Value_Time}}" />
+{{/TEMPLATE:DateTime_Calendar}}
+
+{{TEMPLATE:Date_Calendar}}
+<input type="text" size="10" name="{{_Field}}_Date" value="{{_Value_Date}}" />
+&nbsp;<img name="popcal" src="{{theme_images}}calendar/button.gif" align="top" width="30" height="25" border="0" 
+           alt="Выбрать по календарю" title="Выбрать по календарю" 
+           style='cursor:hand'
+           onclick="imgDir='{{theme_images}}calendar/'; initCalendar();
+                    popUpCalendar(this, {{_Field}}_Date, 'd.mm.yyyy');
+                    return false;" />
+{{/TEMPLATE:Date_Calendar}}
+

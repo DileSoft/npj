@@ -1,0 +1,117 @@
+<!-- Различные кнопочки. Сначала БОЛЬШИЕ КНОПОЧКИ -->
+
+{{TEMPLATE:Delete}}
+<input name="{{Field}}" class="DeleteBtn" 
+  onmouseover='this.className="DeleteBtn_";' 
+  onmouseout ='this.className="DeleteBtn";' 
+  type="submit" align="top" 
+  value="{{Value}}" 
+  id="delete" style='margin-bottom:20px' /><img src="{{images}}z.gif" width="50" height="1" alt="" border="0" />
+{{/TEMPLATE:Delete}}
+
+{{TEMPLATE:Update}}
+<input name="{{Field}}" class="UpdateBtn" 
+  onmouseover='this.className="UpdateBtn_";' 
+  onmouseout ='this.className="UpdateBtn";' 
+  type="submit" align="top" 
+  value="{{Value}}" 
+  id="save" style='margin-bottom:20px' /><img src="{{images}}z.gif" width="50" height="1" alt="" border="0" />
+{{/TEMPLATE:Update}}
+
+{{TEMPLATE:Preview}}
+<input name="{{Field}}" class="UpdateBtn" 
+  onmouseover='this.className="UpdateBtn_";' 
+  onmouseout ='this.className="UpdateBtn";' 
+  type="submit" align="top" 
+  value="{{Value}}" 
+  style='font-size:11px; margin-bottom:20px' /><img src="{{images}}z.gif" width="50" height="1" alt="" border="0" />
+{{/TEMPLATE:Preview}}
+
+{{TEMPLATE:Cancel}}
+<input name="{{Field}}" class="CancelBtn" 
+  onmouseover='this.className="CancelBtn_";' 
+  onmouseout ='this.className="CancelBtn";' 
+  type="button" align="top" 
+  onclick = "history.back();"
+  value="{{Value}}" 
+  style='margin-bottom:20px' />
+{{/TEMPLATE:Cancel}}
+
+
+{{TEMPLATE:Insert}}
+<input name="{{Field}}" class="InsertBtn" 
+  onmouseover='this.className="InsertBtn_";' 
+  onmouseout ='this.className="InsertBtn";' 
+  type="submit" align="top" 
+  value="{{Value}}" 
+  id="save" style='margin-bottom:20px' /><img src="{{images}}z.gif" width="50" height="1" alt="" border="0" />
+{{/TEMPLATE:Insert}}
+
+
+{{TEMPLATE:Modal}}
+<input name="{{Field}}" class="InsertBtn"
+  onmouseover='this.className="InsertBtn_";' 
+  onmouseout ='this.className="InsertBtn";' 
+  type="submit"
+  onclick = 'window.parent.window.returnValue="{{ReturnValue}}"; window.parent.window.close(); return false;'
+  value="{{Value}}"
+ />
+{{/TEMPLATE:Modal}}
+
+{{TEMPLATE:Invisible}}
+{{/TEMPLATE:Invisible}}
+
+
+<!-- Маленькие кнопочки -->
+
+
+{{TEMPLATE:Update_Small}}
+<input name="{{Field}}" class="UpdateBtnSmall" 
+  onmouseover='this.className="UpdateBtnSmall_";' 
+  onmouseout ='this.className="UpdateBtnSmall";' 
+  type="submit" align="top" 
+  value="{{Value}}" 
+  id="save" /><img src="{{images}}z.gif" width="50" height="1" alt="" border="0" />
+{{/TEMPLATE:Update_Small}}
+
+{{TEMPLATE:Preview_Small}}
+<input name="{{Field}}" class="UpdateBtnSmall" 
+  onmouseover='this.className="UpdateBtnSmall_";' 
+  onmouseout ='this.className="UpdateBtnSmall";' 
+  type="submit" align="top" 
+  value="{{Value}}" 
+  id="preview" /><img src="{{images}}z.gif" width="50" height="1" alt="" border="0" />
+{{/TEMPLATE:Preview_Small}}
+
+{{TEMPLATE:Cancel_Small}}
+<input name="{{Field}}" class="CancelBtnSmall" 
+  onmouseover='this.className="CancelBtnSmall_";' 
+  onmouseout ='this.className="CancelBtnSmall";' 
+  type="button" align="top" 
+  onclick = "history.back();"
+  value="{{Value}}" 
+   />
+{{/TEMPLATE:Cancel_Small}}
+
+
+{{TEMPLATE:Insert_Small}}
+<input name="{{Field}}" class="InsertBtnSmall" 
+  onmouseover='this.className="InsertBtnSmall_";' 
+  onmouseout ='this.className="InsertBtnSmall";' 
+  type="submit" align="top" 
+  value="{{Value}}" 
+  id="save" /><img src="{{images}}z.gif" width="50" height="1" alt="" border="0" />
+{{/TEMPLATE:Insert_Small}}
+
+{{TEMPLATE:Modal_Small}}
+<input name="{{Field}}" class="InsertBtnSmall"
+  onmouseover='this.className="InsertBtnSmall_";' 
+  onmouseout ='this.className="InsertBtnSmall";' 
+  type="submit"
+  onclick = 'window.parent.window.returnValue="{{ReturnValue}}"; window.parent.window.close(); return false;'
+  value="{{Value}}"
+ />
+{{/TEMPLATE:Modal_Small}}
+
+{{TEMPLATE:Invisible_Small}}
+{{/TEMPLATE:Invisible_Small}}

@@ -1,0 +1,46 @@
+{{TEMPLATE:List}}
+
+<div class="skin_userpic_load_more"><a href="{{Href:Account}}/profile/pictures/add">Желаете загрузить ещё?</a></div>
+<table class="skin_userpic" cellspacing="5" cellpadding="0" border="0" width="100%">
+<thead>
+<tr>
+  <td colspan="3" class="hr"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></td>
+</tr>
+<tr>
+  <td class="center">Для сообщений</td>
+  <td class="center">Для комментариев</td>
+  <td>Название аватары</td>
+<tr>
+<tr>
+  <td colspan="3" class="hr"><img src="{{images}}z.gif" width="1" height="1" alt=""  border="0" /></td>
+</tr>
+</thead>
+<tbody>
+  {{TEMPLATE:List_Item}}
+  <tr>
+   <td class="center">
+   {{?have_big}}  <img title="Аватара для постов в лентах" src="{{Link:pic_big}}" border="0" />
+   {{?!have_big}}(нет)
+   {{?/have_big}}
+   </td>
+   <td class="center">
+   {{?have_small}}  <img title="Аватара для комментариев" src="{{Link:pic_small}}" border="0" />
+   {{?!have_small}}(нет)
+   {{?/have_small}}
+   </td>
+   <td>{{description}}</td>
+  </tr>
+  <tr>
+    <td colspan="3" class="hr"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></td>
+  </tr>
+  </tbody>
+  {{/TEMPLATE:List_Item}}
+{{/Form}}
+</table>
+{{/TEMPLATE:List}}
+
+{{TEMPLATE:List_Empty}}
+Картинок не загружено
+{{/TEMPLATE:List_Empty}}
+
+

@@ -1,0 +1,17 @@
+{{TEMPLATE:List}}
+ <ul>
+  {{TEMPLATE:List_Item}}
+   <li><b>{{Link:account}} &mdash; {{user_name}}</b> 
+       <br />
+       <small style="color:#999999">
+         Канал: <b>{{channel:channel_type}}</b>; Источник: <b>{{channel:source}}</b>
+
+         {{?is_managed}}
+         &mdash; <a href="{{Href:account}}/channel">Настроить...</a>
+         {{?/}}
+       </small></li>
+  {{/TEMPLATE:List_Item}}
+ </ul>
+  {{ARROWS}}
+{{/TEMPLATE:List}}
+{{TEMPLATE:List_Empty}} {{/TEMPLATE:List_Empty}}

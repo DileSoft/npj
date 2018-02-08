@@ -1,0 +1,120 @@
+{{TEMPLATE:List}}
+{{?CommentID}}<div class="comments-tight">{{?/}}
+<div class="comments">
+
+ {{#CommunityFilterFlip}} 
+
+ {{TEMPLATE:List_Item}}
+ <div class="one-{{?frozen}} frozen-{{?/}}" style='margin-left:{{_Depth}}px'>
+  <a name="comment{{comment_id}}"></a>
+  {{?active}}
+   <table cellspacing="0" cellpadding="7" border="0" >
+    <tr>
+      {{??control_panel}}
+      <td class="admin-">
+       <a href="{{Href:Record}}/comments/{{comment_id}}/delete" title="Удалить комментарий"><img src="{{images}}methods/delete_comment.gif" width="25" height="30" alt="" border="0" /></a><br />
+       <!-- <input class="x" type="checkbox" name="delete_{{comment_id}}" /> -->
+      </td>
+      {{??/control_panel}}
+      <td class="userpic-">{{userpic}}</td>
+      <td class="userinfo-">
+       <div class="name-" nowrap="nowrap">{{user_name}}</div>
+       <div class="link-" nowrap="nowrap">{{Link:user}}</div>
+       <div class="dt-" nowrap="nowrap">#{{comment_id}} @ {{dt}}</div>
+      </td>
+      <td width="100%" class="subject-"><div class="title-">{{subject}}</div>
+   {{??!CommentID}}
+         {{??freeze_panel}}
+           <div class="right-panel-">
+            {{??frozen}}
+              <a href="{{Href:Record}}/comments/{{comment_id}}/unfreeze">Разморозить</a>
+            {{??/frozen}}
+            {{??!frozen}}
+              <a href="{{Href:Record}}/comments/{{comment_id}}/freeze">Заморозить</a>
+            {{??/frozen}}
+           </div>
+         {{??/freeze_panel}}
+
+         {{??filter_panel}}
+           <div class="right-panel-"> 
+             {{??!filtered}}
+              <a href="{{Href:Record}}/comments/{{comment_id}}/filter">Отмодерировать</a>
+             {{??/filtered}}
+             {{??filtered}}
+              Отмодерирован &mdash; 
+              <a href="{{Href:Record}}/comments/{{comment_id}}/filter/reset">Вернуть обратно</a>
+             {{??/filtered}}
+           </div>
+         {{??/filter_panel}}
+
+       <a href="{{Href:Record}}/comments/{{comment_id}}" title="permalink">#</a>
+       | 
+       {{??frozen}}
+         Заморожен
+       {{??/frozen}}
+       {{??!frozen}}
+         <a href="{{Href:Record}}/comments/{{comment_id}}/add#comments_add" >Ответить</a>
+       {{??/frozen}}
+       {{??number_comments}}
+       | <a href="{{Href:Record}}/comments/{{comment_id}}/#comments" >Ветвь дискуссии 
+        <!-- -->
+        {{??_Is_Terminator}}({{number_comments}}){{??/_Is_Terminator}}</a>
+       {{??/number_comments}}
+   {{??/CommentID}}
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+   </table>
+   <div class="body-">{{body_post}}</div>
+  {{?!active}} 
+   <div class="removed-">
+       {{??filtered}}
+         {{??filter_panel}}
+           <div class="right-panel-"> 
+              <a href="{{Href:Record}}/comments/{{comment_id}}/filter/reset">Вернуть обратно</a>
+           </div>
+         {{??/filter_panel}}
+         комментарий скрыт модератором {{Link:filter}}<br />
+       {{??/filtered}}
+       {{??!filtered}}
+         комментарий удалён <br />
+       {{??/filtered}}
+   </div>
+  {{?/active}}
+  {{??_Is_Terminator}}
+   <div class="subtree-">Продолжение дискуссии:
+    <span> &#151; <a href="{{Href:Comments/full}}#comment{{comment_id}}">развернуть все ветви</a></span>
+   </div>
+  {{??/_Is_Terminator}}
+ </div>
+ {{/TEMPLATE:List_Item}}
+</div>
+{{?CommentID}}</div>{{?/}}
+{{/TEMPLATE:List}}
+
+
+{{TEMPLATE:List_Empty}}
+  {{?CommentID}}<div class="comments-tight">{{?/}}
+  <div class="comments">
+   {{#CommunityFilterFlip}} 
+     <div class="removed-">
+       Доступных комментариев нет.
+     </div>
+  </div>
+  {{?CommentID}}</div>{{?/}}
+{{/TEMPLATE:List_Empty}}
+
+
+ {{TEMPLATE:List_Item_2}}
+ <div class="onesmall-" style='margin-left:{{_Depth}}px'>
+   <table cellspacing="0" cellpadding="2" border="0" >
+    <tr>
+      <td class="userinfo-" nowrap>
+       <span class="dt-">{{dt}} &#151; </span><span class="link-">{{Link:user}}</span>&nbsp;
+      </td>
+      <td class="subject-"><a href="{{Href:Record}}/comments/{{comment_id}}">{{_subject}}</a></td>
+      <td>&nbsp;</td>
+    </tr>
+   </table>
+ </div>
+ {{/TEMPLATE:List_Item_2}}

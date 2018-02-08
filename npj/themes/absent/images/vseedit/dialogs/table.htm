@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<TITLE>Введите параметры таблицы</TITLE>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+
+<STYLE TYPE="text/css">
+ BODY   {margin-left:10; font-family:Verdana; font-size:12; background:menu}
+ BUTTON {width:5em}
+ TABLE  {font-family:Verdana; font-size:12}
+ P      {text-align:center}
+</STYLE>
+
+<SCRIPT LANGUAGE=JavaScript>
+function IsDigit()
+{
+  return ((event.keyCode >= 48) && (event.keyCode <= 57))
+}
+</SCRIPT>
+
+
+  <script language="JavaScript" type="text/javascript">
+  function insTable(rows, cols) {
+    document.rte.insTable(rows, cols);
+  }
+
+  function InitTableDialog() {
+  }
+  
+  function cli() {
+    insTable(document.getElementById('NumRows').value, document.getElementById('NumCols').value);
+  }
+  function clo() {
+    document.rte.closeDialog('tbl');
+  }
+  </script>
+</head>
+
+<body bgcolor="white" onLoad="InitTableDialog()" leftmargin="0" rightmargin="0" marginwidth="0" marginheight="0" topmargin="0" bottommargin="0">
+<div style="margin:10px;">
+
+<TABLE>
+ <TR>
+  <TD>Строк:
+  <TD><INPUT ID=NumRows TYPE=TEXT SIZE=3 NAME=NumRows value=2 ONKEYPRESS="event.returnValue=IsDigit();">
+ <TR>
+  <TD>Колонок:
+  <TD><INPUT ID=NumCols TYPE=TEXT SIZE=3 NAME=NumCols value=2 ONKEYPRESS="event.returnValue=IsDigit();">
+<!--
+ <TR>
+  <TD>Атрибуты таблицы:
+  <TD><INPUT TYPE=TEXT SIZE=40 NAME=TableAttrs>
+ <TR>
+  <TD>Атрибуты ячеек:
+  <TD><INPUT TYPE=TEXT SIZE=40 NAME=CellAttrs>
+ <TR>
+  <TD>Заголовок:
+  <TD><INPUT TYPE=TEXT SIZE=40 NAME=Caption>
+-->
+</TABLE>
+
+<button onclick="cli();">Ok</button>
+<BUTTON ONCLICK="clo();">Cancel</BUTTON>
+</div>
+
+</BODY>
+</HTML>

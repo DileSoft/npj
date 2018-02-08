@@ -1,0 +1,190 @@
+/* в этом файле размещаются css, специфичные для темы: в первую очередь, это интерфейсы */
+
+/* ICONS =========================================================================== */
+img.1x1 { width:1px; height:1px; border:0; visibility:hidden; display:block }
+
+img.broken  { width:12px; height:15px; border:0; }
+img.foreign { width:30px; height:15px; border:0; margin:0 2px }
+img.foreignacc { width:15px; height:15px; border:0 }
+img.account { width:15px; height:15px; border:0 }
+img.account0 { width:12px; height:12px; border:0 }
+img.account1 { width:20px; height:20px; border:0 } 
+img.account2 { width:20px; height:20px; border:0 }
+img.web { width:11px; height:9px; border:0 }
+img.mail { width:13px; height:10px; border:0; margin:0px 2px }
+
+/* ACTIONS -- оформляются как прописано в теме, да? или в шкуре ??? ================ */
+
+/* for include */
+.include_title { text-align: right; font-size: 10px; }
+.include_body { }
+.include { background-color: #f8f8f8; padding: 8px; }
+.include .include { background-color: #e8e8e8; padding: 8px; }
+.include .include .include { background-color: #d8d8d8; padding: 8px; }
+
+
+.nobr { white-space:nowrap }
+
+
+/* ФОРМ-ПРОЦЕССОР  ===============================================================   */
+FORM { padding:0; margin:0 }
+TEXTAREA { }
+label {cursor:pointer; cursor:hand;}
+.wh100 { width:100%; height:500px }
+ul.alert { padding-top:0; margin-top:0; padding-bottom:0; margin-bottom:0; color: #ff0000; font-weight:bold; font-size:11px }
+.modified { border-color: #ff6666 }
+
+/* интерфейс форм (уже новый) */
+.form_group { }
+.form_group_title_current,
+.form_group_title        { cursor:hand; padding:3px 3px 3px 7px; background:#cccccc; color:#666666; font:11px Tahoma;
+                           border:0; border-top:4px solid #999999
+                         }
+.form_group_title_hidden_current,
+.form_group_title_hidden { cursor:hand; margin-bottom:2px; padding:3px 3px 3px 7px; color:#ffffff; background:#888888; font:11px Tahoma }
+.form_group_title_current        { background:#FFB778 }
+.form_group_title_hidden_current { background:#FF8E2B }
+.form_group_body        { color:#444444; }
+.form_group_body_hidden { color:#444444; display:none }
+.form_left  { width:10%; color:#444444; font-size:90%; font-weight:bold; vertical-align:top; text-align: right; }
+.form_right { width:90%; color:#666666; font-size:90%; vertical-align:top; text-align: left; }
+.form_horiz { width:33%; color:#666666; font-size:70%; vertical-align:top; text-align: left; }
+.form_wide  { color:#666666; font-size:11px; vertical-align:top; text-align: left; }
+.form_span_name { font-weight:bold; font-size:110%; }
+.form_right_t { color:#666666; }
+.form_border { }
+.form_desc { margin: 2px 2px 10px 10px; font-size:110%; padding-left:5px; color:#888888 }
+.form_right table { font-size:1em }
+.form-wrapper-left { vertical-align:middle; padding: 1px 5px 1px 15px; }
+
+/* record preview */
+.form-auto-preview { margin:10px; padding:20px; border: 2px solid #FF0000; background:#eeeeee }
+
+/* конкретно формпроцессор для постов в сообщество */
+.items-all- select { font-size:11px }
+.items- select {  }
+
+/* кнопки (уже новые) */
+.DeleteBtn  { color:#200000; cursor:hand; background:#f2c9c3; height:40px; width:210px; }
+.DeleteBtn_ { color:#200000; cursor:hand; background:#fff6bc; height:40px; width:210px; }
+.InsertBtn  { color:#002000; cursor:hand; background:#dbffdb; height:40px; width:210px; }
+.InsertBtn_ { color:#002000; cursor:hand; background:#fff6bc; height:40px; width:210px; }
+.UpdateBtn  { color:#002000; cursor:hand; background:#c9e3f2; height:40px; width:210px; }
+.UpdateBtn_ { color:#002000; cursor:hand; background:#fff6bc; height:40px; width:210px; }
+.CancelBtn  { color:#666666; cursor:hand; font-size:10px; background:#cccccc; height:40px; width:150px; }
+.CancelBtn_ { color:#666666; cursor:hand; font-size:10px; background:#dddddd; height:40px; width:150px; }
+.InsertBtnSmall  { color:#002000; cursor:hand; font-size:10px; background:#dbffdb; height:20px; width:180px; }
+.InsertBtnSmall_ { color:#002000; cursor:hand; font-size:10px; background:#fff6bc; height:20px; width:180px; }
+.UpdateBtnSmall  { color:#002000; cursor:hand; font-size:10px; background:#c9e3f2; height:20px; width:180px; }
+.UpdateBtnSmall_ { color:#002000; cursor:hand; font-size:10px; background:#fff6bc; height:20px; width:180px; }
+.CancelBtnSmall  { color:#666666; cursor:hand; font-size:10px; background:#cccccc; height:20px; width:100px; }
+.CancelBtnSmall_ { color:#666666; cursor:hand; font-size:10px; background:#dddddd; height:20px; width:100px; }
+.LogoutBtn  { color:#666666; cursor:hand; font-size:10px; background:#cccccc; height:20px; }
+.LogoutBtn_ { color:#666666; cursor:hand; font-size:10px; background:#dddddd; height:20px; }
+
+/* сообщения об ошибках (уже новые) */
+.resultsok { font-size:11px; font-weight: bold; color: #2b8f2b; border: 1px solid #2b8f2b; background: #dbffdb; padding: 5px }
+.resultsbad { font-size:11px; font-weight: bold; color: #980d0d; border: 1px solid #980d0d;  background: #ffebeb; padding: 5px }
+.resultsnone { font-size:11px; font-weight: bold; color: #666666; border: 1px solid #666666;  background: #eeeeee; padding: 5px }
+.okBorder { background: #33cc66; color:#ffffff; font-size:xx-small; font-weight:bold; }
+.okSmall { font-size:xx-small; font-weight:bold; color:#33cc66; background:#eeffee }
+.okBody { font-size:11px; font-weight:bold; color:#33cc66; background:#eeffee }
+.disabledBorder { background: #999999 }
+.disabledBody { font-size:17px; font-weight:bold; color:#999999; background:#eeeeee }
+
+/* интерфейс для френдов */
+/* __ means this block is in some other block */
+.friends_checkbox        { text-align:center; padding: 2px 7px; }
+.friends_checkboxCHECKED { text-align:center; padding: 2px 7px; background:#ccccbb }
+.friends_group_nameCHECKED  { font-size: 80%; color:#222222; background:#ccccbb }
+.friends_group_name      { font-size: 80%; color:#444444; padding-left:5px }
+.friends_group_all       { font-size: 100%; font-weight:bold; }
+.friends_group_none      { color: #999999; padding:20px 20px; font-size:70% }
+.friends_text            { font-size:90%; margin: 20px 50px }
+.friends__hint           { font-size:90%; color:#999999; margin-top:7px }
+.friends_group_list      { width:150px; background-color: #efefef; }
+.friends_group_title     { font:bold 11px Tahoma, Arial }
+.friends_group_fieldset INPUT { margin:5px }
+.friends_group_legend    { color:#666666; font: 80% Georgia,Times }
+.friends_selector        { margin-left:10px; margin-bottom:20px; }
+
+
+TABLE.friends_join TD { font-size:90%; color:#444444 }
+TABLE.friends_grid {} /* и производные THEAD, TBODY, TGRID */
+TABLE.friends_grid THEAD TD { padding: 3px 5px; background: #e0e0d0; font: bold 11px Tahoma; }
+TABLE.friends_grid THEAD TD .friends_titles { width:60px; text-align:center; font: bold 11px Tahoma; }
+TABLE.friends_grid TBODY TD { font-size:80%; color:#444444 }
+TABLE.friends_grid TFOOT TD { font-size:70%; color:#444444 }
+
+
+/* интерфейс для юзерменю */
+table.edit_usermenu thead td {font-size:70%; font-weight:bold; color:#666666;}
+table.edit_usermenu tbody td {font-size:75%; color:#666666;}
+table.edit_usermenu .hr_ {background-color:#cccccc}
+table.edit_usermenu tfoot small {font-size:75%}
+
+
+/* интерфейс для юзерпиков */
+table.userpic thead td {color:#666666; font-size:70%; font-weight:bold;}
+table.userpic thead td .center {text-align:center}
+table.userpic tbody td {color:#666666; font-size:75%}
+table.userpic tbody img.icon {height:30px; width:25px;}
+table.userpic .hr {background-color:#cccccc}
+.userpic_load_more {padding:5px}
+
+
+/* интерфейс логин/логаута */
+td.login       { font-size:90%; color:#444444 }
+div.login       { text-align:center; padding:5px; font-size:90%; font-weight:bold; color:#444444 }
+div.login2      { text-align:left; padding:0px 20px; width:400px; font-size:80%; color:#666666 }
+td.login-block { padding:5px; text-align:center }
+
+/* vseedit toolbar */
+ .toolbar tr { background: ButtonFace; }
+ .toolbar .btn-, .toolbar  .btn-hover,  .toolbar .btn-active,  .toolbar .btn-pressed {
+  background: ButtonFace;
+  color: ButtonText;
+  border: 1px solid ButtonFace;
+  padding: 1px;  margin: 0px;
+  cursor: pointer; cursor: hand; 
+ }
+ .toolbar img{
+  width: 20px;
+  height: 20px;
+ }
+ .toolbar .btn-hover {
+  border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;
+ }
+ .toolbar .btn-active,  .toolbar .btn-pressed {
+  border-color: ButtonShadow ButtonHighlight ButtonHighlight ButtonShadow;
+ }
+ .toolbar .btn-pressed {
+  background: ButtonHighlight;
+ }
+ .edname-w, .edname-r, .edname-s  
+            { font: bold 14px Arial; border: 3px solid #D4D0C8; padding: 0 7px; color:#ffffff; vertical-align: middle;}
+ .edname-w  { background: #1E9905; }
+ .edname-r  { background: #2A45D0; } 
+ .edname-s  { background: #D08C2A; }
+ .toolbar A:LINK    { color: #000000 }
+ .toolbar A:VISITED { color: #000000 }
+ .toolbar A:HOVER   { color: #aa0000 }
+ .toolbar A:ACTIVE  { color: #aa0000 }
+
+
+ /* edit-in-place */
+.edit-in-place { border:1px #CCCCCC dashed; padding:3px; }
+.edit-in-place .edit-in-place-link- { text-align:right; font-size:11px }
+.edit-in-place .edit-in-place-link- a:LINK,
+.edit-in-place .edit-in-place-link- a:VISITED { color: #CCCCCC; }
+.edit-in-place .edit-in-place-link- a:HOVER   { color: #cc3300; text-decoration:underline; }
+.edit-in-place .edit-in-place-link- a:ACTIVE  { color: #ff0000; }
+/* edit-one-click */
+.edit-one-click           { font-size:11px; border:1px #666666 dashed; padding:3px; margin:5px; width:1%; white-space:nowrap }
+.edit-one-click a:LINK,
+.edit-one-click a:VISITED { color: #666666; }
+.edit-one-click a:HOVER   { color: #cc3300; text-decoration:underline; }
+.edit-one-click a:ACTIVE  { color: #ff0000; }
+
+/* tricky */
+#formcommentsan {display:none;}

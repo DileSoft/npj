@@ -1,0 +1,148 @@
+{{TEMPLATE:Node}}
+Вы находитесь в административном меню узла. У вас есть куча опций:
+<ul>
+<li>посмотреть <a href="{{/}}manage/users">cписок всех пользователей</a>
+(тот же, <a href="{{/}}manage/communities">по&nbsp;сообществам</a>)<br /><br />
+</li>
+<li>посмотреть <a href="{{/}}manage/users/new">новые анкеты</a> на регистрации
+(тот же, <a href="{{/}}manage/communities/new">по&nbsp;сообществам</a>)<br /><br />
+</li>
+<li>список <a href="{{/}}manage/users/frozen">замороженных аккаунтов</a>
+(тот же, <a href="{{/}}manage/communities/frozen">по&nbsp;сообществам</a>)
+</li>
+<li>список <a href="{{/}}manage/users/banned">наказанных аккаунтов</a>
+(тот же, <a href="{{/}}manage/communities/banned">по&nbsp;сообществам</a>)<br /><br />
+</li>
+<li><a href="{{/}}manage/nns">управление подключением</a> к сети NPJ-узлов<br /><br />
+</li>
+<li>и в журнале узлового пользователя: 
+ <ul>
+  <li><a href="{{Href:Account}}/friends/edit">вычеркнуть кого-нибудь из фифа</a>,</li>
+  <li><a href="{{Href:Account}}/manage/usermenu">настроить меню пользователя по-умолчанию</a>,</li>
+  <li><a href="{{Href:Account}}/manage">управление журналом</a>.</li>
+ </ul>
+</li>
+</ul>
+{{/TEMPLATE:Node}}
+
+
+
+
+{{TEMPLATE:Account0}}
+Вы находитесь в административном меню журнала пользователя. У вас есть куча опций:
+<ul>
+<li><a href="{{Href:Account}}/profile/edit">редактировать профиль журнала</a>
+</li>
+<li>потвикать <a href="{{Href:Account}}/settings">настройки пользователя</a><br /><br />
+</li>
+<li>редактировать <a href="{{Href:Account}}/friends/groups/edit/confidents">группы конфидентов</a>
+    или <a href="{{Href:Account}}/friends/groups/edit/correspondents">корреспондентов</a>
+</li>
+<li><a href="{{Href:Account}}/friends/edit">исключить</a> 
+    или <nobr><a href="{{Href:Account}}/friends/add">добавить кого-нибудь в&nbsp;свои друзья</a></nobr><br /><br />
+</li>
+<li>изменить <a href="{{Href:Account}}/manage/usermenu">персональное меню</a>
+</li>
+<li>загрузить <a href="{{Href:Account}}/profile/pictures">картинки-аватары</a><br /><br />
+</li>
+<li><a href="{{Href:Account}}/ban/edit">редактировать бан-лист</a> и 
+    <a href="{{Href:Account}}/rights">настройки доступа по-умолчанию</a><br /><br />
+</li>
+<li><a href="{{Href:Account}}/settings/password">поменять пароль</a>
+</li>
+<li><a href="{{Href:Account}}/settings/login/reset">сбросить все перманентные логины</a>
+</li>
+<li><a href="{{Href:Account}}/manage/freeze">заморозить журнал</a>, если вам надоело его писать
+</li>
+</ul>
+{{/TEMPLATE:Account0}}
+
+
+{{TEMPLATE:Account1}}
+Вы находитесь в административном меню журнала сообщества. У вас есть куча опций:
+<ul>
+<li><a href="{{Href:Account}}/profile/edit">редактировать профиль сообщества</a><br /><br />
+</li>
+<li><a href="{{Href:Account}}/modfeed">модерировать поступающие сообщения</a>
+</li>
+<li>принять или отклонить <a href="{{Href:Account}}/friends/edit/requests">заявки на членство</a>
+</li>
+<li><a href="{{Href:Account}}/ban/edit">редактировать бан-лист</a><br /><br />
+</li>
+<li>редактировать <a href="{{Href:Account}}/friends/edit/moderators">список модераторов</a>,
+    <a href="{{Href:Account}}/friends/edit/lightmembers">тех, кто может писать</a> и
+    <a href="{{Href:Account}}/friends/edit/powermembers">тех, кого не надо премодерировать</a><br /><br />
+</li>
+<li>загрузить <a href="{{Href:Account}}/profile/pictures">картинки-аватары</a> сообщества<br /><br />
+</li>
+<li><a href="{{Href:Account}}/manage/freeze">заморозить сообщество</a>, если вам там надоело
+</li>
+</ul>
+{{/TEMPLATE:Account1}}
+
+
+{{TEMPLATE:Account1_Moderators}}
+Вы находитесь в меню модератора сообщества.
+У вас есть куча опций:
+<ul>
+<li><a href="{{Href:Account}}/modfeed">модерировать поступающие сообщения</a><br /><br />
+</li>
+<li>редактировать списки 
+    <a href="{{Href:Account}}/friends/edit/lightmembers">тех, кто может писать</a> и
+    <a href="{{Href:Account}}/friends/edit/powermembers">тех, кого не надо премодерировать</a><br /><br />
+</li>
+<li>принять или отклонить <a href="{{Href:Account}}/friends/edit/requests">заявки на членство</a><br /><br /> 
+</li>
+<li><a href="{{Href:Account}}/ban/edit">редактировать бан-лист</a>
+</li>
+</ul>
+{{/TEMPLATE:Account1_Moderators}}
+
+
+{{TEMPLATE:Account2}}
+{{?IsNode}}
+  Вы находитесь в административном меню журнала рабочей группы узла. У вас есть куча опций:
+  <ul>
+  <li><a href="{{/}}manage">настроить сам узел</a><br /><br />
+  </li>
+{{?!IsNode}}
+  Вы находитесь в административном меню журнала рабочей группы. У вас есть куча опций:
+  <ul>
+{{?/}}
+<li><a href="{{Href:Account}}/profile/edit">редактировать профиль рабочей группы</a><br /><br />
+</li>
+<li><a href="{{Href:Account}}/modfeed">модерировать поступающие сообщения</a>
+</li>
+<li>принять или отклонить <a href="{{Href:Account}}/friends/edit/requests">заявки на членство</a>
+</li>
+<li><a href="{{Href:Account}}/ban/edit">редактировать бан-лист</a><br /><br />
+</li>
+<li>редактировать <a href="{{Href:Account}}/friends/edit/managers">список менеджеров</a>,
+    <a href="{{Href:Account}}/friends/edit/observers">наблюдателей</a> и
+    <a href="{{Href:Account}}/friends/edit/members">членов РГ</a><br /><br />
+</li>
+<li>загрузить <a href="{{Href:Account}}/profile/pictures">картинки-аватары</a> группы<br /><br />
+</li>
+<li><a href="{{Href:Account}}/manage/freeze">заморозить рабочую группу</a>, если вам там надоело
+</li>
+</ul>
+{{/TEMPLATE:Account2}}
+
+
+{{TEMPLATE:Account2_Moderators}}
+Вы находитесь в меню менеджера рабочей группы.
+У вас есть куча опций:
+<ul>
+<li><a href="{{Href:Account}}/modfeed">модерировать поступающие сообщения</a><br /><br />
+</li>
+<li>редактировать списки
+    <a href="{{Href:Account}}/friends/edit/observers">наблюдателей</a> и
+    <a href="{{Href:Account}}/friends/edit/members">членов РГ</a><br /><br />
+</li>
+<li>принять или отклонить <a href="{{Href:Account}}/friends/edit/requests">заявки на членство</a><br /><br /> 
+</li>
+<li><a href="{{Href:Account}}/ban/edit">редактировать бан-лист</a>
+</li>
+</ul>
+{{/TEMPLATE:Account2_Moderators}}
+

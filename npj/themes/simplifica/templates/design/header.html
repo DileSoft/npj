@@ -1,0 +1,43 @@
+<table class="header w100" cellspacing="0" cellpadding="0" border="0">
+<tr class="no-print">
+  <td class="logo-" rowspan="2">
+    <a href="{{/}}"><img src="{{images}}style/logo.gif" border="0" class="block" width="150" height="50" alt="" /></a>
+  </td>
+  <td class="panel-">
+    {{#HeaderMenu}} 
+  </td>
+  <td class="user-" nowrap="nowrap">
+    {{#UserPanel}}
+  </td>
+</tr>
+<tr class="no-print">
+  <td class="panel- title-">
+    {{NodeName}}
+  </td>
+  <td class="panel- title- search-">
+    {{@design/search.html}}
+  </td>
+</tr>
+<tr>
+ <td>&nbsp;</td>
+ <td>
+   <div class="sitepath">
+      {{#Path}} {{?Record.Stats.ChangedDT}}({{Record.Stats.ChangedDT}}){{?/}}
+      {{??Record.Stats.Address}}
+       <nobr>
+       {{??Record.Stats.Journal1}}&mdash; <a href="{{Href:Account}}/friends">члены сообщества</a>{{??/Record.Stats.Journal1}}
+       {{??Record.Stats.Journal2}}&mdash; <a href="{{Href:Account}}/friends">состав рабочей группы</a>{{??/Record.Stats.Journal2}}
+       </nobr>
+      {{??/Record.Stats.Address}}
+   </div>
+ </td>
+ <td class="no-print newpost-">
+   {{?UserPanel.Guest}}
+     &nbsp;
+   {{?!UserPanel.Guest}}
+     <a href="{{/}}post">Написать сообщение в свой блог &rarr;</a>
+   {{?/}}
+ </td>
+</tr>
+</table>
+

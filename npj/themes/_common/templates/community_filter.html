@@ -1,0 +1,17 @@
+{{TEMPLATE:List}}
+ <div class="community-filter">
+  <div class="filter-flip-">
+   <b>Фильтр:</b>
+   {{TEMPLATE:List_Item}} {{_Text}} {{/TEMPLATE:List_Item}}
+  </div>
+  <div class="filter-title-">
+    <span class="filter-link-">{{filter_link}}</span>
+    {{?more}}
+      <nobr><span class="filter-more-">(<a href="{{Href:more}}#comments">{{more}}</a>)</span></nobr>
+    {{?/}}
+  </div>
+  <div class="stopper-"></div>
+ </div>
+{{/TEMPLATE:List}}
+{{TEMPLATE:List_Empty}} {{/TEMPLATE:List_Empty}}
+   {{TEMPLATE:List_Separator}}|{{/TEMPLATE:List_Separator}}

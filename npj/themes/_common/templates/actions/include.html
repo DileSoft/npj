@@ -1,0 +1,24 @@
+{{TEMPLATE:Cycle}}
+<div class="action_error">
+ <strong>ОШИБКА!</strong>
+ Нашли цикличный include: <a href="{{Link:Include}}">{{IncludeTitle}}</a>
+</div>
+{{/TEMPLATE:Cycle}}
+
+
+{{TEMPLATE:InPost}}
+<div class="include">
+ Здесь должен бы быть инклюд <a href="{{Link:Include}}">{{IncludeTitle}}</a>
+</div>
+{{/TEMPLATE:InPost}}
+
+
+{{TEMPLATE:Title}}
+Документ: 
+<a href="{{Link:Include}}">{{IncludeTitle}}</a>
+{{?!NoEdit}}
+(<a href="{{Link:Include}}/edit">правка</a>)
+{{?/}}
+{{/TEMPLATE:Title}}
+
+

@@ -1,0 +1,320 @@
+/* ОФОРМИТЕЛЬСКИЙ CSS */
+/* в этом файле размещаются CSS, специфичные для шкуры по части оформления */
+
+
+/* переоформление базовых элементов */
+body      { margin:0; padding:0; 
+            background:  #ffffff; 
+            color:#444444; }
+table     { border:none; }
+td        { vertical-align:top }
+img.block { display:block; }
+
+body, table, td, div, p {  font-family: Arial, Tahoma, Verdana, sans;  }
+
+form { padding:0; margin:0 }
+
+hr   { height:1px; border:0; color:#aaaaaa; background:#aaaaaa }
+b    { font-weight:bold }
+
+h1 { padding:0 5px 5px 0; color:#000000; margin:0; font: 25px Arial;  } 
+
+
+a:LINK    { color: #0020cc; }
+a:VISITED { color: #8020cc; }
+a:HOVER   { color: #cc3300; text-decoration:underline; }
+a:ACTIVE  { color: #ff0000; }
+
+.dummy { border:0; width:0; height:0 } /* правда забавно? */
+
+/* Выравнивание, размеры */
+.w100 {width:100%;}
+.right {text-align:right;}
+.left {text-align:left;}
+
+/* Текстовые классы */
+span.current { font-weight:bold; }
+.alert { color: #ff0000; font-weight:bold; font-size:11px }
+.error { font-weight:bold; color:#ff0000; text-align:center }
+.br  { background: #999999 }
+.br2 { background: #cccccc }
+.br3 { background: #eeeeee }
+.text  { font-size: 70%; color: #555555 }
+.small { font-size: 90%; color: #999999 } /* Стиль применяется для вложенного уменьшения размера на 10% */
+.bonus { color:#999999 }
+
+/* вспомогательный для отладки */
+table.set td {border:1px #444444 dashed;} 
+.set {border:1px #000000 dashed;}
+
+/* перегрузка формы логина */
+td.login-block td.login { font-size:80% }
+
+
+/* ПУТЬ ПО САЙТУ =================================================================================== */
+.sitepath { margin: 3px 0 10px 0px;
+            font-size:70%;
+            color: #a9a9a9 }
+.sitepath A:LINK    { color: #a9a9a9 }
+.sitepath A:VISITED { color: #a9a9a9 }
+.sitepath A:HOVER   { color: #cc3300 }
+.sitepath A:ACTIVE  { color: #ff0000 }
+.sitepath .slash-   { padding: 0 2px }
+.sitepath img { filter:Gray; margin-right:2px }
+.sitepath A:HOVER img { filter:none }
+
+/* FOOTER ----- */
+.footer        { margin: 0px 0 0 0; padding: 5px 5px 5px 5px; border-top:1px #cccccc solid  }
+.footer .copy- { font-size:11px; color:#a9a9a9; padding: 0px 5px 0 }
+.footer A:LINK    { color: #a9a9a9 }
+.footer A:VISITED { color: #a9a9a9 }
+.footer A:HOVER   { color: #cc3300 }
+.footer A:ACTIVE  { color: #ff0000 }
+.footer img { filter:Gray }
+.footer A:HOVER img { filter:none }
+
+/* ТИПОВОЕ ОФОРМЛЕНИЕ ТЕКСТА ------------------------------------------------------------------------ */
+.wrapper { 
+           font: 80% Arial;
+           color: #363636;
+           line-height: 1.6em;
+           padding-bottom:10px;
+         }
+.comments .body- ul,
+.wrapper ul         {                     }
+.comments .body- p  { padding:0; margin:0 }
+
+/* левая часть страницы -- юзерпик и журнальные ссылки */
+.body-wrapper { }
+.body-wrapper .userzone- { width:20% }
+.body-wrapper .content-  { width:80% }
+
+.body-wrapper .userzone- .title-  { font-weight:bold; padding-left: 5px; }
+.body-wrapper .userzone- .subtitle-  { font-size:70%; color:#999999; padding-left: 5px; }
+
+.body-wrapper .userzone- .userpic- { text-align:center; }
+.body-wrapper .userzone- .userpic- .border- { border:1px solid #ffffff; margin:5px; padding:5px; }
+.body-wrapper .userzone- table { font-size:1em; width: 150px }
+
+.body-wrapper .userzone- .menu- { font-size:80%; padding: 5px 5px 50px }
+.body-wrapper .userzone- .menu- .item- { margin: 10px 0 }
+
+
+.body-wrapper .userzone- a:link    { color: #666666 }
+.body-wrapper .userzone- a:visited { color: #666666 }
+.body-wrapper .userzone- a:hover   { color: #ff0000 }
+.body-wrapper .userzone- a:active  { color: #ff0000 }
+
+.record-controls  { color:#999999; background: #e0e0e0; float:right;
+                    padding: 10px; margin:0 0 0 10px; font-size:80% }
+.record-controls a:link    { color: #444444 }
+.record-controls a:visited { color: #444444 }
+.record-controls a:hover   { color: #ff0000 }
+.record-controls a:active  { color: #ff0000 }
+
+
+
+/* ЗАГОЛОВОЧНАЯ ЗОНА -------------------------------------------------------------------- */
+div.title-security { font-size:70%; color:#999999 }
+h1.title,
+h1.title-confirm {}
+.top-ref { font-size: 70%; color:#999999 }
+.top-ref A:LINK    { color: #666666 }
+.top-ref A:VISITED { color: #666666 }
+.top-ref A:HOVER   { color: #cc3300 }
+.top-ref A:ACTIVE  { color: #ff0000 }
+
+/* анонсы документов -- это кажется в шапке пишется */
+.announce-top { clear:both; }
+.announce-top .text- { font-size:80%; color:#444444 }
+.announce-top .dt- { font: 70% Tahoma }
+
+.header { }
+.header .logo-  { width:20%; padding: 10px; text-align:center }
+.header .panel- { width:50%; background:#F4C724 }
+
+.header .user-  { width:30%; background:#FADE62; 
+                  padding:5px 10px 0; font-size:80%; }
+.header .user- a:link    { color: #000000 }
+.header .user- a:visited { color: #000000 }
+.header .user- a:hover   { color: #ff0000 }
+.header .user- a:active  { color: #ff0000 }
+
+.header .user- table.login-    { font-size: 1em }
+.header .user- table.login- td { font-size: 80%; vertical-align:middle }
+.header .user- table.login- .submit-   { font-size: 90% }
+
+.header .menu-  { padding:2px 10px; font-size:80%; }
+.header .menu- a:link    { color: #ffffff }
+.header .menu- a:visited { color: #ffffff }
+.header .menu- a:hover   { color: #444444 }
+.header .menu- a:active  { color: #000000 }
+
+.header .title-   { vertical-align:bottom; padding:0 10px 5px;
+                    color: #ffffff; font: 19px Arial, sans 
+                  }
+
+.header .search-  { padding:3px 10px; font-size:80%; color: #ffffff }
+.header .search- a:link    { color: #ffffff }
+.header .search- a:visited { color: #ffffff }
+.header .search- a:hover   { color: #444444 }
+.header .search- a:active  { color: #000000 }
+
+.header .newpost- { padding: 5px 10px; font-size:80%; text-align:right }
+/* конец ЗАГОЛОВОЧНАЯ ЗОНА -------------------------------------------------------------------- */
+
+
+img.security-public    { margin:5px width:28px; height:1px; }
+img.security-private   { margin:5px width:28px; }
+img.security-custom    { margin:5px width:28px; }
+img.security-friends   { margin:5px width:28px; }
+img.security-forbidden { margin:5px width:28px; }
+
+
+/* модерация */
+.body-panel { 
+  margin: 30px 0 0 0;
+  background:#ffeecc;
+  padding: 5px 0px 5px 5px;
+  color: #999999;
+  font-size:70%;
+  text-align:left;  
+            }
+.body-panel-title { float:left; }
+.body-panel-info-bottom { float:left; color:#666666 }
+.body-panel-info-bottom ul { padding:0 0 0 5px; margin: 0 }
+.body-panel-info-bottom .need-mod- { background:#ffccaa; padding:5px 10px 10px 5px; margin:2px; color:#444444 }
+.body-panel-info-bottom .need-mod- strong { color:#800000; }
+.body-panel-info-bottom .need-mod- form { padding-top:5px }
+.body-panel-info-bottom .need-mod- input.confirm- { background:#aaffaa; cursor:hand }
+.body-panel-info-bottom .need-mod- input.decline- { cursor:hand }
+.body-panel-info-bottom ul,
+.body-panel-info-bottom ul li { list-style-type: none; }
+
+
+/* комментарии */
+.comments-hidden, .comments-visible, .comments-deep
+{
+  margin: 30px 0 0 0;
+  background:#eeeeee;
+  padding: 5px 0px 5px 5px;
+  color: #999999;
+  font-size:70%;
+  text-align:left;  
+}
+.comments-deep { margin:0 }
+.comments-mode    { float:right; padding:0px 5px; color:#999999; background:#EFEFEF; }
+.comments-mode A:LINK    { color: #666666 }
+.comments-mode A:VISITED { color: #666666 }
+.comments-mode A:HOVER   { color: #cc3300 }
+.comments-mode A:ACTIVE  { color: #ff0000 }
+.comments-add
+{
+  background:#ffffff;
+  padding: 5px 30px 5px 5px;
+  color:#0064D8;
+  font-weight:bold;
+  font-size:90%;
+}
+.comments-preview 
+{ 
+  font-size:80%; 
+  color:#444444; 
+  margin:0 30px 0 5px; 
+  padding: 10px; 
+  background:#efefef 
+}
+
+.comments-form { padding-right:10px }
+
+
+.comments { padding:5px 10px 50px 0px; color:#666666; }
+.comments-tight .comments { padding-bottom:0;  }
+.comments .one- { margin:5px 0 0 0 }
+.comments .admin- { text-align:center; color:#666666; vertical-align:top; background:#DFDFDF; }
+.comments .admin- input.x { padding:0; margin:0; width:16px }
+.comments .admin- img { background: #FFFFFF; border: 1px solid #cccccc }
+
+.comments .userpic- { background:#DFDFDF; }
+
+.comments .userinfo- { color:#666666; vertical-align:top; }
+.comments .userinfo- .author- { float:left }
+.comments .userinfo- .name- { font-weight:bold; color:#003366; white-space:nowrap }
+.comments .userinfo- .link- { color:#003366; white-space:nowrap }
+.comments .userinfo- .dt-   { font-family:Tahoma; font-size:10px; float:right;
+                              color:#999999; white-space:nowrap }
+.comments .subject- { color:#666666; vertical-align:bottom; font-size:70%; background:#DFDFDF;  }
+.comments .subject- .title- { margin-bottom:0px; color:#666666; vertical-align:top; font: bold 15px Arial }
+.comments .body- { color:#222222; font-size:80%; padding:2px 10px 7px;
+                   border: 1px #eeeeee solid }
+
+/* удалённый комментарий */
+.comments .removed-,
+.comments .controls- 
+                      { 
+                       background:#f5f5f5; font-size:70%; 
+                       padding: 3px 10px; margin: 0 0 0px 0px }
+.comments .removed- { font-size:80%; color:#999999; font-weight:bold; }
+
+/* замороженный комментарий */
+.comments  .frozen- .userpic-,
+.comments  .frozen- .admin-,
+.comments  .frozen- .subject-   { background: #CCD0F5 }
+.comments  .frozen- .body-      { border-color: #CCD0F5 }
+.comments  .frozen- .controls-  { background: #DCE0FF; color:#9999DD }
+.comments  .frozen- .admin- img { background: #FFFFFF; border: 1px solid #AAB5E5 }
+
+.comments  .right-panel- { float:right; margin-left:5px }
+.comments  .right-panel- a:LINK,
+.comments  .right-panel- a:VISITED   { color:#9999DD }
+.comments  .right-panel- a:HOVER,
+.comments  .right-panel- a:ACTIVE    { color:#ff0000 }
+
+/* Фильтр сообщества */
+.community-filter { background:#ffeecc;
+                    padding: 5px;
+                    margin: 5px 0;
+                    color: #999999;
+                  }
+.community-filter .filter-flip- { float:right; font-size:70% }
+.community-filter .filter-link- { font-size:80%; font-weight:bold }
+.community-filter .filter-more- { font-size:70%; }
+.community-filter .stopper- { clear:both }
+
+
+
+.comments .onesmall- { margin:2px; background:#DFDFDF }
+.comments .onesmall- .subject- { font-size:80%; padding: 0 5px 3px }
+.comments .onesmall- .userinfo- { padding-left: 5px }
+.comments .onesmall- .link- { font-size:70% }
+.comments .onesmall- .link- A:LINK    { color: #666666 }
+.comments .onesmall- .link- A:VISITED { color: #666666 }
+.comments .onesmall- .link- A:HOVER   { color: #cc3300 }
+.comments .onesmall- .link- A:ACTIVE  { color: #ff0000 }
+.comments .onesmall- .dt-   { font-family:Tahoma; font-size:10px; float:right; padding:5px;
+                              color:#999999; white-space:nowrap }
+
+.comments .subtree- { font: bold 70% Tahoma, Arial; color:#444444; padding:10px 0 3px 22px }
+.comments .subtree- span { font-weight:normal; color:#999999 }
+.comments .subtree- a:LINK,
+.comments .subtree- a:VISITED   { color:#999999 }
+.comments .subtree- a:HOVER,
+.comments .subtree- a:ACTIVE    { color:#ff0000 }
+
+.comments A.service-:LINK    { color: #666666 }
+.comments A.service-:VISITED { color: #666666 }
+.comments A.service-:HOVER   { color: #cc3300 }
+.comments A.service-:ACTIVE  { color: #ff0000 }
+
+
+/* режим отображения содержимого рубрики */
+.roubric-settings { padding:5px; background:#FADE62; }
+.roubric-settings h3 { padding:0  ; margin:0; border:0; font: 19px Arial }
+.roubric-settings .mode-    { float:right; padding:0px; color:#F4C724; background:#FADE62; }
+.roubric-settings .mode- A:LINK    { color: #666666 }
+.roubric-settings .mode- A:VISITED { color: #666666 }
+.roubric-settings .mode- A:HOVER   { color: #cc3300 }
+.roubric-settings .mode- A:ACTIVE  { color: #ff0000 }
+.roubric-empty    { padding:5px; color:#999999; }
+
+

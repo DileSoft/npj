@@ -1,0 +1,82 @@
+<!---------------------------------- default ----------------------------------------->
+{{TEMPLATE:List_default}}
+<style>
+.forum-action { }
+.forum-action thead td { background:#aaaaaa; color:#ffffff; font-size:11px; vertical-align:middle; padding:2px 5px }
+.forum-action thead .subj- { font-size:12px; font-weight:bold }
+.forum-action thead .author- { font-size:12px; font-weight:bold }
+.forum-action thead .noco- { font-size:9px; text-align:center; }
+
+.forum-action thead .subj-    { width: 60% }
+.forum-action thead .author-  { width: 25% }
+.forum-action thead .noco-    { width:  5% }
+.forum-action thead .lastcom- { width: 10% }
+
+.forum-action tbody td { padding:2px 5px }
+.forum-action tbody tr.even1  { background:#fff5ee }
+.forum-action tbody .subj-    { font-weight:bold; font-size:12px }
+.forum-action tbody .abstract-  { font-weight:normal; font-size:10px; color:#999999 }
+.forum-action tbody .author-  { font-size:12px }
+.forum-action tbody .noco-    { font-size:12px; text-align:center }
+.forum-action tbody .lastcom- { font-size:11px }
+.forum-action tbody .author- div { width:48px; height:48px; text-align:center; vertical-align:center }
+.forum-action tbody .author- div { display:none }
+.forum-action tbody .none- { color:#999999 }
+
+</style>
+{{FORUM-ARROWS}}
+
+<table cellspacing="2" cellpadding="0" border="0" class="forum-action w100">
+ <thead>
+  <tr>
+   <td class="subj-">Тема</td>
+   <td class="author-">Автор</td>
+   <td class="noco-">Комментарии</td>
+   <td class="lastcom-">Последний комментарий</td>
+  </tr>
+ </thead>
+
+ <tbody>
+ {{TEMPLATE:List_default_Item}}
+  <tr class="even{{even}}">
+   <td class="subj-">
+     <a href="{{Href:tag}}">{{non_empty_subject}}</a>
+     {{?non_empty_abstract}}<div class="abstract-">{{non_empty_abstract}}</div>{{?/}}
+   </td>
+   <td class="author-">
+          <div style="float:left">                      <!-- -->
+            {{?userpic_small}}<!--  --><a href="{{Href:user}}">{{userpic_small}}</a><!-- -->
+            {{?!userpic_small}}<!-- --><img src="{{images}}z.gif" class="block" alt="" border="0" /><!-- -->
+            {{?/}}
+          </div>
+          {{Link:user}}<br />
+          <strong>{{edited_user_name}}</strong> <br clear="all" />
+   </td>
+   <td class="noco-">
+    {{?number_comments}}  <a href="{{Href:comments_target}}/comments?nc={{number_comments}}#comments" >{{number_comments}}</a>
+    {{?!number_comments}} <small class="none-">(нет)<small>
+    {{?/}}
+   {{number}}
+   </td>
+   <td class="lastcom-">
+    {{?last_comment_id}}
+      {{commented_dt}}
+      <br />
+      {{Link:comment_user}}
+    {{?!last_comment_id}}
+     <span class="none-">&mdash;</span>
+    {{?/}}
+   </td>
+  </tr>
+ {{/TEMPLATE:List_default_Item}}
+ </tbody>
+
+</table>
+{{FORUM-ARROWS}}
+
+{{/TEMPLATE:List_default}}
+{{TEMPLATE:List_default_Empty}}
+<div class="feed-none">{{data_empty}}</div>
+{{/TEMPLATE:List_default_Empty}}
+
+

@@ -1,0 +1,27 @@
+{{TEMPLATE:List}}
+<style>
+ .trako-interface-menu          { margin:5px; color:#cccccc }
+ .trako-interface div          { padding: 5px 8px }
+ .trako-interface div.current- { margin: 5px 5px 0px 1px; border: 1px solid; 
+                                border-color:#ffffff; border-bottom:0;  
+                                color:#ffffff; background:#999999;
+                              }
+ .trako-interface div.ok-      { margin: 5px 8px 0px 0px; border: 1px solid ; background: #ffffff;
+                                border-color:#c0c0c0 #c0c0c0 #ffffff #c0c0c0; border-bottom:0 }
+ .trako-interface a:hover  div.ok- { border-color:#cc3300 #cc3300 #ffffff #cc3300; background: #ffefb8 }
+ .trako-interface a:active div.ok- { border-color:#ff0000 #ff0000 #ffffff #ff0000; background: #ffefb8 }
+</style>
+
+ <table class="trako-interface" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+  {{TEMPLATE:List_Item}}
+  <td nowrap="nowrap" class="icon-"><a href="{{_Href}}"><div class="ok-" >{{_Text}}</div></a></td>
+  {{/TEMPLATE:List_Item}}
+ </tr></table>
+{{/TEMPLATE:List}}
+{{TEMPLATE:List_Empty}} {{/TEMPLATE:List_Empty}}
+
+
+  {{TEMPLATE:List_Item_Current}}
+  <td nowrap="nowrap" class="icon-"><div class="current-" >{{_Text}}</div></td>
+  {{/TEMPLATE:List_Item_Current}}

@@ -1,0 +1,20 @@
+{{TEMPLATE:Decline}}
+Вы собираетесь отказать пользователю <b>{{Link:Author}}</b> 
+({{Author}}) в публикации его чудесного сообщения, вот такого:
+<ul><li><b>{{Link:Record}} &#151; {{Record.Subject}}</b></li></ul>
+
+<div>
+<b>Укажите причину отказа:</b>
+</div>
+
+{{Form:Decline}}
+<textarea style="width:100%" name="reason" rows=10></textarea>
+<br />
+<input type="submit" name="approve_decline" value="Отказать в публикации" />
+&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+если Вы передумали &#151;
+<input type="button" onclick="history.back()" value="Отмена" />
+{{/Form}}
+
+{{/TEMPLATE:Decline}}

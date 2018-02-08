@@ -1,0 +1,29 @@
+<!-- Оповещение о новых на регистрацию -->
+
+{{TEMPLATE:Subject}}{{!Mail:Subject}}{{/TEMPLATE:Subject}}
+
+
+{{TEMPLATE:Body}}
+{{!Mail:Hello}} администратор узла <b>@{{node_id}}</b>!
+<br /><br />
+{{!Mail:MainText}}
+<br /><br />
+<b>Вот некоторые данные об аккаунте:</b> (<a href="{{Href:profile}}">подробнее в профиле</a>)<br />
+
+<br />
+{{?is_user}}Это &mdash; новый пользователь!
+{{?is_community}}Это &mdash; новое сообщество!
+{{?is_workgroup}}Это &mdash; новая рабочая группа
+{{?/}}
+<br />
+Логин: <b>{{login}}@{{node_id}}</b>      <br />
+Имя:  <b>{{user_name}}</b>      <br />
+<hr />
+<br />
+Понравился? <b><a href="{{Href:alive}}">Подтвердите регистрацию {{login}}@{{node_id}}!</a></b>
+
+<br /><br />
+<hr />
+{{!Mail:Goodbye}}<br />
+{{Link:Host}}
+{{/TEMPLATE:Body}}

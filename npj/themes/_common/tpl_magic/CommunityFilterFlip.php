@@ -1,0 +1,11 @@
+<?php
+
+    if (!$rh->object->record) return GRANTED;
+
+    // ÂÛÂÎÄ ÏÀÍÅËÈ
+    $su = &$rh->utility["skin"];
+
+    echo $su->ParseCommunityFilterFlip( $rh->object->record );
+
+
+?>

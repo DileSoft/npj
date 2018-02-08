@@ -1,0 +1,51 @@
+<!-- Как выглядит форма -->
+ 
+
+{{TEMPLATE:Form}}{{!MailHello}}
+
+{{_Preface}}
+
+-----------------------------------------------------
+Содержимое формы:
+{{CUSTOM}}{{TEMPLATE:Form_Item}}==== {{GroupName}} ====
+{{FIELDS}}
+{{/TEMPLATE:Form_Item}}
+-----------------------------------------------------
+{{!MailGoodbye}}
+{{/TEMPLATE:Form}}
+
+{{TEMPLATE:Form_Empty}}{{/TEMPLATE:Form_Empty}}
+
+
+<!-- как линкуются кнопочки -->
+{{TEMPLATE:Buttons}}
+  {{TEMPLATE:Buttons_Item}}[do not applicable.]{{/TEMPLATE:Buttons_Item}}
+{{/TEMPLATE:Buttons}}
+{{TEMPLATE:Buttons_Wysiwyg}}
+  {{TEMPLATE:Buttons_Wysiwyg_Item}}[do not applicable.]{{/TEMPLATE:Buttons_Wysiwyg_Item}}
+{{/TEMPLATE:Buttons_Wysiwyg}}
+{{TEMPLATE:Buttons_Empty}}{{/TEMPLATE:Buttons_Empty}}
+{{TEMPLATE:Buttons_WysiwygEmpty}}{{/TEMPLATE:Buttons_WysiwygEmpty}}
+
+
+<!-- Как выглядят отдельные строки формы -->
+{{TEMPLATE:Hidden}}{{/TEMPLATE:Hidden}}
+{{TEMPLATE:Row}}  * {{_Name}} => {{_Value}}
+{{/TEMPLATE:Row}}
+
+{{TEMPLATE:Row_Described}}  * {{_Name}} => {{_Value}}
+{{/TEMPLATE:Row_Described}}
+
+
+{{TEMPLATE:Row_Span}}  * {{_Name}} => 
+{{_Value}}
+
+{{/TEMPLATE:Row_Span}}
+
+{{TEMPLATE:Row_Span_Described}}  * {{_Name}} => 
+{{_Value}}
+
+{{/TEMPLATE:Row_Span_Described}}
+
+
+

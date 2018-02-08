@@ -1,0 +1,43 @@
+<!------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------>
+{{TEMPLATE:Form}}
+{{Form:Join}}
+<input type="hidden" name="do" value="submit" />
+<div class="friends_text">
+{{FormState}}
+{{?IsFriendAlready}}
+  <br />
+  <div class="friends__hint">
+  {{FormAction}}
+  </div>
+{{?/}}
+</div>
+<table class="friends_join" cellspacing="5" cellpadding="0" border="0" align="center">
+<tr><td>Вы &#151; {{Link:Principal}}</td>
+    <td><input type="submit" value="{{FormButton}}" /></td>
+</tr>
+{{?!IsFriendAlready}}
+<tr>
+<td colspan="2"><br />
+<strong>Подписаться на все новые:</strong><br />
+&nbsp;<input type="checkbox" name="subscribe_post" id="subscribe_post" />
+<label for="subscribe_post">сообщения в сообществе</label><br />
+&nbsp;<input type="checkbox" name="subscribe_comments" id="subscribe_comments" />
+<label for="subscribe_comments">комментарии в сообществе</label><br />
+</td>
+</tr>
+{{?/}}
+</table>
+{{/Form}}
+{{/TEMPLATE:Form}}
+
+
+<!------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------>
+{{TEMPLATE:Done}}
+На результаты своих действий вы можете посмотреть:
+<ul>
+ <li>на странице <a href="{{Href:Account}}/profile">профиля сообщества</a>;</li>
+ <li>или <a href="{{Href:Account}}/friends/join">здесь же</a>.</li>
+</ul>
+{{/TEMPLATE:Done}}

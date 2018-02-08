@@ -1,0 +1,40 @@
+{{TEMPLATE:Top}}
+ <table cellspacing="0" cellpadding="0" border="0" class="announce-top">
+ <tr>
+  <td class="text-">анонс документа {{Link:subject}} <small class="dt-">(последний раз изменЄн {{edited_datetime}})</small></td>
+ </tr>
+ </table>
+{{/TEMPLATE:Top}}
+
+
+{{TEMPLATE:BackRef}}
+<div class="body_panel">
+<table cellspacing="0" cellpadding="0" border="0" >
+<tr>
+ <td><img src="{{images}}z.gif" width="30" height="1" alt="" border="0" /></td>
+ <td class="body_panel_br"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></td>
+</tr>
+<tr>
+ <td valign="top"><img src="{{images}}z.gif" width="1" height="1" alt="" border="0" /></td>
+ <td valign="top">
+  <div class="body_panel_info_bottom">
+  <strong>ƒокумент анонсирован в&nbsp;журналах:</strong>
+  <ul>
+    {{TEMPLATE:BackRef_Item}}
+     <li>
+      {{?!is_mod}} {{Link:account}} &#151; {{user_name}}  {{?/}}
+      {{?need_mod}}  
+        <div class="need_mod_">
+         {{Link:account}} &#151; <b>{{user_name}}</b> &#151; <strong>нужна модераци€</strong>
+        </div>
+      {{?/}}
+      {{?done_mod}}  {{Link:account}} &#151; {{user_name}} {{?/}}
+     </li>
+    {{/TEMPLATE:BackRef_Item}}
+  </ul>
+  </div>
+ </td>
+</table>
+</div>
+{{/TEMPLATE:BackRef}}
+{{TEMPLATE:BackRef_Empty}}&nbsp;{{/TEMPLATE:BackRef_Empty}}

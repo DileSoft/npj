@@ -1,0 +1,40 @@
+<?php
+
+    // ÍïæÂçàèìíîÎäíîçíà÷íûéÒðàíñëèò
+        $NpjMacros = array( "âèêè" => "wiki", "âàêà" => "wacko", "øâàêà" => "shwacko",
+                            "âåá" => "web", "ëàíñ" => "lance", "êóêóö" => "kukutz", "ìåíäîêóñè" => "mendokusee",
+                            "ÿðåìêî" => "iaremko", "íèêîëàé" => "nikolai", "àëåêñåé" => "aleksey", 
+                            "àíàòîëèé" => "anatoly", "íïæ" => "npj", 
+                          );
+        $NpjLettersFrom = "àáâãäåçèêëìíîïðñòóôöû";
+        $NpjLettersTo   = "abvgdeziklmnoprstufcy";
+        $NpjConsonant = "áâãäæçéêëìíïðñòôõö÷øù";
+        $NpjVowel = "àå¸èîóûýþÿ";
+        $NpjBiLetters = array( 
+      "é" => "jj", "¸" => "jo", "æ" => "zh", "õ" => "kh", "÷" => "ch", 
+      "ø" => "sh", "ù" => "shh", "ý" => "je", "þ" => "ju", "ÿ" => "ja",
+      "ú" => "", "ü" => "",
+                              );
+
+        $NpjCaps  = "ÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÜÚÛÝÞß";
+        $NpjSmall = "àáâãäå¸æçèéêëìíîïðñòóôõö÷øùüúûýþÿ";
+
+
+      $tag = $text;
+      //insert _ between words
+      $tag = preg_replace( "/\s+/ms", "_", $tag );
+      $tag = str_replace( "::", "_", $tag );
+      $tag = str_replace( "@", "_", $tag );
+      $tag = preg_replace( "/\_+/ms", "_", $tag );
+
+      $tag = strtolower( $tag );
+      $tag = strtr( $tag, $NpjCaps, $NpjSmall );
+      $tag = strtr( $tag, $NpjMacros );
+      $tag = strtr( $tag, $NpjLettersFrom, $NpjLettersTo );
+      $tag = strtr( $tag, $NpjBiLetters );
+
+      $tag = preg_replace("/[^a-z0-9\-_]+/mi", "", $tag);
+
+      echo $tag;
+
+?>

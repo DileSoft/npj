@@ -1,0 +1,54 @@
+{{TEMPLATE:List}}
+<table class="edit_usermenu" cellspacing="2" cellpadding="0" border="0" >
+{{Form:List}}<input type="hidden" name="_listform_present" value="yes" />
+    <thead>
+    <tr>
+      <td>№</td>
+      <td>Подписи:</td>
+      <td>&nbsp;</td>
+      <td>(адреса ссылок)</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="5" class="hr_"><img src="{{images}}z.gif" height="1" width="1" alt="" border="0" /></td>
+    </tr>
+    </thead>
+    <tbody>
+  {{TEMPLATE:List_Item}}
+    <tr>
+      <td><input name="pos_{{item_id}}" type=text size=2 value="{{pos}}" /></td>
+      <td><input name="title_{{item_id}}" type=text size=40 value="{{title}}" /></td>
+      <td>&raquo;</td>
+      <td>{{npj_address}}</td>
+      <td><input name="delete_{{item_id}}" type=checkbox /></td>
+    </tr>
+    <tr>
+      <td colspan="5" class="hr_"><img src="{{images}}z.gif" height="1" width="1" alt="" border="0" /></td>
+    </tr>
+  {{/TEMPLATE:List_Item}}
+    <tbody>
+    <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input name="dont_delete" type=submit value="Сохранить изменения" />
+      <td colspan=3 align=right>
+       <small><a onclick="if (confirm('Точно удалять?')) document.forms.listform.submit();return false;" href="javascript:;" >Удалить выбранные</a></small>
+      </td>
+    </tr>
+    </tfoot>
+{{/Form}}
+</table>
+<br />
+<br />
+<br />
+{{/TEMPLATE:List}}
+
+
+{{TEMPLATE:List_Empty}}
+{{/TEMPLATE:List_Empty}}
+
+
+{{TEMPLATE:Page}}
+ {{EditDeleteList}}
+ {{AddForm}}
+{{/TEMPLATE:Page}}

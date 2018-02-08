@@ -1,0 +1,47 @@
+{{TEMPLATE:Guest}}
+    <!-- User Login -->
+     {{UserPanel.FORM}}
+
+      <table border="0" cellspacing="0" cellpadding="0">
+      <tr><td>
+        <table class="login-" border="0" cellspacing="5" cellpadding="0">
+        <tr><td>{{!Login}}:</td>
+            <td><input type="text" size="15" name="_flogin" value='' /></td>
+        </tr>
+        <tr><td>{{!Password}}:</td>
+            <td><input size="15" type="password" name="_fpassword" value='' /></td>
+        </tr>
+        </table>
+      </td>
+      <td>
+        <table class="login-" border="0" cellspacing="5" cellpadding="0">
+        <tr><td style="height:23px" class="opts-"><a href="{{/}}forgot">забыли?</a></td> <!-- !!! messageset -->
+        </tr>
+        <tr><td style="vertical-align:bottom;height:23px;"><input type="submit" class="submit-" value='{{!DoLogin}}' /></td>
+        </tr>
+        </table>
+      </td></tr>
+      </table>
+    <input type="hidden" name="_logout_at" value="cookie" />
+    <input type="hidden" name="freturn2"   value="on" />
+    <input type="hidden" name="freturn" value="{{UserPanel.FORM.Return}}" />
+    </form>
+    <!-- / User Login -->
+{{/TEMPLATE:Guest}}
+
+{{TEMPLATE:User}}
+    <!-- User Info -->
+    <img src="{{images}}style/i-user.gif" align="middle" width="13" height="13" alt="" />
+    <a href="{{Href:Principal}}">{{Npj:Principal}}</a>
+    &nbsp;
+
+    {{?!UserPanel.foreign}}
+     <img src="{{images}}style/i-settings.gif" align="middle" width="13" height="13" alt="" />
+     <a href="{{Href:Principal}}/manage">{{!Manage}}</a>
+    {{?/}}
+    &nbsp;
+
+    <img src="{{images}}style/i-exit.gif" align="middle" width="13" height="13" alt="" />
+    <a onclick="return confirm('{{!LogoutSure}}');" href="{{/}}login/?_logout=yes">{{!Logout}}</a>
+    <!-- / User Info -->
+{{/TEMPLATE:User}}

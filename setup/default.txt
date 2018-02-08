@@ -1,0 +1,37 @@
+  // Настройки самого узла
+  $this->registration_mode = 2;  // 0 / 1 / 2 (no, pre, free)
+  $this->community_creation_mode = 2;  // 0 / 1 / 2 (no, pre, free)
+  $this->workgroup_creation_mode = 2;  // 0 / 1 / 2 (no, pre, free)
+  $this->recent_changes_limit = 70;
+
+  $this->node_user        = "node";                  // системный пользователь узла !! НЕ МЕНЯЙТЕ!!
+
+//  $this->node_mail_pop    = "mail.lenta.ru";         // POP-сервер емейла нпж
+//  $this->node_mail_login  = "mainnpj@lenta.ru";      // логин на POP-сервер
+//  $this->node_mail_passw  = "******";                // пароль туда же
+
+  $this->node_menu = array(
+                            "node@:users"          => "Пользователи",
+                            "node@:communities"    => "Сообщества",
+                            "node@:workgroups"     => "Рабочие группы",
+                            "node@:registracija"   => "Регистрация",
+                          );
+
+  $this->usage_stats = 0; // записывать в БД статистику
+  $this->alert_npjnet = 1; // уведомлять о том, что узел не является частью Сети
+
+  // Design
+  $this->theme         = "absent";                                 // общая "тема" дизайна сайта
+  $this->skins         = array("simplifica", "crabla", "criba", "minikui", 
+                               "academic");      // набор доступных "шкур"
+  $this->default_theme = "_common"; // "шкура" по-умолчанию (там ищется всё, что не нашлось в текущей шкуре
+  
+  // HTTP configuration
+  $this->cookie_expire_days = 365;                  // сколько времени куку хранить
+  $this->rewrite_mode=1;                            // используется ли  dirty-urls / mod_rewrite / 404 {0,1,2 соотв.}
+
+  // content directories
+  $this->themes_www_dir      = "npj/themes/";     // базовый относительный урл для ресурсов темы
+  $this->user_pictures_dir = "/".$this->base_url."images/userpics/";
+
+?>

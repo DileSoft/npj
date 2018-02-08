@@ -1,0 +1,37 @@
+{{TEMPLATE:Alert}}
+<h1 class="title">¬нимание!</h1>
+
+“олько что вы попытались запросить смену парол€, наход€сь на неродном узле.
+ћы не можем вам в этом помочь более, чем перенаправить вас на ваш родной узел
+
+<br /><br />
+ стати, вот что вам сейчас следует сделать:
+<ul><li>
+<b><a href="{{Login.MyNodeURL}}{{Login.Login}}/settings/password/reset">&laquo;Ќапомнить пароль&raquo; на вашем родном узле</a></b> &#151; 
+<nobr>&laquo;{{Login.MyNodeName}}&raquo; (<b>@{{Login.MyNodeID}}</b>)</nobr>
+</li></ul>
+{{/TEMPLATE:Alert}}
+
+
+{{TEMPLATE:Form}}
+<h1 class="title">«абыли пароль?</h1>
+<table cellspacing="0" cellpadding="0" border="0" ><tr><td align="center" >
+<table border=0 cellspacing=10 cellpadding=0>
+{{Form}}
+</tr>
+<tr><td style='font:11px Tahoma' align=left>{{!Login}}:</td>
+    <td align=left><input type=text size=15 name=_flogin value='{{Login}}'>
+    <span class="text">если вспомнили пароль &#0151; <a href="{{/}}login">вход&nbsp;здесь</a></span>
+    </td>
+</tr>
+<tr><td align=left>&nbsp;</td>
+    <td style='color:#666666; font:10px Tahoma' align=left><input type=submit value='¬ыслать пароль!'>
+    </td>
+</tr>
+{{/Form}}
+</table>
+</td></tr></table>
+<script language=JavaScript>
+  {{FocusToID}}.focus();
+</script>
+{{/TEMPLATE:Form}}

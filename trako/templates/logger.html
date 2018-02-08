@@ -1,0 +1,28 @@
+{{TEMPLATE:State}}
+Старое состояние: {{from_state}} <small>(статус: {{from_status}})</small>
+<br />
+Новое состояние: <strong>{{to_state}}</strong> <small>(статус: {{to_status}})</small>
+{{?reason}}
+  <hr />
+  <div><strong>Причина и мотивы:</strong></div>
+  {{reason}}
+{{?/}}
+{{/TEMPLATE:State}}
+
+{{TEMPLATE:Status}}
+Старый статус: {{from_status}}
+<br />
+Новый статус: <strong>{{to_status}}</strong>
+{{?reason}}
+  <hr />
+  <div><strong>Причина и мотивы:</strong></div>
+  {{reason}}
+{{?/}}
+{{/TEMPLATE:Status}}
+
+{{TEMPLATE:Default}}
+{{?reason}}
+  <div><strong>Причина и мотивы:</strong></div>
+  {{reason}}
+{{?/}}
+{{/TEMPLATE:Default}}

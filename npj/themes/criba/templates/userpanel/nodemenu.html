@@ -1,0 +1,40 @@
+{{TEMPLATE:Static}}
+ <div style="padding:5px">
+ <table cellspacing="0" cellpadding="1" border="0" class="node-menu">
+   <tr>
+    <td nowrap="nowrap" class="text-"><a href="{{Href:NodeMenu.Root}}">
+     <!-- -->                                                                                 
+     <img src="{{images}}user_panel/node_root.gif" width="20" height="15" align="top" hspace="2" alt="" border="0" />
+     <!-- -->
+     {{NodeMenu.NodeName}}</a></td>
+   </tr>
+   <tr>
+    <td nowrap="nowrap" class="text-"><a href="{{Href:NodeMenu.Root}}node/freshdirectory">
+     <!-- -->
+     <img src="{{images}}user_panel/node_people.gif" width="20" height="20" align="absmiddle" hspace="2" alt="" border="0" />
+     <!-- -->
+     Пользователи узла</a></td>
+   </tr>
+   <tr>
+    <td nowrap="nowrap" class="text-"><a href="{{Href:NodeMenu.Root}}registracija">
+     <!-- -->
+     <img src="{{images}}z.gif" width="21" height="20" align="absmiddle" hspace="2" alt="" border="0" />
+     <!-- -->
+     Регистрация...</a></td>
+   </tr>
+ </table>
+ </div>
+{{/TEMPLATE:Static}}
+
+
+{{TEMPLATE:StaticSmall}}
+ <div style="padding:5px" class="node-menu">
+  <div class="text-">
+    <a href="{{Href:NodeMenu.Root}}">{{NodeMenu.NodeName}}</a>
+    |
+    <a href="{{Href:NodeMenu.Root}}node/freshdirectory">Пользователи узла</a>
+    | 
+    <a href="{{Href:NodeMenu.Root}}registracija">Регистрация...</a>
+  </div>
+ </div>
+{{/TEMPLATE:StaticSmall}}

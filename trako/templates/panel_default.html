@@ -1,0 +1,181 @@
+<!-- GRID template -------------------------------------------------------------- -->
+{{TEMPLATE:Grid}}
+
+ <style>
+  .trako-grid { } 
+  .trako-grid table { font-size:1em; }
+
+  .trako-grid .arrows- { float:right }
+  .trako-grid { }
+  .trako-grid thead td { background:#999999; color:#cccccc; font-size:95%; vertical-align:middle; padding:2px 5px }
+  .trako-grid thead .report-  { text-align:center; width: 1%; }
+  .trako-grid thead .status-  { text-align:center; width:15%; }
+  .trako-grid thead .sev-     { text-align:center; width:20%; }
+  .trako-grid thead .pri-     { text-align:center; width: 1%; }
+  .trako-grid thead .subj-    {                    width:80%; }
+  .trako-grid thead .lastcom- { text-align:center; width: 1%;                }
+  .trako-grid thead .noco-    { text-align:center; width: 1%; font-size:70%; }
+
+  .trako-grid thead a:link    { text-decoration:underline; color:#ffffff }
+  .trako-grid thead a:visited { text-decoration:underline; color:#ffffff }
+  .trako-grid thead a:hover   { text-decoration:underline; color:#333333 }
+  .trako-grid thead a:active  { text-decoration:underline; color:#000000 }
+
+  .trako-grid tbody td { padding:2px 5px; vertical-align:middle }
+  .trako-grid tbody tr.even1  { background:#fff5ee }
+
+  .trako-grid tbody .report-  { font-size:12px; text-align:center; }
+  .trako-grid tbody .status-  { font-size:12px; text-align:center; }
+  .trako-grid tbody .sev-     { font-size:90%;  text-align:center; }
+  .trako-grid tbody .pri-     { font-size:90%;  text-align:center; color:#666666 }
+  .trako-grid tbody .subj-    { font-size:100%; text-align:left;   color:#000000; }
+  .trako-grid tbody .lastcom- { font-size:11px; text-align:center; color:#666666 }
+  .trako-grid tbody .noco-    { font-size:12px; text-align:center }
+  
+  .trako-grid tbody .pri- .symbol-  { font-size:14px; color:#000000; font-weight:normal }
+  .trako-grid tbody .subj-      { font-weight:bold }
+  .trako-grid tbody .abstract-  { font-weight:normal; font-size:10px; color:#666666 }
+  .trako-grid tbody .keywords-  { font-weight:normal; font-size:10px; color:#666666 }
+  .trako-grid tbody .keywords- a:link    { color:#444444 }
+  .trako-grid tbody .keywords- a:visited { color:#666666 }
+  .trako-grid tbody .keywords- a:hover   { color:#800000 }
+  .trako-grid tbody .keywords- a:active  { color:#FF0000 }
+  .trako-grid tbody .none-  { color:#999999 }
+
+  .trako-grid tbody tr.fresh- .report-,
+  .trako-grid tbody tr.fresh- .subj-,
+  .trako-grid tbody tr.fresh- .status-   { font-weight:bold }
+  .trako-grid tbody tr.fresh- .lastcom-  { color:#000000 }
+ </style>
+ {{@styleblock.html}}
+ <style>
+ </style>
+
+ <div class="trako-grid"> 
+
+  <table cellspacing="5" cellpadding="0" border="0" class="w100">
+   <tr>
+    <td class="w100">
+      {{?Href:Trako/sub}}
+      <b><a href="{{Href:Trako/sub}}/add">Добавить рапорт в эту рубрику...</a></b>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <small>
+       |
+       <a href="{{Href:Trako}}/add">Просто добавить...</a>
+       |
+       <a href="{{Href:Trako}}">Вернуться в список</a>
+      </small>
+      {{?!Href:Trako/sub}}
+      <b><a href="{{Href:Trako}}/add">Добавить рапорт...</a></b>
+      {{?/}}
+    </td>
+    <td nowrap="nowrap">&nbsp;{{ARROWS}}</td>
+   </tr>
+  </table>
+
+  <table cellspacing="1" cellpadding="0" border="0" class="w100">
+   <thead>
+    <tr>
+     <td class="report-">{{Trako.ORDER:no}}</td>
+     {{?can_edit}}
+     <td class="noco-">правка</td>
+     {{?/}}
+     <td class="noco-">#</td>
+     <td class="status-">{{Trako.ORDER:status}}</td>
+     <td class="sev-">{{Trako.ORDER:severity}}</td>
+     <td class="pri-">{{Trako.ORDER:priority}}</td>
+     <td class="subj-">Суть рапорта</td>
+     <td class="lastcom-">{{Trako.ORDER:touched}}</td>
+    </tr>
+   </thead>
+
+   <tbody>
+      {{TEMPLATE:Grid_Item}}
+       <tr class="even{{even}} {{?is_fresh}}fresh-{{?/}} status-{{status}} state-{{state}}">
+         <td class="report-">
+           <a title="Открыть страницу рапорта" href="{{Href:tag}}">{{issue_no_aligned}}</a>
+         </td>
+         {{?can_edit}}
+         <td class="noco-">
+           <a title="Редактировать рапорт" href="{{Href:tag}}/edit"><small>EDIT</small></a>
+         </td>
+         {{?/}}
+         <td class="noco-">
+           {{?number_comments}}  <a href="{{Href:comments_target}}/comments?nc={{number_comments}}#comments" >{{number_comments}}</a>
+           {{?!number_comments}} <small class="none-">&mdash;<small>
+           {{?/}}
+         </td>
+         <td class="status- status-{{status}}">{{status_text}}</td>
+         <td class="sev-"><b>{{severity_class_text}}</b><br />{{severity_value_text}}</td>
+         <td class="pri- "><span class="priority-{{priority}} symbol-">{{priority_symbol}}</span>
+          <!-- {{priority_text}} -->
+          </td>
+         <td class="subj-">
+           <div class="keywords-">{{keywords}}</div>
+           {{subject}}
+           <div class="abstract-">{{non_empty_abstract}}</div>
+         </td>
+         <td class="lastcom-">{{user_dt}}</td>
+       </tr>
+      {{/TEMPLATE:Grid_Item}}
+   </tbody>
+
+  </table>
+
+   <div class="arrows-"> 
+    {{ARROWS}}
+   </div><br clear="all" />
+
+   {{@panel_default.html:Colorbox}}
+   <br />
+   {{@self_report.html}}
+
+  </div>
+{{/TEMPLATE:Grid}}
+{{TEMPLATE:Grid_Empty}} 
+  <table style="font-size:1em" cellspacing="5" cellpadding="0" border="0" class="w100">
+   <tr>
+    <td class="w100">
+      {{?Href:Trako/sub}}
+      <b><a href="{{Href:Trako/sub}}/add">Добавить рапорт в эту рубрику...</a></b>
+      &nbsp;&nbsp;&nbsp;&nbsp;|
+      <small>
+       <a href="{{Href:Trako}}/add">Просто добавить...</a>
+       |
+       <a href="{{Href:Trako}}">Вернуться в корень...</a>
+      </small>
+      {{?!Href:Trako/sub}}
+      <b><a href="{{Href:Trako}}/add">Добавить рапорт...</a></b>
+      {{?/}}
+    </td>
+    <td nowrap="nowrap">&nbsp;{{ARROWS}}</td>
+   </tr>
+  </table>
+  {{@self_report.html}}
+
+{{/TEMPLATE:Grid_Empty}}
+
+
+{{TEMPLATE:Colorbox}}
+<style>
+.trako-colorbox          { background:#999999; }
+.trako-colorbox td.main-box- { background:#FFFFFF; padding:0px; }
+.trako-colorbox td.main-box- td { font-size:90%; font-weight:bold; vertical-align:middle; text-align:center }
+</style>
+<br />
+<table class="trako-colorbox" cellspacing="1" cellpadding="0" border="0" width="100%">
+ <tr><td class="main-box-">
+  <table cellspacing="1" cellpadding="0" border="0" width="100%">
+   <tr>
+    <td width="13%" class="status-new">новый</td>
+    <td width="13%" class="status-info">информация</td>
+    <td width="13%" class="status-agreed">признан</td>
+    <td width="13%" class="status-assigned">назначен</td>
+    <td width="13%" class="status-next">ближайшие планы</td>
+    <td width="13%" class="state-solved">решён</td>
+    <td width="13%" class="state-closed">закрыт</td>
+   </tr>
+  </table>
+ </td></tr>
+</table>
+{{/TEMPLATE:Colorbox}}

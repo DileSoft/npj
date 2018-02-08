@@ -1,0 +1,26 @@
+<h1 class="title">Подождите, идёт проверка прав доступа...</h1>
+Вы находитесь на чужом узле сети NPJ. Для того, чтобы узел мог вас идентифицировать,
+ему необходимо узнать ваши реквизиты у вашего родного узла, {{Link:AuthNode}}.
+Это займёт от одной до 10 секунд.
+<p>Независимо от результатов авторизации, страница, на которую вы хотели попасть, откроется через 10 секунд.
+<p>Чтобы пропустить этап авторизации и пройти на страницу, на которую вы хотели попасть, нажмите на кнопку:
+{{Form}}
+<input type=submit value='Пропустить авторизацию' />
+{{/Form}}
+
+<table cellspacing="0" cellpadding="0" border="0" ><tr><td align="center" >
+<table border=0 cellspacing=10 cellpadding=0>
+{{Form}}
+<tr><td colspan=2 style='font:11px Tahoma' align=left><div class="error">{{Error}}</div></td>
+</tr>
+<tr><td style='font:11px Tahoma' align=left>Состояние авторизации:</td>
+    <td align=left>
+     <!--input type=text size=15 name=_cheatlogin value='{{CookieLogin}}'>
+     <input type=submit value='{{!DoLogin}}'-->
+     <img src="{{AuthTo}}" width="20" height="20" onload="document.location='{{GoTo}}'" />
+    </td>
+</tr>
+{{/Form}}
+</table>
+</td></tr></table>
+

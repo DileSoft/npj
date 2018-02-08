@@ -1,0 +1,63 @@
+{{TEMPLATE:Plain}}
+
+{{?!_Only_More}}
+ Панель владельца журнала:<br />
+ {{GROUPS}}
+ <div align="right">
+ <nobr>доп. параметр: <input size=17 type="string" name="{{_Field}}_param" maxlen="{{_Param_MaxLen}}" value="{{_Param}}" /></nobr>
+ </div>
+ 
+ <hr size="1" noshade="noshade" />
+ <div style="padding-top:5px"><strong>Для автора записи:</strong>
+ {{ADD}}
+ </div>
+ <hr size="1" noshade="noshade" />
+
+
+{{?/_Only_More}}
+
+ Панель автора записи:<br />
+ {{GROUPS_MORE}}
+ <div align="right">
+ <nobr>доп. параметр: <input size=17 type="string" name="{{_Field}}_more_param" maxlen="{{_Param_MaxLen}}" value="{{_Param_More}}" /></nobr>
+ </div>
+ <br />
+{{/TEMPLATE:Plain}}
+
+<!-- ---------------------------------------------------------------------------------- -->
+{{TEMPLATE:Plain_Radio}}
+<table cellspacing="3" cellpadding="0" border="0" width="100%">
+  {{TEMPLATE:Plain_Radio_Item}}
+   <tr>
+    <td><input id="chk{{_Field}}_{{_Count}}" type="radio" name="{{_Field}}_add" value="{{_Href}}" /></td>
+    <td width="100%" class="form_right_t"><label for="chk{{_Field}}_{{_Count}}">{{_Text}}</label></td>
+   </tr>
+  {{/TEMPLATE:Plain_Radio_Item}}
+</table>
+{{/TEMPLATE:Plain_Radio}}
+{{TEMPLATE:Plain_Radio_Empty}}
+{{/TEMPLATE:Plain_Radio_Empty}} 
+
+  {{TEMPLATE:Plain_Radio_Item_Current}}
+   <tr>
+    <td><input id="chk{{_Field}}_{{_Count}}"type="radio" name="{{_Field}}_add" checked value="{{_Href}}" /></td>
+    <td width="100%" class="form_right_t"><label for="chk{{_Field}}_{{_Count}}">{{_Text}}</label></td>
+   </tr>
+  {{/TEMPLATE:Plain_Radio_Item_Current}}
+
+
+<!-- ---------------------------------------------------------------------------------- -->
+{{TEMPLATE:Plain_Groups}}
+<select class="w100" name="{{_Field}}">
+  {{TEMPLATE:Plain_Groups_Item}}
+   <option value="{{_Href}}" />{{_Text}}</option>
+  {{/TEMPLATE:Plain_Groups_Item}}
+</select>
+{{/TEMPLATE:Plain_Groups}}
+{{TEMPLATE:Plain_Groups_Empty}}
+{{/TEMPLATE:Plain_Groups_Empty}} 
+
+  {{TEMPLATE:Plain_Groups_Item_Current}}
+   <option value="{{_Href}}" selected/>{{_Text}}</option>
+  {{/TEMPLATE:Plain_Groups_Item_Current}}
+

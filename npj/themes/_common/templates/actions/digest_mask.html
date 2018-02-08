@@ -1,0 +1,84 @@
+<style>
+.digest td div { margin:2px 5px }
+.digest .mask-active- td div  { color: #444444 }
+.digest .mask-active- td select { background:#ffffff; color:#000000 }
+.digest .mask-passive- td div { color: #999999 }
+.digest .mask-passive- td select { background:#eeeeee; color:#999999 }
+</style>
+
+<table cellspacing="3" cellpadding="0" border="0" >
+
+<!-- ------------------------------------------ -->
+<tr>
+ <td><input 
+    onclick="div_mask_0.className='mask-active-';div_mask_1.className='mask-passive-'" 
+    id="mask_0" type="radio" name="mode" value="simple" {{mode_simple}} /></td>
+ <td><label for="mask_0"><b>Текстовый черновик</b></label></td>
+</tr>
+<tr>
+ <td>&nbsp;</td>
+ <td>
+  <div id="div_mask_0" class="mask-active-">
+   <table cellspacing="0" cellpadding="0" border="0" >
+    <tr>
+     <td><div class="mask-dir">Шаблон:</div></td>
+     <td><div>
+             <select 
+               onmousedown="this.form.mask_0.checked=true;div_mask_0.className='mask-active-';div_mask_1.className='mask-passive-'" 
+               onfocus="this.form.mask_0.checked=true;div_mask_0.className='mask-active-';div_mask_1.className='mask-passive-'" 
+               name="template">
+               <option value="default"        {{template_default}}       >Заголовки и даты</option>
+               <option value="default_users"  {{template_default_users}} >Заголовки и даты + авторы</option>
+               <option value="full"           {{template_full}}          >Вместе с текстом</option>
+               <option value="full_users"     {{template_full_users}}    >Вместе с текстом + авторы</option>
+             </select></div></td>
+    </tr>
+    <tr>
+     <td><div class="mask-prefix">Редактор:</div></td>
+     <td><div>
+             <select 
+               onmousedown="this.form.mask_0.checked=true;div_mask_0.className='mask-active-';div_mask_1.className='mask-passive-'" 
+               onfocus="this.form.mask_0.checked=true;div_mask_0.className='mask-active-';div_mask_1.className='mask-passive-'" 
+               name="formatting">
+               <option value="default"   {{formatting_default}}  >Ваш &laquo;по умолчанию&raquo;</option>
+               <option value="wacko"     {{formatting_wacko}}    >Вака/вики-разметка</option>
+               <option value="rawhtml"   {{formatting_rawhtml}}  >WYSIWYG/наглядный редактор</option>
+               <option value="simplebr"  {{formatting_simplebr}} >Только переносы строк</option>
+             </select></div></td>
+    </tr>
+   </table>
+  </div>
+ </td>
+</tr>
+
+<!-- ------------------------------------------ -->
+<tr>
+ <td><input 
+    onclick="div_mask_1.className='mask-active-';div_mask_0.className='mask-passive-'"
+    id="mask_1" type="radio" name="mode" value="form" {{mode_form}} /></td>
+ <td class="content2_"><label for="mask_1"><b>Черновик на веб-формах</b></label></td>
+</tr>
+<tr>
+ <td>&nbsp;</td>
+ <td>
+  <div id="div_mask_1" class="mask-passive-">
+   <table cellspacing="0" cellpadding="0" border="0" >
+    <tr>
+     <td><div class="mask-dir">Оформление:</div></td>
+     <td><div>
+             <select 
+               onmousedown="this.form.mask_1.checked=true;div_mask_1.className='mask-active-';div_mask_0.className='mask-passive-'" 
+               onfocus="this.form.mask_1.checked=true;div_mask_1.className='mask-active-';div_mask_0.className='mask-passive-'" 
+               name="html">
+               <option value="default"        {{html_default}} >Без авторства</option>
+               <option value="users"          {{html_users}}   >С указанием авторов</option>
+             </select></div></td>
+    </tr>
+   </table>
+  </div>
+ </td>
+</tr>
+
+<!-- ------------------------------------------ -->
+
+</table>

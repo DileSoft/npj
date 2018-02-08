@@ -1,0 +1,11 @@
+<?php
+// function IsGrantedTo( $method, $object_class, $object_id, $options="" )
+
+// GRANTED --> òîëüêî åñëè ÅÑÒÜ Â ÑÏÈÑÊÅ $rh->node_admins
+
+// âûçûâàåò "acl_text"
+
+  return $this->IsGrantedTo( "acl_text", $object_class, $object_id, $rh->node_admins );
+
+
+?>

@@ -1,0 +1,19 @@
+{{TEMPLATE:List}}<?xml version="1.0" encoding='windows-1251'?>
+<nns>
+  {{TEMPLATE:List_Item}}
+  <entry>  
+    <title>{{title}}</title>
+    <id>{{node_id}}</id>
+    <url>{{url}}</url>
+    <is_nns>{{is_nns}}</is_nns>
+    <can_nns>{{can_nns}}</can_nns>
+    <created>{{created_datetime}}</created>
+    <user_pictures_dir>{{user_pictures_dir}}</user_pictures_dir>
+    {{?LoggedIn}}
+    <email>{{email}}</email>
+    <ip>{{ip}}</ip>
+    {{?/LoggedIn}}
+  </entry>
+  {{/TEMPLATE:List_Item}}
+</nns>
+{{/TEMPLATE:List}}

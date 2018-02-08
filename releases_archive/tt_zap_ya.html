@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />    <title>Яндекс: Паспорт</title>
+<script type="text/javascript" language="javascript">
+var n = 0;
+var Auth = new Array();
+var Url = new Array();
+Auth['.yandex.ua'] = false;
+Url['.yandex.ua'] = 'http://pass.yandex.ua/login?session_info=1169737746.802.1319581.sah^D5B4C1BB.yandex_login^mendokusee.yandexuid^1697319981169737734.intother^2:2883980:99.yandex_ua:4211.3880.4ccab891cd1d99c52dfbcddfee222e7a';
+
+function loginAll(){
+    var millis = 100;
+    var Successful = true;
+    for (var key in Auth){
+        if (Auth[key] == false){
+            var mysrc = Url[key];
+            Successful = false;
+            var src = mysrc + '&ncrnd=' + (100000 + Math.floor(Math.random() * 899999));
+            document.writeln('<script type="text/javascript" language="javascript" src="' + src + '"></s' + 'cript>');
+            var date = new Date();
+            var curDate = null;
+            do { curDate = new Date(); } while(curDate-date < 10);
+        }
+    }
+    if (Successful){
+        window.location = 'http://mail.yandex.ru/';
+    }
+    if (n < 4){
+        window.setTimeout('loginAllNext()', millis);
+    }
+}
+function loginAllNext() { ++n; loginAll(); }
+</script>
+</head>
+<body>
+<div>Яндекс: идет процесс проверки авторизации...</div>
+<script type="text/javascript" language="javascript">
+    document.writeln('<meta http-equiv="refresh" content="10;url=http://passport.yandex.ru/passport?mode=passport">');
+    loginAll();
+</script>
+</body>
+</html>

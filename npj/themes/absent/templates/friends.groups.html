@@ -1,0 +1,57 @@
+{{TEMPLATE:Main}}
+{{Form:Filter}}
+<div class="friends_text">
+Выберите те группы корреспондентов, ленты журналов которых хотите включить в данный просмотр.
+  <br />
+  <div class="friends__hint">
+  Серый фон вокруг галочек показывает, что эта группа входит в вашу &laquo;ленту корреспондентов&raquo;
+  <nobr>по-умолчанию.</nobr>
+  </div>
+</div>
+
+<table cellspacing="2" cellpadding="0" border="0" align="center">
+<tr><td>
+
+  <table cellspacing="2" cellpadding="0" border="0" >
+   <tr>
+    <td><div class="friends_checkbox{{All.Checked}}"><input type="checkbox" name="group_{{All.ID}}" id="idgrp_{{All.ID}}" /></div></td>
+    <td class="friends_group_all"><label for="idgrp_{{All.ID}}">{{All.Name}}</label>
+   </tr>
+  </table>
+
+  {{List}}
+
+<div style='margin-left:20px'>
+ <input type="submit" value="Показать ленту" />
+</div>
+<div style='font-size:70%; color:#666666; margin:5px 0 20px 20px; white-space:nowrap'>
+ <input id="chk_default" type="checkbox" name="_default" />
+ <label for="chk_default">Сохранить как настройку по-умолчанию</label>
+</div>
+
+</td></tr></table>
+
+
+
+{{/Form}}
+{{/TEMPLATE:Main}}
+
+
+{{TEMPLATE:Groups}}
+  <table cellspacing="0" cellpadding="0" border="0" >
+  {{TEMPLATE:Groups_Item}}
+   <tr>
+    <td><div class="friends_checkbox{{_Title}}"><input type="checkbox" name="group_{{_Href}}" id="idgrp_{{_Href}}"/></div></td>
+    <td class="friends_group_name"><label for="idgrp_{{_Href}}">{{_Text}}</label>
+   </tr>
+  {{/TEMPLATE:Groups_Item}}
+  </table>
+{{/TEMPLATE:Groups}}
+{{TEMPLATE:Groups_Empty}}
+ <div class="friends_group_none" style='width:300px'>
+ У вас не создано ни одной подгруппы корреспондентов.
+ Если вы создатите парочку таких, то сможете просматривать их по-отдельности, точно
+ <br />
+<a href="{{Href:Account}}/friends/groups/edit/{{All.Rank}}">создать...</a>
+</div>
+{{/TEMPLATE:Groups_Empty}}
